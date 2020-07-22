@@ -1,2 +1,2 @@
-# my_summary
-Website where I describe my professional life
+# Descripción
+Sitio web donde resumo mi vida profesional
