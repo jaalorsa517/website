@@ -1,7 +1,7 @@
 * {
-    --color-nav: green;
-    --color-body:orange;
-    --color-text: black;
+    --color-nav: #61BD65;
+    --color-body: #A7A58D;
+    --color-text: #484845;
 }
 
 body {
@@ -12,22 +12,26 @@ body {
 
 nav {
     background: var(--color-nav);
+    width: 100%;
     display: flex;
     justify-content: space-around;
 }
-nav h1{
-    font-family: 'Architects Daughter', cursive,Helvetica;
+
+nav h1 {
+    font-family: 'Architects Daughter', cursive, Helvetica;
+    text-align: center;
+    color:var(--color-text)
 }
 
 nav section ul {
     display: flex;
-    align-items: inherit;
+    align-items: flex-end;
     justify-content: center;
     list-style: none;
 }
 
 nav section ul a {
-    font-family: 'Indie Flower', cursive;
+    font-family: 'Indie Flower', cursive, Arial, Helvetica, sans-serif;
     font-size: 25px;
     text-decoration: none;
     color: var(--color-text);
@@ -35,9 +39,3 @@ nav section ul a {
     padding: 10px;
 }
 
-.container-image img {
-    width: 480px;
-    height: 580px;
-    display: block;
-    margin: auto;
-}
