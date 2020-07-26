@@ -20,7 +20,7 @@ nav {
 nav h1 {
     font-family: 'Architects Daughter', cursive, Helvetica;
     text-align: center;
-    color:var(--color-text)
+    color: var(--color-text)
 }
 
 nav section ul {
@@ -39,3 +39,14 @@ nav section ul a {
     padding: 10px;
 }
 
+main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+main div {
+    margin: auto;
+    border: 1px solid green;
+    max-width: 200;
+}
