@@ -1,0 +1,42 @@
+mixin card(url,text,description)
+	.card-experiencia
+		div(id= attributes.id)
+		a(href=url)= text
+		p= description
+
+section.secondary
+	article.habilidades-secondary
+		h2 Habilidades
+			ul
+				li Desarrollo ágil con SCRUM.
+				li Comunicación en equipo por Slack.
+				li Terminal y líneas de comandos.
+				li Manejo de lo esencial de SQL.
+				li Desarrollo en equipo con Git.
+				li Programación orientada a objetos.
+				li Gestión de contenedores con Docker.
+				li Inglés básico.
+	article.experiencia-secondary
+		h2 Experiencia
+		.experiencia-container.python
+			h3 Python
+			.cards-container
+				+card('https://github.com/jaalorsa517/pomodoro',
+					'Pomodoro', 
+					'Aplicación escritorio de un temporizador para '+
+					'la técnica pomodoro.')(id='pomodoro')
+				+card('https://github.com/jaalorsa517/Pedidos',
+					'Pedidos',
+					'Aplicación para escritorio, muy específica, desarrollada '+
+					'para una distribuidora de lácteos para agilizar un '+
+					'proceso logístico en el área de ventas. Está hecha '+
+					'para el manejo de interfaz gráfica y para ser '+
+					'manipulada por la línea de comandos')(id='pedidos')
+				+card('https://github.com/jaalorsa517/utilities',
+					'Utilities',
+					'Recopilación de algunos scripts que facilitan '+
+					'ciertos procesos como agregar archivos al '+
+					'archivo gitignore, por ejemplo')(id='utilities')
+			h3 Web
+			.cards-container
+				+card()
