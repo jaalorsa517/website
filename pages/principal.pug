@@ -1,10 +1,12 @@
-mixin contacto(title, text, url)
-  h3= title
-  span
-    if url
-      a(href=url target='_blank')= text
-    else
-      span= text
+mixin contacto(icon,title, text, url)
+  .contacto-card
+    h3= title
+    img.icon-contacto(src='../images/'+ icon)
+    div
+      if url
+        a(href=url target='_blank')= text
+      else
+        span= text
 
 main.principal
   article.perfil-principal
@@ -24,14 +26,12 @@ main.principal
       Java.
   article.contacto-principal
     h2 Contacto
-    .contacto-subcontainer-principal
-      .icon-contacto--subcontainer
-      .contacto-container--subcontainer
-        +contacto('Teléfono','3504459101')
-        +contacto('Email','jaalorsa519@gmail.com')
-        +contacto('Github','https://github.com/jaalorsa517','https://github.com/jaalorsa517')
-        +contacto(
-          'Linkedin',
-          'www.linkedin.com/in/jaime-alberto-ortiz-saldarriaga-54a3409b',
-          'https://www.linkedin.com/in/jaime-alberto-ortiz-saldarriaga-54a3409b')
-        +contacto('Twitter','@jaalorsa517','https://twitter.com/jaalorsa517')
+    .subcontainer--principal
+      +contacto('phone-icon.png','Teléfono','3504459101')
+      +contacto('gmail-icon.ico','Email','jaalorsa519@gmail.com')
+      +contacto('github-icon.ico','Github','https://github.com/jaalorsa517','https://github.com/jaalorsa517')
+      +contacto('linkedin-icon.ico',
+        'Linkedin',
+        'www.linkedin.com/in/jaime-alberto-ortiz-saldarriaga-54a3409b',
+        'https://www.linkedin.com/in/jaime-alberto-ortiz-saldarriaga-54a3409b')
+      +contacto('twitter-icon.png','Twitter','@jaalorsa517','https://twitter.com/jaalorsa517')

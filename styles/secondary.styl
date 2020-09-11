@@ -1,2 +1,55 @@
 .secondary
-    grid-area:secondary
+	margin: 20px 20px 20px 0
+	grid-area:secondary
+.cards-container
+	display:flex
+	flex-wrap: nowrap
+	scrolling() 
+.card-experiencia
+	flex-shrink: 0
+	width: size-card.w	
+	height: size-card.w 
+	margin: 0 25px
+	display: flex
+	flex-direction: column
+	align-items: center
+	position relative
+	font-size: 1.2rem
+	& img 
+		width: 100%
+		height 100%
+	& div
+		position: absolute
+		bottom 0
+		width: 100%
+		height: 50%
+		z-index 1
+		overflow-y  auto
+		scrollbar-width: none
+		background: rgba(24,77,71,0.4)
+		display flex
+		flex-direction: column
+		& div::-webkit-scrollbar
+			display:none
+		& a
+			top 20%
+			left 20%
+			font-size: 1.5rem
+			text-decoration: none
+			color: white
+			font-weight: 700
+			text-align: center
+		& p
+			top 20%
+			left 20%
+			color white
+			text-align: left
+.card-experiencia:hover
+	width: size-card.w	*1.5
+	height: size-card.w *1.5
+.habilidades-secondary
+	& li
+		font-size: 1.5rem
+		font-weight: 400
+		line-height: 2
+		text-align: left

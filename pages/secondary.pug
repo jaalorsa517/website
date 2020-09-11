@@ -1,8 +1,9 @@
-mixin card(url,text,description)
+mixin card(img,url,text,description)
 	.card-experiencia
-		div(id= attributes.id)
-		a(href=url)= text
-		p= description
+		img(src='../images/preview/'+img )
+		div
+			a(href=url)= text
+			p= description
 
 section.secondary
 	article.habilidades-secondary
@@ -21,22 +22,36 @@ section.secondary
 		.experiencia-container.python
 			h3 Python
 			.cards-container
-				+card('https://github.com/jaalorsa517/pomodoro',
+				+card('portada.png',
+					'https://github.com/jaalorsa517/pomodoro',
 					'Pomodoro', 
 					'Aplicación escritorio de un temporizador para '+
-					'la técnica pomodoro.')(id='pomodoro')
-				+card('https://github.com/jaalorsa517/Pedidos',
+					'la técnica pomodoro.')
+				+card('portada.png',
+					'https://github.com/jaalorsa517/Pedidos',
 					'Pedidos',
 					'Aplicación para escritorio, muy específica, desarrollada '+
 					'para una distribuidora de lácteos para agilizar un '+
 					'proceso logístico en el área de ventas. Está hecha '+
 					'para el manejo de interfaz gráfica y para ser '+
-					'manipulada por la línea de comandos')(id='pedidos')
-				+card('https://github.com/jaalorsa517/utilities',
+					'manipulada por la línea de comandos')
+				+card('portada.png',
+					'https://github.com/jaalorsa517/utilities',
 					'Utilities',
 					'Recopilación de algunos scripts que facilitan '+
 					'ciertos procesos como agregar archivos al '+
-					'archivo gitignore, por ejemplo')(id='utilities')
+					'archivo gitignore, por ejemplo')
 			h3 Web
 			.cards-container
-				+card()
+				+card('page_lading_mobile.png',
+					'https://github.com/jaalorsa517/reto1',
+					'Landing Page',
+					'Ejemplo de una página landing')
+				+card('card-desktop-interactivo.png',
+					'https://github.com/jaalorsa517/reto2',
+					'Card info',
+					'Ejemplo de una card de información')
+				+card('card-feature-desktop.png',
+					'https://github.com/jaalorsa517/reto03',
+					'Four cards',
+					'Ejemplo de una estructuras de cards')
