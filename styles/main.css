@@ -148,6 +148,15 @@ h5 {
 .card-experiencia div::-webkit-scrollbar {
   display: none;
 }
+.cards-container::-webkit-scrollbar {
+  background-color: #eebb4d;
+}
+.cards-container::-webkit-scrollbar:active {
+  background-color: #f0dcb2;
+}
+.cards-container::-webkit-scrollbar:hover {
+  background-color: #f0dcb2;
+}
 .card-experiencia:hover {
   width: 375px;
   height: 375px;
@@ -168,6 +177,15 @@ h5 {
   overflow-x: auto;
   overflow-y: hidden;
   scrollbar-color: #f0dcb2 #eebb4d;
+}
+.categoria-container::-webkit-scrollbar {
+  background-color: #eebb4d;
+}
+.categoria-container::-webkit-scrollbar:active {
+  background-color: #f0dcb2;
+}
+.categoria-container::-webkit-scrollbar:hover {
+  background-color: #f0dcb2;
 }
 .card-formacion {
   flex-shrink: 0;
@@ -246,6 +264,15 @@ footer .attribution {
     overflow-y: hidden;
     scrollbar-color: #f0dcb2 #eebb4d;
   }
+  .subcontainer--principal::-webkit-scrollbar {
+    background-color: #eebb4d;
+  }
+  .subcontainer--principal::-webkit-scrollbar:active {
+    background-color: #f0dcb2;
+  }
+  .subcontainer--principal::-webkit-scrollbar:hover {
+    background-color: #f0dcb2;
+  }
   .contacto-card {
     margin: 10px;
   }
@@ -254,9 +281,9 @@ footer .attribution {
   html {
     font-size: 10px;
   }
-  .image-header {
-    width: 300px/2;
-    height: 300px/2;
+  .head .image-header {
+    width: 200px;
+    height: 200px;
   }
 }
 @media screen and (max-width: 500px) {

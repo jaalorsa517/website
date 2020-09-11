@@ -6,14 +6,21 @@
         max-width: 100%
     .subcontainer--principal
         scrolling()
+    .subcontainer--principal::-webkit-scrollbar
+	    background-color: color-secondary
+    .subcontainer--principal::-webkit-scrollbar:active
+    	background-color: #f0dcb2
+    .subcontainer--principal::-webkit-scrollbar:hover
+	    background-color: #f0dcb2
     .contacto-card
         margin: 10px
 @media screen and (max-width 800px)
     html
         font-size 10px
-    .image-header
-        width: altura-head/2
-        height: altura-head/2
+    .head
+        & .image-header
+            width: (altura-head / 1.5)
+            height: (altura-head / 1.5)
 @media screen and (max-width 500px)
     html
         font-size 8px
@@ -24,3 +31,6 @@
         font-size 1.5rem
     .subtitle--description-header
         font-size 1.3rem
+    // .image-header
+    //     width: altura-head / 3
+    //     height: altura-head / 3
