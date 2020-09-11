@@ -258,6 +258,9 @@ footer .attribution {
     justify-content: center;
     max-width: 100%;
   }
+  .image-header {
+    align-items: center;
+  }
   .subcontainer--principal {
     overflow-x: auto;
     overflow-y: hidden;
@@ -302,74 +305,125 @@ footer .attribution {
   }
 }
 @media print {
+  html {
+    font-size: 12pt;
+  }
+  h3 {
+    font-size: 1rem;
+  }
+  h4,
+  h5,
+  span,
+  a {
+    font-size: 0.8rem;
+  }
+  @page {
+    margin: 25mm;
+    size: letter;
+  }
   .body {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    font-size: 1rem;
   }
   .main-container {
+    width: 165mm;
     display: flex;
     flex-direction: column;
     align-items: center;
   }
-  .head {
+  .main-container .head {
+    height: 229mm;
     flex-direction: column;
-    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    break-before: always;
   }
-  .principal {
+  .main-container .principal {
+    height: auto;
+    margin: auto;
+    margin-top: 10px;
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
-    margin: 0;
-    max-width: 19cm;
+    max-width: 165mm;
     box-shadow: 0px 0px #184d47;
-    page-break-before: always;
   }
-  .subcontainer--principal {
+  .main-container .principal .perfil-principal {
+    height: 229mm;
+  }
+  .main-container .principal .perfil-principal h2 {
+    margin: 10px 0 0 0;
+  }
+  .main-container .principal .perfil-principal p {
+    margin: 10px 0 0 0;
+  }
+  .main-container .principal .contacto-principal {
+    height: 229mm;
+  }
+  .main-container .principal .subcontainer--principal {
     flex-wrap: wrap;
   }
-  .secondary {
+  .main-container .principal .subcontainer--principal .contacto-car img {
+    width: 16px;
+    height: 16px;
+  }
+  .main-container .secondary {
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
-    margin: 0;
-    max-width: 19cm;
+    max-width: 165mm;
     box-shadow: 0px 0px #184d47;
-    page-break-before: always;
   }
-  .secondary .cards-container {
+  .main-container .secondary .habilidades-secondary {
+    height: 229mm;
+    margin-top: 10px;
+  }
+  .main-container .secondary .experiencia-secondary {
+    height: 458mm;
+  }
+  .main-container .secondary .experiencia-secondary .cards-container {
+    page-break-inside: avoid;
+    height: 150mm;
     overflow: hidden;
     flex-wrap: wrap;
   }
-  .secondary .cards-container .card-experiencia {
+  .main-container .secondary .experiencia-secondary .cards-container .card-experiencia {
     margin: 10px;
   }
-  .third {
+  .main-container .third {
+    height: 297.7mm;
+    margin: 0;
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
-    margin: 0;
-    max-width: 19cm;
+    max-width: 165mm;
     box-shadow: 0px 0px #184d47;
-    page-break-before: always;
   }
-  .third .categoria-container {
+  .main-container .third h2 {
+    margin: 0;
+  }
+  .main-container .third .categoria-container .card-formacion {
+    width: auto;
+    height: auto;
+    flex-wrap: wrap;
+    margin: 10px;
+  }
+  .main-container .third .categoria-container .card-formacion img {
+    width: 50px;
+    height: 50px;
+  }
+  .categoria-container {
     overflow: hidden;
     flex-wrap: wrap;
   }
-  .third .categoria-container .card-formacion {
+  .categoria-container .card-formacion {
     margin: 10px;
   }
-  .footer {
+  .categoria-container .footer {
+    margin: 0;
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
-    margin: 0;
-    max-width: 19cm;
+    max-width: 165mm;
     box-shadow: 0px 0px #184d47;
-    page-break-before: always;
   }
 }
