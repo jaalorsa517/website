@@ -9,7 +9,8 @@ mixin card(imagen,title,year='Julio 2020',academia='Platzi')
 
 section.third
   h2 Formación
-    h3 Habilidades
+    .formacion-container
+      h3 Habilidades
       .categoria-container
         +card('tecnico_sistemas.JPG',
           'Técnico en sistemas',
@@ -31,7 +32,7 @@ section.third
         +card('docker.png',
           'Fundamentos de Docker',
           'Agosto 2020')
-    h3 Python
+      h3 Python
       .categoria-container
         +card('python.png',
           'Python')
@@ -42,7 +43,7 @@ section.third
         +card('django.png',
           'Django',
           'Agosto 2020')
-    h3 Web
+      h3 Web
       .categoria-container
         +card('html-css.png',
           'HTML y CSS')

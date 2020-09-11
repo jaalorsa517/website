@@ -1,0 +1,43 @@
+config()
+    display: flex
+    flex-direction: column
+    flex-wrap: wrap
+    margin: 0
+    max-width: 19cm
+    box-shadow: 0px 0px color-dark
+    page-break-before: always
+@media print
+    .body
+        display: flex
+        flex-direction: column
+        justify-content: center
+        align-items: center
+    .main-container
+        display: flex
+        flex-direction: column
+        align-items:center
+    .head
+        flex-direction: column
+        flex-wrap: wrap
+        justify-content: center
+        align-items: center
+    .principal
+        config()
+    .subcontainer--principal
+        flex-wrap: wrap
+    .secondary
+        config()
+        .cards-container
+            overflow hidden
+            flex-wrap: wrap
+            .card-experiencia
+                margin: 10px
+    .third
+        config()
+        .categoria-container
+            overflow hidden
+            flex-wrap: wrap
+            .card-formacion
+                margin:10px
+    .footer
+        config()
