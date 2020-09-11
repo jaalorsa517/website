@@ -29,7 +29,7 @@ h5 {
   display: grid;
   grid-template-rows: 300px auto auto;
   grid-template-columns: 50% 50%;
-  grid-template-areas: "head head" "primary primary" "secondary third";
+  grid-template-areas: "head head" "primary primary" "secondary third" "footer footer";
 }
 .head {
   grid-area: head;
@@ -51,6 +51,9 @@ h5 {
   flex-grow: 2;
   align-self: center;
   text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
 }
 .head .description-header .title--description-header {
   font-size: 4rem;
@@ -59,8 +62,8 @@ h5 {
   font-size: 4.5rem;
 }
 .principal {
-  margin: 20px 0;
   grid-area: primary;
+  margin: 20px 0;
 }
 .perfil-principal p {
   font-size: 1.5rem;
@@ -68,15 +71,14 @@ h5 {
 }
 .subcontainer--principal {
   display: flex;
-  flex-wrap: wrap;
 }
 .contacto-card {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  width: 250px;
-  height: 120px;
+  width: auto;
+  height: auto;
 }
 .contacto-card .icon-contacto {
   width: 48px;
@@ -91,8 +93,8 @@ h5 {
   text-align: center;
 }
 .secondary {
-  margin: 20px 20px 20px 0;
   grid-area: secondary;
+  margin: 50px 10px;
 }
 .cards-container {
   display: flex;
@@ -157,8 +159,8 @@ h5 {
   text-align: left;
 }
 .third {
-  margin: 20px 0;
   grid-area: third;
+  margin: 50px 10px;
 }
 .categoria-container {
   display: flex;
@@ -196,4 +198,79 @@ h5 {
 .card-formacion:hover {
   width: 375px;
   height: 375px;
+}
+footer {
+  grid-area: footer;
+  display: flex;
+  flex-direction: column;
+  font-size: 1.5rem;
+  margin: 50px 10px;
+}
+footer h3 {
+  text-align: center;
+}
+footer .other-info ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  width: 250px;
+  height: 120px;
+}
+footer .other-info ul li {
+  text-decoration: none;
+  list-style: none;
+}
+footer .other-info ul li .card-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 10px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+}
+footer .attribution {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 1.2rem;
+}
+@media screen and (max-width: 1279px) {
+  .main-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 100%;
+  }
+  .subcontainer--principal {
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-color: #f0dcb2 #eebb4d;
+  }
+  .contacto-card {
+    margin: 10px;
+  }
+}
+@media screen and (max-width: 800px) {
+  html {
+    font-size: 10px;
+  }
+  .image-header {
+    width: 300px/2;
+    height: 300px/2;
+  }
+}
+@media screen and (max-width: 500px) {
+  html {
+    font-size: 8px;
+  }
+  .head {
+    flex-direction: column;
+    justify-content: center;
+  }
+  .title--description-header {
+    font-size: 1.5rem;
+  }
+  .subtitle--description-header {
+    font-size: 1.3rem;
+  }
 }

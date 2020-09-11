@@ -1,0 +1,14 @@
+mixin card-other(title, text)
+    .card-info 
+      h4= title   
+      span= text
+
+footer
+  h3 Otros datos
+  .other-info
+    ul
+      li 
+        +card-other('Residencia', 'Andes - Antioquia')
+      li 
+        +card-other( 'Estado civil' ,'Casado')
+  .attribution Coded by <a href="#top">Jaime Ortiz</a>.
