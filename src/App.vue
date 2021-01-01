@@ -6,9 +6,9 @@
 </template>
 
 <script>
-import headerCustom from "./components/header";
-import footerCustom from "./components/footer";
-import navigatorCustom from "./components/navigator";
+import headerCustom from "./components/header-custom";
+import footerCustom from "./components/footer-custom";
+import navigatorCustom from "./components/navigator-custom";
 
 export default {
   name: "Curriculum",
