@@ -1,17 +1,20 @@
 <template lang="pug">
   .app
     header-custom
+    navigator-custom
     footer-custom
 </template>
 
 <script>
 import headerCustom from "./components/header";
 import footerCustom from "./components/footer";
+import navigatorCustom from "./components/navigator";
 
 export default {
   name: "Curriculum",
   components: {
     headerCustom,
+    navigatorCustom,
     footerCustom,
   },
 };
