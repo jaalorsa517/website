@@ -2,10 +2,9 @@
     header
         img(:src="logo" alt='logo' class="logo")
         .title
-           h2 Desarrollador
-           h1 Jaime Alberto Ortiz Saldarriaga
-        v-avatar(size=200 class="photo")
-            img(:src="photo" alt='photo') 
+            h2 Desarrollador
+            h1 Jaime Alberto Ortiz Saldarriaga
+        img(:src="photo" alt='photo' class="photo") 
 </template>
 
 <script>
@@ -30,6 +29,12 @@ shadow-text()
 shadow-box()
     box-shadow 5px 5px 10px rgba(51, 63, 56, 0.5)
 
+avatar(size, radius)
+    width size
+    height size
+    border-radius radius
+    shadow-box()
+
 header
     height 200px
     width 100%
@@ -39,6 +44,7 @@ header
     background #79D70F
     box-shadow-box()
 .title
+    height 100%
     display flex
     flex-direction column
     justify-content center
@@ -50,11 +56,8 @@ header
         font-size 4rem
         shadow-text()
 .logo
-    width 100px
-    height 100px
-    border-radius 5px
-    shadow-box()
+    avatar(100px, 5px)
 
 .photo
-    shadow-box()
+    avatar(200px,50%)
 </style>

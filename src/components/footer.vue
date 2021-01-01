@@ -1,17 +1,23 @@
 <template lang="pug">
     footer
         div(v-for="red in networkSocials")
-            img(:src="red.icon")
+            a(v-if="red.url" :href="red.url" class="card-icon")
+                img(:src="red.icon" alt="red.name" class="icons")
+                h4 {{red.name}}
+            div(v-else class="card-icon")
+                img(:src="red.icon" class="icons")
+                h4 {{red.data}}
+
         
 </template>
 
 <script>
 import telephone from "../assets/images/phone-icon.png";
-import email from "../assets/images/gmail-icon.ico";
-import github from "../assets/images/github-icon.ico";
-import linkendin from "../assets/images/linkedin-icon.ico";
+import email from "../assets/images/gmail-icon.png";
+import github from "../assets/images/github-icon.png";
+import linkendin from "../assets/images/linkedin-icon.png";
 import twitter from "../assets/images/twitter-icon.png";
-// import youtube from "../assets/images/youtube-icon.png";
+import youtube from "../assets/images/youtube-icon.png";
 
 export default {
   name: "footer",
@@ -42,11 +48,38 @@ export default {
         {
           name: "Twitter",
           icon: twitter,
-          data: "@jaalorsa517",
           url: "https://twitter.com/jaalorsa517",
+        },
+        {
+          name: "Youtube",
+          icon: youtube,
+          url: "https://www.youtube.com/channel/UC2629Jqdc0PQCYRxmF3fcZA",
         },
       ],
     };
   },
 };
 </script>
+
+<style lang="stylus" scoped>
+flex-display()
+    display flex
+    justify-content center
+    align-items center
+
+footer
+    width 100%
+    height 100px
+    flex-display ()
+    background #79D70F
+a, h4
+    font-size 1rem
+    text-decoration none
+.card-icon
+    flex-display()
+    flex-direction column
+    margin 0 20px
+.icons
+    max-width 64px
+    height 64px
+</style>
