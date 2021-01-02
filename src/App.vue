@@ -1,6 +1,6 @@
 <template lang="pug">
   .app
-    headi.header
+    headi.headi
     router-view.body
     navi.navi
     foot.footer
@@ -34,6 +34,7 @@ fonts()
 
 .app
   height 100vh
+  max-height 100vh
   width 100%
   min-height 600px
   position relative
@@ -41,13 +42,13 @@ fonts()
 
 a
   fonts()
-.header
+.headi
   z-index 3
 .body
   z-index 2
 .navi
   position fixed
-  top 40%
+  top calc((100vh - 300px)/2)
   right 0
   z-index 5
 

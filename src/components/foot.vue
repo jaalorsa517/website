@@ -32,7 +32,7 @@ export default {
         {
           name: "Email",
           icon: email,
-          data: "jaalorsa519@gmail.com",
+          data: "jaalorsa519\n@gmail.com",
         },
         {
           name: "Github",
@@ -70,6 +70,7 @@ flex-display()
 footer
     width 100%
     height 100px
+    min-height 100px
     flex-display ()
     background #79D70F
 a, h4
@@ -80,6 +81,26 @@ a, h4
     flex-direction column
     margin 0 20px
 .icons
-    max-width 64px
+    width 64px
     height 64px
+
+@media screen and (max-width: 767px)
+  a, h4
+    font-size 0.5rem
+  .card-icon
+    width 32px
+    margin 0 15px
+  .icons
+    width 32px
+    height 32px
+
+@media screen and (max-width: 1280px)
+  a, h4
+    font-size 0.8rem
+  .card-icon
+    width 48px
+    margin 0 20px
+  .icons
+    width  48px
+    height 48px
 </style>
