@@ -14,7 +14,7 @@
 
 <script>
 export default {
-  name: "navigator",
+  name: "navi",
   data: function() {
     return {
       sections: [
@@ -40,9 +40,9 @@ export default {
 
 <style lang="stylus" scoped>
 .navegator
-    position fixed
-    right 0
-    top 200px
+    // position fixed
+    // right 0
+    // top 200px
     margin 0
     & a
       display flex

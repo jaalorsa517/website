@@ -20,7 +20,7 @@ import twitter from "../assets/images/twitter-icon.png";
 import youtube from "../assets/images/youtube-icon.png";
 
 export default {
-  name: "footer",
+  name: "foot",
   data: function() {
     return {
       networkSocials: [

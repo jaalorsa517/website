@@ -12,7 +12,7 @@ import logo from "../assets/images/logo.png";
 import photo from "../assets/images/perfil.jpg";
 
 export default {
-  name: "header",
+  name: "headi",
   data: function() {
     return {
       logo,
