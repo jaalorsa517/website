@@ -88,7 +88,7 @@ export default {
   .item-complete
     height 32px
 
-@media screen and (max-width: 1280px)
+@media screen and (min-width: 768px) and (max-width: 1280px)
   .navegator
     & a
       font-size 1.5rem
