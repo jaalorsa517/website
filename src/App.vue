@@ -1,5 +1,5 @@
 <template lang="pug">
-  .app
+  .app(:style="background=cssProps")
     headi.headi
     router-view.body
     navi.navi
@@ -18,6 +18,13 @@ export default {
     navi,
     foot,
   },
+  data: function() {
+    return {
+      cssProps: {
+        backgroundImage: `url(${require("./assets/images/fondo.png")})`,
+      },
+    };
+  },
 };
 </script>
 
@@ -29,15 +36,14 @@ fonts()
   font-size 12px
   color #333F38
 
+
 *
   margin 0
 
 .app
-  height 100vh
-  max-height 100vh
   width 100%
-  min-height 600px
   position relative
+  background-repeat repeat
   fonts()
 
 a
@@ -46,14 +52,15 @@ a
   z-index 3
 .body
   z-index 2
+  background-color #EDF4F2
 .navi
   position fixed
-  top calc((100vh - 300px)/2)
+  top 25vh
   right 0
   z-index 5
 
 .footer
   position relative
-  bottom 0
+  top 100%
   z-index 3
 </style>

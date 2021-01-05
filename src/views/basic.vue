@@ -1,7 +1,7 @@
 <template lang="pug">
   div.basic
-    //- card-document.card(title="Perfil",text="Soy una persona que me gusta ayudar al que lo necesita, la cualidad que me identifican es la responsabilidad; pero tengo otras que me ayudan a resaltar la cualidad patriarcal: orden, respeto, creativdad y persistencia, todo enfocado de una manera humana. \nMe perfilo al desarrollo web con python como backend y JavaScript en Vue como fronted. También me oriento, en menor medida, al desarrollo móvil con Flutter y desarrollos de escritorio con Java. ")
-    card-progress
+    card-document.card(title="Perfil",text="Soy una persona que me gusta ayudar al que lo necesita, la cualidad que me identifican es la responsabilidad; pero tengo otras que me ayudan a resaltar la cualidad patriarcal: orden, respeto, creativdad y persistencia, todo enfocado de una manera humana. \nMe perfilo al desarrollo web con python como backend y JavaScript en Vue como fronted. También me oriento, en menor medida, al desarrollo móvil con Flutter y desarrollos de escritorio con Java. ")
+    card-progress.card
 </template>
 
 <script>
@@ -19,9 +19,23 @@ export default {
 
 <style lang="stylus" scoped>
 .basic
-  height calc(100vh - 300px)
+  width 80%
+  height calc(100% - 300px)
+  margin 0 auto
   display flex
-  // background-color #f3d8a6
+  justify-content center
+  align-items center
+  // background-color #EDF4F2
+  background-color rgba(256,256,256,0)
 .card
   margin 30px
+  flex 1
+@media screen and  (max-width: 767px)
+  .basic
+    flex-direction column
+    height auto
+@media screen and (min-width: 768px) and (max-width: 1280px)
+  .basic
+    flex-direction column
+    height auto
 </style>

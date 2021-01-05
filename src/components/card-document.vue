@@ -1,6 +1,6 @@
 <template lang="pug">
 	.card-document
-		.card-tittle {{title}}
+		h3.card-title {{title}}
 		.card-text  {{text}}
 </template>
 
@@ -12,6 +12,25 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-// .card-document
-// 	max-width 400px
+.card-document
+	min-width 350px
+	padding 15px
+	font-size 1.1rem
+	background-color #EDF4F2
+	border-top 5px solid #D32626
+	border-radius 5px
+	border-bottom-left-radius 15px
+	border-bottom-right-radius 15px
+	box-shadow 5px 5px 10px rgba(51, 63, 56, 0.5)
+.card-title
+	margin 10px
+	font-size 2rem
+	text-shadow 5px 5px 10px rgba(51, 63, 56, 0.3)
+@media screen and  (max-width: 767px)
+	.card-document
+		margin 0 20px
+		min-width 40vh
+		font-size 0.7rem
+	.card-title
+		font-size 1rem
 </style>

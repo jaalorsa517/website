@@ -8,7 +8,7 @@ div
       @mouseleave="outHover(i)" 
       href="#")
         .item-complete(v-show="section.hover") {{section.name}}
-        .item(:class="isactive")
+        .item(:class="isactive") {{section.init}}
                       
 </template>
 
@@ -18,9 +18,9 @@ export default {
   data: function() {
     return {
       sections: [
-        { name: "Básica", hover: false },
-        { name: "Experiencia", hover: false },
-        { name: "Estudios", hover: false },
+        { name: "Básica", hover: false, init: 1 },
+        { name: "Experiencia", hover: false, init: 2 },
+        { name: "Estudios", hover: false, init: 3 },
       ],
       isactive: "",
     };
@@ -54,6 +54,7 @@ export default {
     height 48px
     margin 15px
     margin-left 0
+    line-height 1.5
     border-radius 50%
     background-color #F5A31A
     transition 0.5s
