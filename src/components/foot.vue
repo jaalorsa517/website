@@ -69,7 +69,7 @@ flex-display()
 
 footer
     width 100%
-    height 100px
+    height 150px
     min-height 100px
     flex-display ()
     background #79D70F
@@ -85,6 +85,8 @@ a, h4
     height 64px
 
 @media screen and (max-width: 767px)
+  footer
+    height 100px
   a, h4
     font-size 0.5rem
   .card-icon
@@ -95,6 +97,8 @@ a, h4
     height 32px
 
 @media screen and (min-width: 768px) and (max-width: 1280px)
+  footer
+    height 100px
   a, h4
     font-size 0.8rem
   .card-icon

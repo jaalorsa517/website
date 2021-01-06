@@ -1,9 +1,9 @@
 <template lang="pug">
-  .app(:style="background=cssProps")
+  #app(:style="background=cssProps")
     headi.headi
     router-view.body
     navi.navi
-    foot.footer
+    foot.foot
 </template>
 
 <script>
@@ -36,31 +36,35 @@ fonts()
   font-size 12px
   color #333F38
 
-
 *
   margin 0
 
-.app
+#app
   width 100%
+  height 100vh
   position relative
   background-repeat repeat
+  overflow auto
   fonts()
 
-a
+a,h1,h2,h3,h4,h5,h6
   fonts()
+
 .headi
   z-index 3
+
 .body
   z-index 2
   background-color #EDF4F2
+
 .navi
   position fixed
-  top 25vh
+  top 40vh
   right 0
   z-index 5
 
-.footer
-  position relative
-  top 100%
+.foot
+  position fixed
+  bottom 0
   z-index 3
 </style>

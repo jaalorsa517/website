@@ -36,12 +36,14 @@ avatar(size, radius)
   shadow-box()
 
 .header
-  height 200px
-  min-height 200px
   width 100%
+  height 200px
+  max-height 200px
   display flex
   justify-content space-around
   align-items center
+  position fixed
+  top 0
   background #79D70F
   box-shadow-box()
 .title
@@ -60,7 +62,7 @@ avatar(size, radius)
   avatar(100px, 5px)
 
 .photo
-  avatar(200px,50%)
+  avatar(180px,50%)
 
 @media screen and  (max-width: 767px)
   .header

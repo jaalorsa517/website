@@ -44,7 +44,7 @@ export default {
   & a
     display flex
     align-items center
-    justify-content end
+    justify-content flex-end
     font-size 2rem
     text-decoration none
     text-align center

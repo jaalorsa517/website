@@ -20,22 +20,27 @@ export default {
 <style lang="stylus" scoped>
 .basic
   width 80%
-  height calc(100% - 300px)
-  margin 0 auto
+  height 100%
+  margin auto
   display flex
   justify-content center
   align-items center
   // background-color #EDF4F2
   background-color rgba(256,256,256,0)
+
 .card
   margin 30px
   flex 1
+
 @media screen and  (max-width: 767px)
   .basic
     flex-direction column
-    height auto
+    margin-top 200px
+    margin-bottom 100px
+
 @media screen and (min-width: 768px) and (max-width: 1280px)
   .basic
     flex-direction column
-    height auto
+    margin-top 200px
+    margin-bottom 100px
 </style>
