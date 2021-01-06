@@ -6,6 +6,7 @@ div
       :key="i" 
       @mouseover="inHover(i)" 
       @mouseleave="outHover(i)" 
+      @click="goTo(i)"
       href="#")
         .item-complete(v-show="section.hover") {{section.name}}
         .item(:class="isactive") {{section.init}}
@@ -33,6 +34,20 @@ export default {
     outHover: function(i) {
       this.$el.children[0].children[i].children[1].classList.remove("active");
       this.sections[i].hover = false;
+    },
+    goTo: function(i) {
+      switch (i) {
+        case 0:
+          if (this.$router.currentRoute.path !== "/basic") {
+            this.$router.replace({ path: "/basic" });
+          }
+          break;
+        case 1:
+          if (this.$router.currentRoute.path !== "/experiencie") {
+            this.$router.replace({ path: "/experiencie" });
+          }
+          break;
+      }
     },
   },
 };

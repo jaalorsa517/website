@@ -5,9 +5,10 @@ Vue.use(VueRouter);
 
 const routes = [
   {
-    path: "/",
+    path: "/basic",
     name: "basic",
     component: () => import("../views/basic.vue"),
+    alias: "/",
   },
   {
     path: "/experience",
@@ -17,6 +18,7 @@ const routes = [
 ];
 
 const router = new VueRouter({
+  mode: "history",
   routes,
 });
 
