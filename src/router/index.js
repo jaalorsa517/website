@@ -1,5 +1,7 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
+import Basic from "../views/basic.vue";
+import Experiencie from "../views/experiencie.vue";
 
 Vue.use(VueRouter);
 
@@ -7,13 +9,13 @@ const routes = [
   {
     path: "/basic",
     name: "basic",
-    component: () => import("../views/basic.vue"),
+    component: Basic,
     alias: "/",
   },
   {
-    path: "/experience",
+    path: "/experiencie",
     name: "experiencie",
-    component: () => import("../views/exp.vue"),
+    component: Experiencie,
   },
 ];
 

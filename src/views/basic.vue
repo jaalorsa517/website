@@ -25,7 +25,6 @@ export default {
   display flex
   justify-content center
   align-items center
-  // background-color #EDF4F2
   background-color rgba(256,256,256,0)
 
 .card

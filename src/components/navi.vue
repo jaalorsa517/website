@@ -39,12 +39,12 @@ export default {
       switch (i) {
         case 0:
           if (this.$router.currentRoute.path !== "/basic") {
-            this.$router.replace({ path: "/basic" });
+            this.$router.push({ path: "/basic" });
           }
           break;
         case 1:
           if (this.$router.currentRoute.path !== "/experiencie") {
-            this.$router.replace({ path: "/experiencie" });
+            this.$router.push({ path: "/experiencie" });
           }
           break;
       }
