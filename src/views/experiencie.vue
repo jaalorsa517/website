@@ -18,39 +18,32 @@ export default {
           category: "Python",
           datas: [
             {
-              title: "Basico",
-              text: "Esto es una prueba de lo que va a pasar",
-              url: "#",
+              title: "Fique API",
+              text:
+                "Una api hecha con Flask y su extensión Flask-restful.\n La API permite las operaciones básicas del CRUD. También tiene implementada seguridad, gracias a la extensión Flask-httpauth.",
+              url: "https://github.com/jaalorsa517/fique_app",
+              type: "Empresarial",
             },
             {
-              title: "Basico1",
-              text: "Esto es una prueba de lo que va a pasar",
-              url: "#",
+              title: "Admin-flask",
+              text:
+                "Programa hecho en Flask para demostrar el uso de login, con la extensión Flask-login. \n Para ver la demo del programa, visite http://jaalorsa517.pythonanywhere.com/auth/login?next=%2F. \nLas instrucciones de su uso las encuentra en el README del github",
+              url: "https://github.com/jaalorsa517/admin-flask",
+              type: "Iniciativa Propia",
             },
             {
-              title: "Basico2",
-              text: "Esto es una prueba de lo que va a pasar",
-              url: "#",
-            },
-          ],
-        },
-        {
-          category: "Web",
-          datas: [
-            {
-              title: "Basico3",
-              text: "Esto es una prueba de lo que va a pasar",
-              url: "#",
+              title: "Pedidos",
+              text:
+                "Programa hecho con tkinter para automatizar un proceso del área de markenting de una distribuidoras de lácteos. El programa lee un archivo de *.xlsx y procesa la información para devolver un archivo *.pdf listo para imprimir.",
+              url: "https://github.com/jaalorsa517/Pedidos",
+              type: "Empresarial",
             },
             {
-              title: "Basico4",
-              text: "Esto es una prueba de lo que va a pasar",
-              url: "#",
-            },
-            {
-              title: "Basico5",
-              text: "Esto es una prueba de lo que va a pasar",
-              url: "#",
+              title: "Pomodoro",
+              text:
+                "Programa de escritorio para mejorar la productividad de quién lo use.",
+              url: "https://github.com/jaalorsa517/pomodoro",
+              type: "Iniciativa Propia",
             },
           ],
         },
@@ -65,10 +58,18 @@ export default {
   width 80%
   height 80%
   margin auto
-  margin-top 200px
+  margin-top 50px
   display flex
   justify-content center
   align-items center
   position relative
   background-color rgba(256,256,256,0)
+
+@media screen and (max-width: 767px)
+  .exp
+    margin-top 200px
+    margin-bottom 50px
+@media screen and (min-width: 1280px) and (max-width: 1480px)
+  .exp
+    margin-top 100px
 </style>

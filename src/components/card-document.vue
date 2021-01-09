@@ -26,6 +26,9 @@ export default {
 	margin 10px
 	font-size 2rem
 	text-shadow 5px 5px 10px rgba(51, 63, 56, 0.3)
+.card-text
+	font-family inherit
+	white-space pre-wrap
 @media screen and  (max-width: 767px)
 	.card-document
 		margin 0 20px

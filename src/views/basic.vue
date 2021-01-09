@@ -34,8 +34,8 @@ export default {
 @media screen and  (max-width: 767px)
   .basic
     flex-direction column
-    margin-top 200px
-    margin-bottom 100px
+    margin-top 225px
+    margin-bottom 125px
 
 @media screen and (min-width: 768px) and (max-width: 1280px)
   .basic
