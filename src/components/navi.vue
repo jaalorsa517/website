@@ -8,8 +8,8 @@ div
       @mouseleave="outHover(i)" 
       @click="goTo(i)"
       href="#")
-        .item-complete(v-show="section.hover") {{section.name}}
-        .item(:class="isactive") {{section.init}}
+        .item-complete(v-show="section.hover" ) {{section.name}}
+        .item {{section.init}}
                       
 </template>
 
@@ -23,7 +23,7 @@ export default {
         { name: "Experiencia", hover: false, init: 2 },
         { name: "Estudios", hover: false, init: 3 },
       ],
-      isactive: "",
+      index_active: 0,
     };
   },
   methods: {
@@ -36,6 +36,11 @@ export default {
       this.sections[i].hover = false;
     },
     goTo: function(i) {
+      this.$el.children[0].children[
+        this.index_active
+      ].children[1].classList.remove("current");
+      this.$el.children[0].children[i].children[1].classList.add("current");
+      this.index_active = i;
       switch (i) {
         case 0:
           if (this.$router.currentRoute.path !== "/basic") {
@@ -54,6 +59,11 @@ export default {
           break;
       }
     },
+  },
+  mounted: function() {
+    this.$el.children[0].children[this.index_active].children[1].classList.add(
+      "current"
+    );
   },
 };
 </script>
@@ -81,13 +91,16 @@ export default {
   &.active
     border-top-left-radius 0
     border-bottom-left-radius 0
+    background-color #D32626
+  &.current
+    background-color #D32626
 
 .item-complete
   margin 0
   height 48px
   border-top-left-radius 10%
   border-bottom-left-radius 10%
-  background-color #F5A31A
+  background-color #D32626
   animation-name sliden
   animation-duration 1s
   animation-timing-function ease-in

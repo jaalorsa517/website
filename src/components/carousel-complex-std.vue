@@ -1,12 +1,11 @@
 <template lang="pug">
   .carousel-container
     .slides
-      .slide
-        .card-img
-          img(:src="infoSlide.img")
-          h4 {{infoSlide.title}}
-          h5 {{infoSlide.year}}
-          h4 {{infoSlide.institute}}
+      .card-img
+        img(:src="infoSlide.img")
+        h4 {{infoSlide.title}}
+        h5 {{infoSlide.year}}
+        h4 {{infoSlide.institute}}
     .controlls
       button.left(@click="toPrevSlide" class="btn") 
         img(:src="leftIcon")
@@ -85,7 +84,6 @@ export default {
       this.currentCircle(this.currentSlide, old);
     },
     goToSlide: function(i) {
-      console.log(i);
       this.currentCircle(i, this.currentSlide);
       this.currentSlide = i;
     },
@@ -96,6 +94,7 @@ export default {
       } else {
         this.currentThumbnails = 0;
       }
+      this.currentCircle(0, this.currentSlide);
       this.currentSlide = 0;
       this.currentThumbnail(this.currentThumbnails, old);
     },
@@ -106,12 +105,15 @@ export default {
       } else {
         this.currentThumbnails = this.dataShow.length - 1;
       }
+      this.currentCircle(0, this.currentSlide);
       this.currentSlide = 0;
       this.currentThumbnail(this.currentThumbnails, old);
     },
     goToThumbnail: function(i) {
       this.currentThumbnail(i, this.currentThumbnails);
       this.currentThumbnails = i;
+      this.currentCircle(0, this.currentSlide);
+      this.currentSlide = 0;
     },
   },
   mounted: function() {
@@ -133,13 +135,20 @@ export default {
   align-items center
   .slides
     flex-grow 5
-    a
-      text-decoration none
-      h4
+    & .card-img
+      display flex
+      flex-direction column
+      justify-content center
+      align-items center
+      & img
+        max-width 350px
+        max-height 250px
+      & h4
+        text-align center
         font-size 1.3rem
-        margin-left 15px
-        margin-bottom 5px
-        text-shadow 5px 5px 10px rgba(51, 63, 56, 0.1)
+      & h5
+        text-align center
+        font-size 1.1rem
   .controlls
     flex-grow 1
     display flex
@@ -152,13 +161,12 @@ export default {
     width 16px
     height 16px
     margin 0 10px
-    background-color rgba(51, 63, 56, 0.4)
     border-radius 50%
+    background-color #F5A31A
     &:hover
       cursor pointer
     &.current
-      // background-color rgba(51, 63, 56, 1)
-      background-color #F5A31A
+      background-color #D32626
   .thumbnails-container
     flex-grow 1
     display:flex
@@ -175,9 +183,13 @@ export default {
     align-items center
     text-align center
     border-radius 5px
-    background-color rgba(245,163,26,1)
+    background-color #F5A31A
+    &:hover
+      cursor pointer
     &.current
-      background-color rgba(245,163,26,0.2)
+      background-color #D32626
+      h5
+        color #EDF4F2
     h5
       font-weight 700
       font-size 1.3rem
@@ -195,4 +207,29 @@ export default {
     &:hover
       background-color #EDF4F2
       box-shadow 5px 5px 10px rgba(51, 63, 56, 0.3)
+      cursor pointer
+@media screen and  (max-width: 767px)
+  .carousel-container
+    .slides
+      & .card-img
+        & img
+          max-width 250px
+          max-height 150px
+    .circle
+      width  8px
+      height 8px
+      margin 0 2px
+    .thumbnail
+      width  64px
+      height 64px
+      h5
+        font-size 0.8rem
+        overflow hidden
+        text-overflow ellipsis
+    .btn
+      max-width 32px
+      max-height 32px
+      img
+        max-width  16px
+        max-height 16px
 </style>

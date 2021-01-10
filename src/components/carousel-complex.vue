@@ -92,6 +92,7 @@ export default {
       } else {
         this.currentThumbnails = 0;
       }
+      this.currentCircle(0, this.currentSlide);
       this.currentSlide = 0;
       this.currentThumbnail(this.currentThumbnails, old);
     },
@@ -102,12 +103,15 @@ export default {
       } else {
         this.currentThumbnails = this.dataShow.length - 1;
       }
+      this.currentCircle(0, this.currentSlide);
       this.currentSlide = 0;
       this.currentThumbnail(this.currentThumbnails, old);
     },
     goToThumbnail: function(i) {
       this.currentThumbnail(i, this.currentThumbnails);
       this.currentThumbnails = i;
+      this.currentCircle(0, this.currentSlide);
+      this.currentSlide = 0;
     },
   },
   mounted: function() {
@@ -148,11 +152,12 @@ export default {
     width 16px
     height 16px
     margin 0 10px
-    background-color rgba(51, 63, 56, 0.4)
+    background-color #F5A31A
     border-radius 50%
+    &:hover
+      cursor pointer
     &.current
-      // background-color rgba(51, 63, 56, 1)
-      background-color #F5A31A
+      background-color #D32626
   .thumbnails-container
     flex-grow 1
     display:flex
@@ -169,9 +174,13 @@ export default {
     align-items center
     text-align center
     border-radius 5px
-    background-color rgba(245,163,26,1)
+    background-color #F5A31A
+    &:hover
+      cursor pointer
     &.current
-      background-color rgba(245,163,26,0.2)
+      background-color #D32626
+      h5
+        color #EDF4F2
     h5
       font-weight 700
       font-size 1.3rem
@@ -189,4 +198,24 @@ export default {
     &:hover
       background-color #EDF4F2
       box-shadow 5px 5px 10px rgba(51, 63, 56, 0.3)
+      cursor pointer
+@media screen and  (max-width: 767px)
+  .carousel-container
+    .circle
+      width  8px
+      height 8px
+      margin 0 2px
+    .thumbnail
+      width  64px
+      height 64px
+      h5
+        font-size 0.8rem
+        overflow hidden
+        text-overflow ellipsis
+    .btn
+      max-width 32px
+      max-height 32px
+      img
+        max-width  16px
+        max-height 16px
 </style>

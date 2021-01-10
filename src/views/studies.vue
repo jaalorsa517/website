@@ -179,10 +179,14 @@ export default {
   width 80%
   height 80%
   margin auto
-  margin-top 50px
+  margin-top 125px
   display flex
   justify-content center
   align-items center
   position relative
   background-color rgba(256,256,256,0)
+@media screen and (max-width: 767px)
+  .stu
+    margin-top 200px
+    margin-bottom 50px
 </style>

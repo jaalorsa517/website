@@ -47,17 +47,17 @@ export default {
             },
           ],
         },
-        {
-          category: "Web",
-          datas: [
-            {
-              title: "algo",
-              text: "",
-              url: "",
-              type: "",
-            },
-          ],
-        },
+        // {
+        //   category: "Web",
+        //   datas: [
+        //     {
+        //       title: "algo",
+        //       text: "",
+        //       url: "",
+        //       type: "",
+        //     },
+        //   ],
+        // },
       ],
     };
   },
