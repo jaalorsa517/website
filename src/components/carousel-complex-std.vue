@@ -2,9 +2,11 @@
   .carousel-container
     .slides
       .slide
-        a(:href="infoSlide.url" target="_blank")
-          h4 {{infoSlide.type}}
-          card-document(:title="infoSlide.title" :text="infoSlide.text")
+        .card-img
+          img(:src="infoSlide.img")
+          h4 {{infoSlide.title}}
+          h5 {{infoSlide.year}}
+          h4 {{infoSlide.institute}}
     .controlls
       button.left(@click="toPrevSlide" class="btn") 
         img(:src="leftIcon")
@@ -65,6 +67,7 @@ export default {
     },
     toNextSlide: function() {
       let old = this.currentSlide;
+      ("../assets/images/certificados/animacion-web.png");
       if (this.currentSlide < this.dataSlide.length - 1) {
         this.currentSlide++;
       } else {
@@ -82,6 +85,7 @@ export default {
       this.currentCircle(this.currentSlide, old);
     },
     goToSlide: function(i) {
+      console.log(i);
       this.currentCircle(i, this.currentSlide);
       this.currentSlide = i;
     },
@@ -150,6 +154,8 @@ export default {
     margin 0 10px
     background-color rgba(51, 63, 56, 0.4)
     border-radius 50%
+    &:hover
+      cursor pointer
     &.current
       // background-color rgba(51, 63, 56, 1)
       background-color #F5A31A

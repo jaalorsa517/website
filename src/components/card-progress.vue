@@ -48,6 +48,11 @@ export default {
           value: 90,
           color: "pink",
         },
+        {
+          title: "Expresiones regulares",
+          value: 50,
+          color: "orange",
+        },
       ],
     };
   },

@@ -47,6 +47,11 @@ export default {
             this.$router.push({ path: "/experiencie" });
           }
           break;
+        case 2:
+          if (this.$router.currentRoute.path !== "/studies") {
+            this.$router.push({ path: "/studies" });
+          }
+          break;
       }
     },
   },

@@ -47,6 +47,17 @@ export default {
             },
           ],
         },
+        {
+          category: "Web",
+          datas: [
+            {
+              title: "algo",
+              text: "",
+              url: "",
+              type: "",
+            },
+          ],
+        },
       ],
     };
   },
@@ -58,7 +69,7 @@ export default {
   width 80%
   height 80%
   margin auto
-  margin-top 50px
+  margin-top 100px
   display flex
   justify-content center
   align-items center
@@ -69,7 +80,4 @@ export default {
   .exp
     margin-top 200px
     margin-bottom 50px
-@media screen and (min-width: 1280px) and (max-width: 1480px)
-  .exp
-    margin-top 100px
 </style>
