@@ -1,10 +1,11 @@
 <template lang="pug">
   father(:dataShow="dataShow" @info="getInfo")
-    .card-img
-      img(:src="infoSlide.img")
-      h4 {{infoSlide.title}}
-      h5 {{infoSlide.year}}
-      h4 {{infoSlide.institute}}
+    transition(name="slider")
+      .card-img(v-show="anime")
+        img(:src="infoSlide.img")
+        h4 {{infoSlide.title}}
+        h5 {{infoSlide.year}}
+        h4 {{infoSlide.institute}}
 
 </template>
 <script>
@@ -24,11 +25,19 @@ export default {
   data: function() {
     return {
       infoSlide: {},
+      anime: true,
     };
   },
   methods: {
     getInfo: function(obj) {
+      this.anime = false;
       this.infoSlide = obj;
+      setTimeout(
+        function() {
+          this.anime = true;
+        }.bind(this),
+        500
+      );
     },
   },
 };
@@ -39,6 +48,12 @@ flex()
   flex-direction column
   justify-content center
   align-items center
+
+.slider-enter-active, .slider-leave-active
+  transition: transform  0.5s
+
+.slider-enter, .slider-leave-to
+  transform: scale(0.7)
 
 .carousel-container
   width 100%

@@ -47,17 +47,37 @@ export default {
             },
           ],
         },
-        // {
-        //   category: "Web",
-        //   datas: [
-        //     {
-        //       title: "algo",
-        //       text: "",
-        //       url: "",
-        //       type: "",
-        //     },
-        //   ],
-        // },
+        {
+          category: "Web",
+          datas: [
+            {
+              title: "Curriculum",
+              text: "Aplicación web realizada con VUE",
+              url: "https://github.com/jaalorsa517/jaalorsa517.github.io",
+              type: "Marca Personal",
+            },
+            {
+              title: "Reto 03",
+              text: "Maquetación de página web",
+              url: "https://github.com/jaalorsa517/reto03",
+              type: "Proyecto de práctica",
+            },
+            {
+              title: "Platzi vídeo",
+              text:
+                "Maquetación de página web que simula una plataforma de vídeos.",
+              url: "https://github.com/jaalorsa517/platzivideo",
+              type: "Proyecto de práctica",
+            },
+            {
+              title: "Platzi movie",
+              text:
+                "Maquetación de página web que simula una plataforma de películas.",
+              url: "https://github.com/jaalorsa517/platzimovie",
+              type: "Proyecto de práctica",
+            },
+          ],
+        },
       ],
     };
   },
