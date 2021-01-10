@@ -1,6 +1,6 @@
 {
-  "name": "my_summary",
-  "version": "0.1.0",
+  "name": "CV_Jaime_Ortiz",
+  "version": "2.0.0",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
