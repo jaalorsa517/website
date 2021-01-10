@@ -8,7 +8,8 @@ div
       @mouseleave="outHover(i)" 
       @click="goTo(i)"
       href="#")
-        .item-complete(v-show="section.hover" ) {{section.name}}
+        transition(name="fade")
+          .item-complete(v-show="section.hover" ) {{section.name}}
         .item {{section.init}}
                       
 </template>
@@ -80,6 +81,12 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
+.fade-enter-active, .fade-leave-active
+  transition: opacity 1s
+
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */
+  opacity: 0
+
 .navegator
   margin 0
   & a
@@ -112,14 +119,6 @@ export default {
   border-top-left-radius 10%
   border-bottom-left-radius 10%
   background-color #D32626
-  animation-name sliden
-  animation-duration 1s
-  animation-timing-function ease-in
-@keyframes sliden
-  0%
-    opacity 0%
-  100%
-    opacity 100%
 
 @media screen and (max-width: 767px)
   .navegator
