@@ -2,9 +2,7 @@
   .carousel-container
     .slides
       .slide
-        a(:href="infoSlide.url" target="_blank")
-          h4 {{infoSlide.type}}
-          card-document(:title="infoSlide.title" :text="infoSlide.text")
+        slot
     .controlls
       button.left(@click="toPrevSlide" class="btn") 
         img(:src="leftIcon")
@@ -52,6 +50,11 @@ export default {
     },
     infoSlide: function() {
       return this.dataSlide[this.currentSlide];
+    },
+  },
+  watch: {
+    infoSlide: function() {
+      this.$emit("info", this.infoSlide);
     },
   },
   methods: {
@@ -115,6 +118,7 @@ export default {
     },
   },
   mounted: function() {
+    this.$emit("info", this.infoSlide);
     this.$el.children[1].children[1].children[this.currentSlide].classList.add(
       "current"
     );
@@ -125,21 +129,6 @@ export default {
 };
 </script>
 <style lang="stylus" scoped>
-.carousel-container
-  width 100%
-  display flex
-  flex-direction column
-  justify-content center
-  align-items center
-  .slides
-    flex-grow 5
-    a
-      text-decoration none
-      h4
-        font-size 1.3rem
-        margin-left 15px
-        margin-bottom 5px
-        text-shadow 5px 5px 10px rgba(51, 63, 56, 0.1)
   .controlls
     flex-grow 1
     display flex

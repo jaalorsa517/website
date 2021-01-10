@@ -61,6 +61,17 @@ export default {
     },
   },
   mounted: function() {
+    switch (this.$router.currentRoute.path) {
+      case "/basic":
+        this.index_active = 0;
+        break;
+      case "/experiencie":
+        this.index_active = 1;
+        break;
+      case "/studies":
+        this.index_active = 2;
+        break;
+    }
     this.$el.children[0].children[this.index_active].children[1].classList.add(
       "current"
     );

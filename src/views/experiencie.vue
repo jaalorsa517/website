@@ -4,7 +4,7 @@
 </template>
 
 <script>
-import carousel from "../components/carousel-complex";
+import carousel from "../components/carousel-experiencie";
 
 export default {
   name: "experiencie",

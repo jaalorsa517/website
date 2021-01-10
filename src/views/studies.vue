@@ -3,7 +3,7 @@
 		carousel-std(:data-show="info")
 </template>
 <script>
-import carouselStd from "../components/carousel-complex-std";
+import carouselStd from "../components/carousel-studie";
 import titulo from "../assets/images/certificados/tecnico_sistemas.png";
 import scrum from "../assets/images/certificados/scrum.png";
 import terminal from "../assets/images/certificados/linea-comandos.png";
