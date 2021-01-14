@@ -18,6 +18,12 @@ export default {
           category: "Python",
           datas: [
             {
+              title: "Hospital API",
+              text: "Una API hecha con Flask y sus extensiones Flask-restful y Flask-httpauth.\nLa API demuestra como funcionaría, en un caso ficticio, el web service de un backend.",
+              url: "https://github.com/jaalorsa517/hospital_api",
+              type: "Iniciativa propia",
+            },
+            {
               title: "Fique API",
               text:
                 "Una api hecha con Flask y su extensión Flask-restful.\n La API permite las operaciones básicas del CRUD. También tiene implementada seguridad, gracias a la extensión Flask-httpauth.",
