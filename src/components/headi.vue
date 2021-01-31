@@ -81,7 +81,9 @@ avatar(size, radius)
   .photo
     avatar(100px, 50%)
 
-@media screen and (min-width: 768px) and (max-width: 1280px)
+@media screen and (min-width: 768px) and (max-width: 1440px)
+  .header
+    height 150px
   .title
     & h2
       font-size 1.5rem

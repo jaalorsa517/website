@@ -78,4 +78,10 @@ flex()
         & img
           max-width 250px
           max-height 150px
+@media screen and (min-width: 768px) and (max-width: 1440px)
+	.carousel-container
+    .slides
+      & .card-img
+        & h4
+          font-size 1rem
 </style>

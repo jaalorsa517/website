@@ -207,4 +207,11 @@ export default {
       img
         max-width  16px
         max-height 16px
+@media screen and (min-width: 768px) and (max-width: 1440px)
+  .carousel-container
+    .thumbnail
+      width  96px
+      height 96px
+      h5
+        font-size 1rem
 </style>

@@ -36,4 +36,7 @@ export default {
 		font-size 0.7rem
 	.card-title
 		font-size 1rem
+@media screen and (min-width: 768px) and (max-width: 1440px)
+	.card-document
+		font-size 1rem
 </style>
