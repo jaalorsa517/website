@@ -40,12 +40,12 @@ export default {
         },
         {
           title: "Docker",
-          value: 60,
+          value: 80,
           color: "red",
         },
         {
           title: "POO",
-          value: 90,
+          value: 100,
           color: "pink",
         },
         {

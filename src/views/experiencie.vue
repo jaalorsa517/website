@@ -19,7 +19,8 @@ export default {
           datas: [
             {
               title: "Hospital API",
-              text: "Una API hecha con Flask y sus extensiones Flask-restful y Flask-httpauth.\nLa API demuestra como funcionaría, en un caso ficticio, el web service de un backend.",
+              text:
+                "Una API hecha con Flask y sus extensiones Flask-restful y Flask-httpauth.\nLa API demuestra como funcionaría, en un caso ficticio, el web service de un backend.",
               url: "https://github.com/jaalorsa517/hospital_api",
               type: "Iniciativa propia",
             },
@@ -27,7 +28,7 @@ export default {
               title: "Fique API",
               text:
                 "Una api hecha con Flask y su extensión Flask-restful.\n La API permite las operaciones básicas del CRUD. También tiene implementada seguridad, gracias a la extensión Flask-httpauth.",
-              url: "https://github.com/jaalorsa517/fique_app",
+              url: "https://github.com/jaalorsa517/fique_api",
               type: "Empresarial",
             },
             {
@@ -56,6 +57,13 @@ export default {
         {
           category: "Web",
           datas: [
+            {
+              title: "Asomufi",
+              text:
+                "Aplicación web realizada con VUE donde se integra con una API y se administra el inventario y las finanzas de la distribuidora.",
+              url: "https://github.com/jaalorsa517/jaalorsa517.github.io",
+              type: "Empresarial",
+            },
             {
               title: "Curriculum",
               text: "Aplicación web realizada con VUE",
