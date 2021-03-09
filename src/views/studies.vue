@@ -17,18 +17,20 @@ import python from "../assets/images/certificados/python.png";
 import pythonCrud from "../assets/images/certificados/python-crud.png";
 import flask from "../assets/images/certificados/flask.png";
 import django from "../assets/images/certificados/django.png";
-import vuejs from "../assets/images/certificados/avanzado-vue.png";
+import vuejs from "../assets/images/certificados/fronted_vue.png";
 import html from "../assets/images/certificados/html-css.png";
 import responsive from "../assets/images/certificados/responsive.png";
 import js from "../assets/images/certificados/profesional-js.png";
 import web from "../assets/images/certificados/desarrollo-web.png";
 import precss from "../assets/images/certificados/preprocesador-css.png";
 import animacion from "../assets/images/certificados/animacion-web.png";
+import typescript from "../assets/images/certificados/typescript.png";
+import react from "../assets/images/certificados/react.png";
 
 export default {
   name: "studies",
   components: {
-    carouselStd,
+    carouselStd
   },
   data: function() {
     return {
@@ -40,58 +42,58 @@ export default {
               img: titulo,
               title: "Técnico en sistemas",
               year: "2.009",
-              institute: "Remington",
+              institute: "Remington"
             },
             {
               img: scrum,
               title: "SCRUM",
               year: "Julio 2.020",
-              institute: "Platzi",
+              institute: "Platzi"
             },
             {
               img: terminal,
               title: "Terminal y línea de comandos",
               year: "Julio 2.020",
-              institute: "Platzi",
+              institute: "Platzi"
             },
             {
               img: sql,
               title: "SQL y MYSQL",
               year: "Julio 2.020",
-              institute: "Platzi",
+              institute: "Platzi"
             },
             {
               img: postgres,
               title: "Postgresql",
               year: "Diciembre 2.020",
-              institute: "Platzi",
+              institute: "Platzi"
             },
             {
               img: git,
               title: "Git y github",
               year: "Julio 2.020",
-              institute: "Platzi",
+              institute: "Platzi"
             },
             {
               img: docker,
               title: "Fundamentos de Docker",
               year: "Agosto 2.020",
-              institute: "Platzi",
+              institute: "Platzi"
             },
             {
               img: poo,
               title: "Programación orientada a objetos",
               year: "Julio 2.020",
-              institute: "Platzi",
+              institute: "Platzi"
             },
             {
               img: regex,
 
               title: "Expresiones regulares",
               year: "Junio 2.020",
-              institute: "Platzi",
-            },
-          ],
+              institute: "Platzi"
+            }
+          ]
         },
         {
           category: "Python",
@@ -100,78 +102,90 @@ export default {
               img: python,
               title: "Python",
               year: "Julio 2.020",
-              institute: "Platzi",
+              institute: "Platzi"
             },
             {
               img: pythonCrud,
               title: "Python: Creación de un CRUD",
               year: "Julio 2.020",
-              institute: "Platzi",
+              institute: "Platzi"
             },
             {
               img: flask,
               title: "Flask",
               year: "Julio 2.020",
-              institute: "Platzi",
+              institute: "Platzi"
             },
             {
               img: django,
               title: "Django",
               year: "Agosto 2.020",
-              institute: "Platzi",
-            },
-          ],
+              institute: "Platzi"
+            }
+          ]
         },
         {
           category: "Web",
           datas: [
             {
               img: vuejs,
-              title: "Avanzado en VueJS",
-              year: "Noviembre 2.020",
-              institute: "Platzi",
+              title: "Desarrollo con VueJs",
+              year: "Marzo 2.021",
+              institute: "Platzi"
+            },
+            {
+              img: react,
+              title: "React.js",
+              year: "Marzo 2.021",
+              institute: "Platzi"
+            },
+            {
+              img: typescript,
+              title: "Fundamentos de Typescript",
+              year: "Febrero 2.021",
+              institute: "Platzi"
             },
             {
               img: html,
               title: "HTML y CSS",
               year: "Julio 2.020",
-              institute: "Platzi",
+              institute: "Platzi"
             },
             {
               img: responsive,
               title: "Responsive Design",
               year: "Julio 2.020",
-              institute: "Platzi",
+              institute: "Platzi"
             },
             {
               img: js,
               title: "Profesional en JavaScript",
               year: "Agosto 2.020",
-              institute: "Platzi",
+              institute: "Platzi"
             },
             {
               img: web,
               title: "Desarrollo web online",
               year: "Julio 2.020",
-              institute: "Platzi",
+              institute: "Platzi"
             },
             {
               img: precss,
               title: "Preprocesador CSS",
               year: "Septiembre 2.020",
-              institute: "Platzi",
+              institute: "Platzi"
             },
             {
               img: animacion,
               title: "Animación para web",
               year: "Diciembre 2.020",
-              institute: "Platzi",
-            },
-          ],
-        },
-      ],
+              institute: "Platzi"
+            }
+          ]
+        }
+      ]
     };
-  },
+  }
 };
 </script>
 <style lang="stylus" scoped>
