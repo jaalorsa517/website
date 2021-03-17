@@ -1,19 +1,10 @@
-# my_summary
+# Curriculum Vitae Jaime Ortiz
 
-## Project setup
-```
-npm install
-```
+## Descripción
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+Currículo hecho con Vue.js.
+Muestra el uso de componentes, router, propiedades y muchas más funciones que tiene Vue.js.
 
-### Compiles and minifies for production
-```
-npm run build
-```
+## URL
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+El Demo lo pueden visualizar en http://jaalorsa.com

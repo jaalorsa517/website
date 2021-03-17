@@ -65,6 +65,12 @@ export default {
             //   type: "Empresarial",
             // },
             {
+              title: "Manual Edertiz",
+              text: "Manual para la aplicación Edertiz. Hecho con Vue.js. Esta página pretende demostrar una maquetación sencilla.",
+              url: "https://github.com/jaalorsa517/manual_edertiz",
+              type: "Proyecto de Tecnología"
+            },
+            {
               title: "Curriculum",
               text: "Aplicación web realizada con VUE",
               url: "https://github.com/jaalorsa517/jaalorsa517.github.io",
