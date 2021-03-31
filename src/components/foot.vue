@@ -25,20 +25,16 @@ export default {
     return {
       networkSocials: [
         {
-          name: "Telefono",
-          icon: telephone,
-          data: "3504459101",
-        },
-        {
           name: "Email",
           icon: email,
           data: "jaalorsa519\n@gmail.com",
         },
         {
-          name: "Github",
-          icon: github,
-          url: "https://github.com/jaalorsa517",
-        },
+          name: "Youtube",
+          icon: youtube,
+          url: "https://www.youtube.com/channel/UC2629Jqdc0PQCYRxmF3fcZA",
+        }
+        ,
         {
           name: "Linkedin",
           icon: linkendin,
@@ -51,10 +47,11 @@ export default {
           url: "https://twitter.com/jaalorsa517",
         },
         {
-          name: "Youtube",
-          icon: youtube,
-          url: "https://www.youtube.com/channel/UC2629Jqdc0PQCYRxmF3fcZA",
+          name: "Github",
+          icon: github,
+          url: "https://github.com/jaalorsa517",
         },
+        
       ],
     };
   },
