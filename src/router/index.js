@@ -8,26 +8,35 @@ Vue.use(VueRouter);
 
 const routes = [
   {
-    path: "/basic",
+    path: "/",
     name: "basic",
-    component: Basic,
-    alias: "/",
+    component: Basic
   },
   {
     path: "/experiencie",
     name: "experiencie",
-    component: Experiencie,
+    component: Experiencie
   },
   {
     path: "/studies",
     name: "studies",
-    component: Studies,
-  },
+    component: Studies
+  }
 ];
 
 const router = new VueRouter({
   mode: "history",
-  routes,
+  routes
+});
+
+router.beforeEach((to, from, next) => {
+  if(to.matched.some((route) =>
+    routes.find((element) => element.name === route.name)
+  )){
+  next()}
+  else{
+    next({name:"basic"})
+  }
 });
 
 export default router;

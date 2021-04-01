@@ -7,7 +7,10 @@ div
       @mouseover="inHover(i)" 
       @mouseleave="outHover(i)" 
       @click="goTo(i)"
-      href="#")
+      href="#"
+      v-animate-css="animations.Pulse"
+      v-animate-css.hover="animations.Pulse"
+      )
         transition(name="fade")
           .item-complete(v-show="section.hover" ) {{section.name}}
         .item {{section.init}}
@@ -25,6 +28,11 @@ export default {
         { name: "Estudios", hover: false, init: 3 },
       ],
       index_active: 0,
+      animations:{
+        Pulse:{
+          classes:"pulse",
+        }
+      }
     };
   },
   methods: {
@@ -44,8 +52,8 @@ export default {
       this.index_active = i;
       switch (i) {
         case 0:
-          if (this.$router.currentRoute.path !== "/basic") {
-            this.$router.push({ path: "/basic" });
+          if (this.$router.currentRoute.path !== "/") {
+            this.$router.push({ name: "basic" });
           }
           break;
         case 1:

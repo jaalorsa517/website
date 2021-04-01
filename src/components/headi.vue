@@ -1,10 +1,24 @@
 <template lang="pug">
   header.header
-    img(:src="logo" alt='logo' class="logo")
-    .title
-      h2 Desarrollador
-      h1 Jaime Alberto Ortiz Saldarriaga
-    img(:src="photo" alt='photo' class="photo") 
+    img(
+      loading="lazy" 
+      v-lazy="logo" 
+      alt='logo' 
+      class="logo"
+      v-animate-css="animations.FadeIn"
+      v-animate-css.hover="animations.Pulse"
+      )
+    .title(v-animate-css.hover="animations.Pulse")
+      h2(v-animate-css="animations.Pulse") Desarrollador
+      h1(v-animate-css="animations.Pulse") Jaime Alberto Ortiz Saldarriaga
+    img(
+      loading="lazy" 
+      v-lazy="photo" 
+      alt='photo' 
+      class="photo"
+      v-animate-css="animations.Swing"
+      v-animate-css.hover="animations.Pulse"
+      ) 
 </template>
 
 <script>
@@ -17,8 +31,20 @@ export default {
     return {
       logo,
       photo,
+      animations: {
+        Pulse: {
+          classes: "pulse"
+        },
+        FadeIn: {
+          classes: "fadeIn",
+          delay: 500
+        },
+        Swing: {
+          classes: "swing"
+        }
+      }
     };
-  },
+  }
 };
 </script>
 

@@ -1,11 +1,15 @@
 <template lang="pug">
     footer
-        div(v-for="red in networkSocials")
+        div(
+          v-for="red in networkSocials" 
+          v-animate-css="animations.Jello"
+          v-animate-css.hover="animations.Pulse"
+          )
             a(v-if="red.url" :href="red.url" class="card-icon")
                 img(:src="red.icon" alt="red.name" class="icons")
                 h4 {{red.name}}
             div(v-else class="card-icon")
-                img(:src="red.icon" class="icons")
+                img(v-lazy="red.icon" class="icons")
                 h4 {{red.data}}
 
         
@@ -24,40 +28,48 @@ export default {
   data: function() {
     return {
       networkSocials: [
-        {
-          name: "Telefono",
-          icon: telephone,
-          data: "3504459101",
-        },
+        // {
+        //   name: "Telefono",
+        //   icon: telephone,
+        //   data: "3504459101"
+        // },
         {
           name: "Email",
           icon: email,
-          data: "jaalorsa519\n@gmail.com",
+          data: "jaalorsa519\n@gmail.com"
         },
         {
           name: "Github",
           icon: github,
-          url: "https://github.com/jaalorsa517",
+          url: "https://github.com/jaalorsa517"
         },
         {
           name: "Linkedin",
           icon: linkendin,
           url:
-            "https://www.linkedin.com/in/jaime-alberto-ortiz-saldarriaga-54a3409b",
+            "https://www.linkedin.com/in/jaime-alberto-ortiz-saldarriaga-54a3409b"
         },
         {
           name: "Twitter",
           icon: twitter,
-          url: "https://twitter.com/jaalorsa517",
+          url: "https://twitter.com/jaalorsa517"
         },
         {
           name: "Youtube",
           icon: youtube,
-          url: "https://www.youtube.com/channel/UC2629Jqdc0PQCYRxmF3fcZA",
-        },
+          url: "https://www.youtube.com/channel/UC2629Jqdc0PQCYRxmF3fcZA"
+        }
       ],
+      animations: {
+        Jello: {
+          classes: "jello"
+        },
+        Pulse: {
+          classes: "pulse"
+        }
+      }
     };
-  },
+  }
 };
 </script>
 

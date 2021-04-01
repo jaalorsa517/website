@@ -2,7 +2,7 @@
   father(:dataShow="dataShow" @info="getInfo")
     transition(name="slider")
       .card-img(v-show="anime")
-        img(:src="infoSlide.img")
+        img(v-lazy="infoSlide.img")
         h4 {{infoSlide.title}}
         h5 {{infoSlide.year}}
         h4 {{infoSlide.institute}}
