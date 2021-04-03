@@ -6,10 +6,7 @@
       v-animate-css="animations.ZoomIn"
       v-animate-css.hover="animations.Pulse"
       )
-    card-progress.card(
-      v-animate-css="animations.ZoomIn"
-      v-animate-css.hover="animations.Pulse"
-    )
+    card-progress.card(v-animate-css="animations.ZoomIn")
 </template>
 
 <script>
@@ -26,11 +23,13 @@ export default {
     return {
       animations: {
         Pulse: {
-          classes: "pulse"
+          classes: "pulse",
+		  delay:100,
+          iteration: 1
         },
         ZoomIn: {
           classes: "zoomIn",
-          delay: 700
+          delay: 200
         }
       }
     };

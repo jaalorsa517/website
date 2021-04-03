@@ -1,5 +1,8 @@
 <template lang="pug">
-  father(:dataShow="dataShow" @info="getInfo")
+  father(
+    :dataShow="dataShow" 
+    @info="getInfo"
+    )
     transition(name="slider")
       .card-img(v-show="anime")
         img(v-lazy="infoSlide.img")
@@ -16,16 +19,16 @@ export default {
   props: {
     dataShow: {
       type: Array,
-      required: true,
-    },
+      required: true
+    }
   },
   components: {
-    father,
+    father
   },
   data: function() {
     return {
       infoSlide: {},
-      anime: true,
+      anime: true
     };
   },
   methods: {
@@ -38,8 +41,8 @@ export default {
         }.bind(this),
         500
       );
-    },
-  },
+    }
+  }
 };
 </script>
 <style lang="stylus" scoped>
@@ -50,10 +53,10 @@ flex()
   align-items center
 
 .slider-enter-active, .slider-leave-active
-  transition: transform  0.5s
+  transition: transform  800ms
 
 .slider-enter, .slider-leave-to
-  transform: scale(0.7)
+  transform: scale(1.1)
 
 .carousel-container
   width 100%

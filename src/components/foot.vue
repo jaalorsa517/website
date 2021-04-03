@@ -16,7 +16,6 @@
 </template>
 
 <script>
-import telephone from "../assets/images/phone-icon.png";
 import email from "../assets/images/gmail-icon.png";
 import github from "../assets/images/github-icon.png";
 import linkendin from "../assets/images/linkedin-icon.png";
@@ -28,37 +27,20 @@ export default {
   data: function() {
     return {
       networkSocials: [
-<<<<<<< HEAD
         // {
         //   name: "Telefono",
         //   icon: telephone,
         //   data: "3504459101"
         // },
-=======
->>>>>>> 1ddabfcab232e550182c893c622978d2d2954655
         {
           name: "Email",
           icon: email,
           data: "jaalorsa519\n@gmail.com"
         },
         {
-<<<<<<< HEAD
-          name: "Github",
-          icon: github,
-          url: "https://github.com/jaalorsa517"
-        },
-=======
           name: "Youtube",
           icon: youtube,
-          url: "https://www.youtube.com/channel/UC2629Jqdc0PQCYRxmF3fcZA",
-        }
-        ,
->>>>>>> 1ddabfcab232e550182c893c622978d2d2954655
-        {
-          name: "Linkedin",
-          icon: linkendin,
-          url:
-            "https://www.linkedin.com/in/jaime-alberto-ortiz-saldarriaga-54a3409b"
+          url: "https://www.youtube.com/channel/UC2629Jqdc0PQCYRxmF3fcZA"
         },
         {
           name: "Twitter",
@@ -66,18 +48,16 @@ export default {
           url: "https://twitter.com/jaalorsa517"
         },
         {
-<<<<<<< HEAD
-          name: "Youtube",
-          icon: youtube,
-          url: "https://www.youtube.com/channel/UC2629Jqdc0PQCYRxmF3fcZA"
-        }
-=======
+          name: "Linkedin",
+          icon: linkendin,
+          url:
+            "https://www.linkedin.com/in/jaime-alberto-ortiz-saldarriaga-54a3409b"
+        },
+        {
           name: "Github",
           icon: github,
-          url: "https://github.com/jaalorsa517",
-        },
-        
->>>>>>> 1ddabfcab232e550182c893c622978d2d2954655
+          url: "https://github.com/jaalorsa517"
+        }
       ],
       animations: {
         Jello: {

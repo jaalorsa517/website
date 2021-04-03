@@ -31,6 +31,7 @@ export default {
       animations:{
         Pulse:{
           classes:"pulse",
+          delay: 200
         }
       }
     };

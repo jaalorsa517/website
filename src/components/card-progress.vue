@@ -1,5 +1,7 @@
 <template lang="pug">
-  div.container-progress
+  div.container-progress(
+    v-animate-css.hover="animations.Pulse"
+  )
     h3 Habilidades
     .skills(v-for="skill in skills" :key="skill.title") 
       span.title {{skill.title}}
@@ -13,7 +15,7 @@ import KProgress from "k-progress";
 export default {
   name: "card-progress",
   components: {
-    "k-progress": KProgress,
+    "k-progress": KProgress
   },
   data: function() {
     return {
@@ -21,41 +23,48 @@ export default {
         {
           title: "SCRUM",
           value: 50,
-          color: "green",
+          color: "green"
         },
         {
           title: "Terminal Linux",
           value: 85,
-          color: "blue",
+          color: "blue"
         },
         {
           title: "SQL",
           value: 80,
-          color: "yellow",
+          color: "yellow"
         },
         {
           title: "Git",
           value: 75,
-          color: "purple",
+          color: "purple"
         },
         {
           title: "Docker",
           value: 80,
-          color: "red",
+          color: "red"
         },
         {
           title: "POO",
           value: 100,
-          color: "pink",
+          color: "pink"
         },
         {
           title: "Expresiones regulares",
           value: 50,
-          color: "orange",
-        },
+          color: "orange"
+        }
       ],
+      animations: {
+        Pulse: {
+          classes: "pulse",
+          delay:100,
+          iteration: 1
+        },
+      }
     };
-  },
+  }
 };
 </script>
 

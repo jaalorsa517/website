@@ -1,7 +1,14 @@
 <template lang="pug">
-  father(:data-show="dataShow" @info="getInfo")
+  father(
+    :data-show="dataShow" 
+    @info="getInfo"
+    )
     transition(name="slider")
-      a(:href="infoSlide.url" target="_blank" v-show="anime")
+      a(
+        :href="infoSlide.url" 
+        target="_blank" 
+        v-show="anime" 
+        )
         h4 {{infoSlide.type}}
         card-document(:title="infoSlide.title" :text="infoSlide.text")
 </template>
@@ -14,8 +21,8 @@ export default {
   props: {
     dataShow: {
       type: Array,
-      required: true,
-    },
+      required: true
+    }
   },
   data: function() {
     return {
@@ -25,7 +32,7 @@ export default {
   },
   components: {
     cardDocument,
-    father,
+    father
   },
   methods: {
     getInfo: function(obj) {
@@ -37,8 +44,8 @@ export default {
         }.bind(this),
         500
       );
-    },
-  },
+    }
+  }
 };
 </script>
 <style lang="stylus" scoped>
@@ -46,7 +53,7 @@ export default {
   transition transform 0.5s
 
 .slider-enter, .slider-leave-to
-  transform scale(0.7)
+  transform scale(1.1)
 
 .carousel-container
   width 100%

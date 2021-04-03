@@ -14,7 +14,12 @@
       button.leftThumbnail(@click="toPrevThumb" class="btn") 
         img(:src="leftIcon")
       .thumbnails
-        .thumbnail(v-for="t, index in dataShow" :key="index" :class="`t--${index}`" @click="goToThumbnail(index)")
+        .thumbnail(
+          v-for="t,index in dataShow" 
+          :key="index" 
+          :class="`t--${index}`" 
+          @click="goToThumbnail(index)"
+          )
           h5 {{t.category}}
       button.rightThumbnail(@click="toNextThumb" class="btn") 
         img(:src="rigthIcon")
@@ -30,19 +35,19 @@ export default {
   props: {
     dataShow: {
       type: Array,
-      required: true,
-    },
+      required: true
+    }
   },
   data: function() {
     return {
       currentSlide: 0,
       currentThumbnails: 0,
       leftIcon,
-      rigthIcon,
+      rigthIcon
     };
   },
   components: {
-    cardDocument,
+    cardDocument
   },
   computed: {
     dataSlide: function() {
@@ -50,12 +55,12 @@ export default {
     },
     infoSlide: function() {
       return this.dataSlide[this.currentSlide];
-    },
+    }
   },
   watch: {
     infoSlide: function() {
       this.$emit("info", this.infoSlide);
-    },
+    }
   },
   methods: {
     currentCircle: function(n, o) {
@@ -115,7 +120,7 @@ export default {
       this.currentThumbnails = i;
       this.currentCircle(0, this.currentSlide);
       this.currentSlide = 0;
-    },
+    }
   },
   mounted: function() {
     this.$emit("info", this.infoSlide);
@@ -125,7 +130,7 @@ export default {
     this.$el.children[2].children[1].children[
       this.currentThumbnails
     ].classList.add("current");
-  },
+  }
 };
 </script>
 <style lang="stylus" scoped>
@@ -143,8 +148,10 @@ export default {
     margin 0 10px
     background-color #F5A31A
     border-radius 50%
+    transition transform 800ms
     &:hover
       cursor pointer
+      transform scale(1.5)
     &.current
       background-color #D32626
   .thumbnails-container
@@ -164,8 +171,11 @@ export default {
     text-align center
     border-radius 5px
     background-color #F5A31A
+    transition transform 800ms
     &:hover
       cursor pointer
+      transform scale(1.2)
+
     &.current
       background-color #D32626
       h5
