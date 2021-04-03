@@ -5,14 +5,14 @@
         slot
     .controlls
       button.left(@click="toPrevSlide" class="btn") 
-        img(:src="leftIcon")
+        img(v-lazy="leftIcon")
       .circles-container
         .circle(v-for="i in dataSlide.length" :class="`circle--${i} `" @click="goToSlide(i-1)")
       button.right(@click="toNextSlide" class="btn")
-        img(:src="rigthIcon")
+        img(v-lazy="rigthIcon")
     .thumbnails-container
       button.leftThumbnail(@click="toPrevThumb" class="btn") 
-        img(:src="leftIcon")
+        img(v-lazy="leftIcon")
       .thumbnails
         .thumbnail(
           v-for="t,index in dataShow" 
@@ -22,7 +22,7 @@
           )
           h5 {{t.category}}
       button.rightThumbnail(@click="toNextThumb" class="btn") 
-        img(:src="rigthIcon")
+        img(v-lazy="rigthIcon")
 
 </template>
 <script>

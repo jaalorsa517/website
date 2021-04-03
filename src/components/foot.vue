@@ -6,7 +6,10 @@
           v-animate-css.hover="animations.Pulse"
           )
             a(v-if="red.url" :href="red.url" class="card-icon")
-                img(:src="red.icon" alt="red.name" class="icons")
+                img(
+                  v-lazy="red.icon" 
+                  alt="red.name" 
+                  class="icons")
                 h4 {{red.name}}
             div(v-else class="card-icon")
                 img(v-lazy="red.icon" class="icons")
