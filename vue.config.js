@@ -22,8 +22,8 @@ module.exports = {
   },
   pwa: {
     name: "CV Jaime Ortiz",
-    themeColor: "#4DBA87",
-    msTileColor: "#ffffff",
+    themeColor: "#79D70F",
+    msTileColor: "#333F38",
     workboxPluginMode: "InjectManifest",
     workboxOptions: {
       swSrc: "src/service-worker.js",
