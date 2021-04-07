@@ -78,7 +78,7 @@ export default {
             },
             {
               title: "Reto 03",
-              text: "Maquetación de página web",
+              text: "Ejemplo de maquetación de una página web",
               url: "https://github.com/jaalorsa517/reto03",
               type: "Proyecto de práctica"
             },
