@@ -21,12 +21,12 @@ module.exports = {
     });
   },
   pwa: {
-    name: "CV Jaime",
+    name: "CV Jaime Ortiz",
     themeColor: "#4DBA87",
     msTileColor: "#ffffff",
     workboxPluginMode: "InjectManifest",
     workboxOptions: {
-      swSrc:"src/service-worker.js",
+      swSrc: "src/service-worker.js",
       swDest: "service-worker.js"
     }
   }
