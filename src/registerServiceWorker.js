@@ -1,32 +1,47 @@
 /* eslint-disable no-console */
 
-import { register } from 'register-service-worker'
+import { register } from "register-service-worker";
+import alertify from "alertify.js";
 
-if (process.env.NODE_ENV === 'production') {
+const notify = (worker) =>
+  alertify.confirm("Existe una versión nueva, ¿desea actualizarla?", () => {
+    worker.postMessage({ action: "skipWaiting" });
+  });
+
+if (process.env.NODE_ENV === "production") {
   register(`${process.env.BASE_URL}service-worker.js`, {
-    ready () {
+    ready() {
       console.log(
-        'App is being served from cache by a service worker.\n' +
-        'For more details, visit https://goo.gl/AFskqB'
-      )
+        "App is being served from cache by a service worker.\n" +
+          "For more details, visit https://goo.gl/AFskqB"
+      );
     },
-    registered () {
-      console.log('Service worker has been registered.')
+    registered() {
+      console.log("Service worker has been registered.");
     },
-    cached () {
-      console.log('Content has been cached for offline use.')
+    cached() {
+      console.log("Content has been cached for offline use.");
     },
-    updatefound () {
-      console.log('New content is downloading.')
+    updatefound() {
+      console.log("New content is downloading.");
     },
-    updated () {
-      console.log('New content is available; please refresh.')
+    updated(sw) {
+      console.log("New content is available; please refresh.");
+      notify(sw.waiting);
     },
-    offline () {
-      console.log('No internet connection found. App is running in offline mode.')
+    offline() {
+      console.log(
+        "No internet connection found. App is running in offline mode."
+      );
     },
-    error (error) {
-      console.error('Error during service worker registration:', error)
+    error(error) {
+      console.error("Error during service worker registration:", error);
     }
-  })
+  });
+  var refreshing;
+  window.navigator.serviceWorker.addEventListener("controllerchange", () => {
+    if (refreshing) return;
+    window.location.reload();
+    refreshing = true;
+  });
 }

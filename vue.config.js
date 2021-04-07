@@ -6,8 +6,8 @@ module.exports = {
     plugins: [
       new CopyPlugin([
         {
-          from: path.resolve(__dirname, "src",".well-known"),
-          to: path.resolve(__dirname,"dist",".well-known"),
+          from: path.resolve(__dirname, "src", ".well-known"),
+          to: path.resolve(__dirname, "dist", ".well-known")
         }
       ])
     ]
@@ -15,9 +15,20 @@ module.exports = {
   assetsDir: "static",
   transpileDependencies: [],
   chainWebpack: (config) => {
+    config.plugin("workbox");
     config.plugin("html").tap((args) => {
       args[0].title = "CV Jaime Ortiz";
       return args;
     });
+  },
+  pwa: {
+    name: "CV Jaime",
+    themeColor: "#4DBA87",
+    msTileColor: "#ffffff",
+    workboxPluginMode: "InjectManifest",
+    workboxOptions: {
+      swSrc:"src/service-worker.js",
+      swDest: "service-worker.js"
+    }
   }
 };
