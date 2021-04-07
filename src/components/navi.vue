@@ -13,7 +13,7 @@ div
       )
         transition(name="fade")
           .item-complete(v-show="section.hover" ) {{section.name}}
-        .item {{section.init}}
+        .item(ref="item") {{section.init}}
                       
 </template>
 
@@ -25,12 +25,12 @@ export default {
       sections: [
         { name: "Básica", hover: false, init: 1 },
         { name: "Experiencia", hover: false, init: 2 },
-        { name: "Estudios", hover: false, init: 3 },
+        { name: "Estudios", hover: false, init: 3 }
       ],
       index_active: 0,
-      animations:{
-        Pulse:{
-          classes:"pulse",
+      animations: {
+        Pulse: {
+          classes: "pulse",
           delay: 200
         }
       }
@@ -38,18 +38,16 @@ export default {
   },
   methods: {
     inHover: function(i) {
-      this.$el.children[0].children[i].children[1].classList.add("active");
+      this.$refs.item[i].classList.add("active");
       this.sections[i].hover = true;
     },
     outHover: function(i) {
-      this.$el.children[0].children[i].children[1].classList.remove("active");
+      this.$refs.item[i].classList.remove("active");
       this.sections[i].hover = false;
     },
     goTo: function(i) {
-      this.$el.children[0].children[
-        this.index_active
-      ].children[1].classList.remove("current");
-      this.$el.children[0].children[i].children[1].classList.add("current");
+      this.$refs.item[this.index_active].classList.remove("current");
+      this.$refs.item[i].classList.add("current");
       this.index_active = i;
       switch (i) {
         case 0:
@@ -71,20 +69,7 @@ export default {
     },
   },
   mounted: function() {
-    switch (this.$router.currentRoute.path) {
-      case "/basic":
-        this.index_active = 0;
-        break;
-      case "/experiencie":
-        this.index_active = 1;
-        break;
-      case "/studies":
-        this.index_active = 2;
-        break;
-    }
-    this.$el.children[0].children[this.index_active].children[1].classList.add(
-      "current"
-    );
+    this.$refs.item[this.index_active].classList.add("current");
   },
 };
 </script>
