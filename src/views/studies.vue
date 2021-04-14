@@ -96,35 +96,6 @@ export default {
           ]
         },
         {
-          category: "Python",
-          datas: [
-            {
-              img: python,
-              title: "Python",
-              year: "Julio 2.020",
-              institute: "Platzi"
-            },
-            {
-              img: pythonCrud,
-              title: "Python: Creación de un CRUD",
-              year: "Julio 2.020",
-              institute: "Platzi"
-            },
-            {
-              img: flask,
-              title: "Flask",
-              year: "Julio 2.020",
-              institute: "Platzi"
-            },
-            {
-              img: django,
-              title: "Django",
-              year: "Agosto 2.020",
-              institute: "Platzi"
-            }
-          ]
-        },
-        {
           category: "Web",
           datas: [
             {
@@ -179,6 +150,35 @@ export default {
               img: animacion,
               title: "Animación para web",
               year: "Diciembre 2.020",
+              institute: "Platzi"
+            }
+          ]
+        },
+        {
+          category: "Python",
+          datas: [
+            {
+              img: python,
+              title: "Python",
+              year: "Julio 2.020",
+              institute: "Platzi"
+            },
+            {
+              img: pythonCrud,
+              title: "Python: Creación de un CRUD",
+              year: "Julio 2.020",
+              institute: "Platzi"
+            },
+            {
+              img: flask,
+              title: "Flask",
+              year: "Julio 2.020",
+              institute: "Platzi"
+            },
+            {
+              img: django,
+              title: "Django",
+              year: "Agosto 2.020",
               institute: "Platzi"
             }
           ]

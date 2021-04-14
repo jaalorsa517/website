@@ -38,10 +38,12 @@ if (process.env.NODE_ENV === "production") {
       console.error("Error during service worker registration:", error);
     }
   });
-  var refreshing;
-  window.navigator.serviceWorker.addEventListener("controllerchange", () => {
-    if (refreshing) return;
-    window.location.reload();
-    refreshing = true;
-  });
+  if (register) {
+    var refreshing;
+    window.navigator.serviceWorker.addEventListener("controllerchange", () => {
+      if (refreshing) return;
+      window.location.reload();
+      refreshing = true;
+    });
+  }
 }
