@@ -1,70 +1,21 @@
-<template lang="pug">
-  #app(:style="background=cssProps")
-    headi.headi
-    router-view.body
-    navi.navi
-    foot.foot
-</template>
-
-<script>
-import headi from "./components/headi";
-import foot from "./components/foot";
-import navi from "./components/navi";
-
-export default {
-  name: "Curriculum",
-  components: {
-    headi,
-    navi,
-    foot,
-  },
-  data: function() {
-    return {
-      cssProps: {
-        backgroundImage: `url(${require("./assets/images/fondo.png")})`,
-      },
-    };
-  },
-};
+<script setup>
+// This starter template is using Vue 3 <script setup> SFCs
+// Check out https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup
+import HelloWorld from './components/HelloWorld.vue'
 </script>
 
-<style lang="stylus">
-@import url('https://fonts.googleapis.com/css2?family=Glegoo:wght@400;700&display=swap')
+<template>
+  <img alt="Vue logo" src="./assets/logo.png" />
+  <HelloWorld msg="Hello Vue 3 + Vite" />
+</template>
 
-fonts()
-  font-family 'Glegoo', serif
-  font-size 12px
-  color #333F38
-
-*
-  margin 0
-
-#app
-  width 100%
-  height 100vh
-  position relative
-  background-repeat repeat
-  overflow auto
-  fonts()
-
-a,h1,h2,h3,h4,h5,h6
-  fonts()
-
-.headi
-  z-index 3
-
-.body
-  z-index 2
-  background-color #EDF4F2
-
-.navi
-  position fixed
-  top 40vh
-  right 0
-  z-index 5
-
-.foot
-  position fixed
-  bottom 0
-  z-index 3
+<style>
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+  margin-top: 60px;
+}
 </style>
