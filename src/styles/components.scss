@@ -1,0 +1,20 @@
+.button {
+  padding: $base;
+  min-width: 100px;
+  background-color: $color_primary_color;
+  color: $color_white;
+  outline: none;
+  border: 1px solid $color_primary_color;
+  border-radius: $radius_button;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  &:hover {
+    border-color: $color_sec_color;
+    background-color: $color_white;
+    color: $color_primary_color;
+  }
+  &:active {
+    border-color: $color_sec_color;
+    background-color: $color_sec_color;
+  }
+}

@@ -1,5 +1,9 @@
-<script setup></script>
+<script setup>
+import Banner from "./Banner.vue";
+</script>
 
-<template></template>
+<template>
+  <Banner />
+</template>
 
 <style lang="scss"></style>

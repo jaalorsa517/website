@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Rasa:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&family=Saira:ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&display=swap");
 @import "./normalize.css";
+@import "./components.scss";
 
 * {
   margin: 0;
@@ -11,6 +12,7 @@ body {
   font-family: $font_normal;
   font-size: $font_size_base;
   color: $color_black;
+  background-color: $color_white;
 }
 
 small {
@@ -50,23 +52,7 @@ h6 {
   font-weight: 500;
 }
 
-.button {
-  padding: $base;
-  min-width: 100px;
-  background-color: $color_primary_color;
-  color: $color_white;
-  outline: none;
-  border: 1px solid $color_primary_color;
-  border-radius: $radius_button;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  &:hover {
-    border-color: $color_sec_color;
-    background-color: $color_white;
-    color: $color_primary_color;
-  }
-  &:active {
-    border-color: $color_sec_color;
-    background-color: $color_sec_color;
-  }
+.app {
+  min-width: 100vw;
+  min-height: 100vh;
 }
