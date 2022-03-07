@@ -1,9 +1,9 @@
-@function getName($width) {
-  $name: name-#{$width};
+@function getNameWidthPause($width) {
+  $name: widthPause-#{$width};
   @return $name;
 }
 @mixin widthPause($width) {
-  $name: getName($width);
+  $name: getNameWidthPause($width);
   @keyframes #{$name} {
     to {
       width: $width;
@@ -26,5 +26,13 @@
 @keyframes blinkEnd {
   to {
     border: none;
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }

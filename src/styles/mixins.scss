@@ -3,5 +3,21 @@
   flex-direction: $direction;
   justify-content: $justify;
   align-items: $align;
-  background-color: $color_primary_color;
+}
+
+@mixin pocketWidth() {
+  @media screen and (min-width: 540px) {
+    @content;
+  }
+}
+
+@mixin tabletWidth() {
+  @media screen and (min-width: 768px) {
+    @content;
+  }
+}
+@mixin desktopWidth() {
+  @media screen and (min-width: 1024px) {
+    @content;
+  }
 }
