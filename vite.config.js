@@ -14,7 +14,8 @@ export default defineConfig(({ mode, command }) => {
         manifest: {
           name: "Desarrollador fullStack Jaime Ortiz",
           short_name: "jaalorsa",
-          description: "Desarrollador fullStack Jaime Ortiz, con experiencia en desarrollo web, usando NodeJs y VueJs.",
+          description:
+            "Desarrollador fullStack Jaime Ortiz, con experiencia en desarrollo web, usando NodeJs y VueJs.",
           theme_color: "#ffffff",
           icons: [
             {
@@ -59,6 +60,7 @@ export default defineConfig(({ mode, command }) => {
       },
     },
   };
+
   return {
     plugins,
     resolve: _resolve,

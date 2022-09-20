@@ -1,3 +1,9 @@
+<script setup>
+import JHeader from "@/components/JHeader.vue";
+</script>
 <template>
-  <router-view></router-view>
+  <main class="main">
+    <JHeader />
+    <router-view></router-view>
+  </main>
 </template>
