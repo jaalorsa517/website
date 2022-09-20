@@ -1,5 +1,9 @@
 <script setup>
 import MenuHamburguer from "@/components/MenuHamburguer.vue";
+import JFooter from "@/components/JFooter.vue";
+import { useRoot } from "@/store";
+
+const store = useRoot();
 
 const options = [
   {
@@ -26,6 +30,7 @@ const options = [
               <span>{{ option.name }}</span>
             </li>
           </ul>
+          <JFooter class="header__footer" v-if="store.isMobile"></JFooter>
         </nav>
       </MenuHamburguer>
     </section>
@@ -51,6 +56,9 @@ const options = [
     &:first-child {
       border-top: 1px solid $color_gray;
     }
+  }
+  &__footer {
+    margin: 4em auto;
   }
   @include tabletWidth() {
     &__options {
