@@ -40,7 +40,7 @@ function toggleMenu() {
 .hamburguer {
   &__container {
     @include Flex(row, space-between);
-    height: 3.4375em;
+    height: $height_fixed;
     padding: 0.5em 0.8em;
     border-bottom: 1px solid $color_gray;
     position: relative;
@@ -133,14 +133,5 @@ function toggleMenu() {
       z-index: 1;
     }
   }
-}
-.v-enter-active,
-.v-leave-active {
-  transition: opacity 0.8s ease-in-out;
-}
-
-.v-enter-from,
-.v-leave-to {
-  opacity: 0;
 }
 </style>

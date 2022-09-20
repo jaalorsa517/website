@@ -1,7 +1,11 @@
-<script setup></script>
+<script setup>
+import Separate from "@/components/Separate.vue";
+</script>
 
 <template>
-  <div class="root"></div>
+  <div class="root">
+    <Separate></Separate>
+  </div>
 </template>
 
 <style lang="scss">

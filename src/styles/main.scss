@@ -47,7 +47,21 @@ h2 {
   font-size: $font_size_base + 2px;
 }
 
+a:link{
+  color: $color_font_dark;
+}
+
 .app {
   min-width: 100vw;
   min-height: 100vh;
+}
+
+.v-enter-active,
+.v-leave-active {
+  transition: opacity 0.8s ease-in-out;
+}
+
+.v-enter-from,
+.v-leave-to {
+  opacity: 0;
 }
