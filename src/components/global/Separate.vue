@@ -9,6 +9,8 @@ const { isNone } = defineProps({ isNone: { type: Boolean, default: false } });
 </template>
 <style lang="scss">
 .separate {
+  $major: 95%;
+  $minor: 85%;
   @include Flex(column, center, flex-start);
   &.none {
     @include Flex(column, center, flex-end);
@@ -17,21 +19,21 @@ const { isNone } = defineProps({ isNone: { type: Boolean, default: false } });
     height: 0.125em;
     margin: 0.25rem 0;
     &--one {
-      width: 97vw;
-      background-color: $color_sec_color;
+      width: $major;
+      background-color: var(--color-primary);
     }
     &--dos {
-      width: 88vw;
-      background-color: $color_third_color;
+      width: $minor;
+      background-color: var(--color-second);
     }
     &.none {
       &--one {
-        width: 88vw;
-        background-color: $color_third_color;
+        width: $minor;
+        background-color: var(--color-second);
       }
       &--dos {
-        width: 97vw;
-        background-color: $color_sec_color;
+        width: $major;
+        background-color: var(--color-primary);
       }
     }
   }

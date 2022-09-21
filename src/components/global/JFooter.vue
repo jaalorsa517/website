@@ -1,5 +1,5 @@
 <script setup>
-import JIconic from "@/components/JIconic/JIconic.vue";
+import JIconic from "@/components/global/JIconic/JIconic.vue";
 const icons = [
   { name: "youtube", link: "https://www.youtube.com/channel/UC2629Jqdc0PQCYRxmF3fcZA" },
   { name: "github", link: "https://github.com/jaalorsa517" },

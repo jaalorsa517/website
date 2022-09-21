@@ -1,6 +1,6 @@
 <script setup>
-import Separate from "@/components/Separate.vue";
-import Intro from "@/components/Intro.vue";
+import Intro from "@/components/home/Intro.vue";
+import Separate from "@/components/global/Separate.vue";
 </script>
 
 <template>

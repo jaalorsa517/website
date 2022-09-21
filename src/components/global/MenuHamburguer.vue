@@ -30,7 +30,7 @@ function toggleMenu() {
       </div>
     </div>
     <Transition>
-      <section class="hamburguer__content" v-if="isOpen || !store.isMobile">
+      <section class="hamburguer__content" v-if="isOpen || !store.isMobile" @click="isOpen = false">
         <slot></slot>
       </section>
     </Transition>
@@ -42,12 +42,12 @@ function toggleMenu() {
     @include Flex(row, space-between);
     height: $height_fixed;
     padding: 0.5em 0.8em;
-    border-bottom: 1px solid $color_gray;
+    border-bottom: 1px solid var(--color-gray);
     position: relative;
     z-index: 1001;
   }
   &__menu {
-    font-size: $font_size_base;
+    font-size: var(--font-size);
     text-align: end;
     cursor: pointer;
   }
@@ -64,8 +64,8 @@ function toggleMenu() {
   }
   &__title {
     margin: 0 0.5em;
-    font-family: $font_cursive;
-    font-size: $font_size_base;
+    font-family: var(--font-cursive);
+    font-size: var(--font-size);
     line-height: 25px;
     letter-spacing: 0.02em;
   }
@@ -74,7 +74,7 @@ function toggleMenu() {
     height: 0.125em;
     margin: 0.125em 0;
     border-radius: 0.0625em;
-    background-color: $color_font_dark;
+    background-color: var(--color-font-dark);
     transition: transform 600ms ease-in-out, opacity 800ms ease-in-out;
     &--uno {
       width: 1.25em;
@@ -101,10 +101,10 @@ function toggleMenu() {
     position: fixed;
     width: 100vw;
     height: calc(100vh - 3.4375em);
-    font-size: $font_size_base;
+    font-size: var(--font-size);
     top: 3.4375em;
     left: 0;
-    background-color: $color_white;
+    background-color: var(--color-white);
     z-index: 1000;
   }
 
@@ -112,7 +112,7 @@ function toggleMenu() {
     @include Flex(row, space-between);
     height: 3.4375em;
     padding: 0.5em 0.8em;
-    border-bottom: 1px solid $color_gray;
+    border-bottom: 1px solid var(--color-gray);
     position: relative;
     &__container {
       display: initial;
@@ -126,7 +126,7 @@ function toggleMenu() {
       position: static;
       width: auto;
       height: auto;
-      font-size: $font_size_base;
+      font-size: var(--font-size);
       top: unset;
       left: unset;
       background-color: transparent;

@@ -1,24 +1,11 @@
 <script setup>
-import MenuHamburguer from "@/components/MenuHamburguer.vue";
-import JFooter from "@/components/JFooter.vue";
 import { useRoot } from "@/store";
+import routes from "@/router/routes";
+import MenuHamburguer from "@/components/global/MenuHamburguer.vue";
+import JFooter from "@/components/global/JFooter.vue";
 
 const store = useRoot();
-
-const options = [
-  {
-    name: "Home",
-    link: "/",
-  },
-  {
-    name: "About",
-    link: "/about",
-  },
-  {
-    name: "Contact",
-    link: "/contact",
-  },
-];
+const options = routes.map((route) => ({ name: route.name, link: route.path }));
 </script>
 <template>
   <header class="header">
@@ -27,7 +14,7 @@ const options = [
         <nav class="header__nav">
           <ul class="header__options">
             <li class="header__option" v-for="(option, key) in options" :key="key">
-              <span>{{ option.name }}</span>
+              <RouterLink :to="option.link">{{ option.name }}</RouterLink>
             </li>
           </ul>
           <JFooter class="header__footer" v-if="store.isMobile"></JFooter>
@@ -49,12 +36,12 @@ const options = [
   }
   &__option {
     font-size: 0.9375em;
-    font-family: $font_title;
+    font-family: var(--font-title);
     padding: 0.6em 0;
     list-style: none;
-    border-bottom: 1px solid $color_gray;
+    border-bottom: 1px solid var(--color-gray);
     &:first-child {
-      border-top: 1px solid $color_gray;
+      border-top: 1px solid var(--color-gray);
     }
   }
   &__footer {
@@ -65,6 +52,7 @@ const options = [
       display: flex;
     }
     &__option {
+      flex-shrink: 0;
       border: none;
       padding: 0 0.6em;
       &:first-child {

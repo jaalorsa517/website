@@ -1,6 +1,6 @@
 <script setup>
-import Iconic from "@/components/JIconic/JIconic.vue";
 import { ref, computed } from "vue";
+import Iconic from "@/components/global/JIconic/JIconic.vue";
 
 const { url } = defineProps({ url: String });
 const isLoaded = ref(false);
@@ -21,49 +21,54 @@ const isShow = computed(() => {
 </template>
 <style lang="scss">
 .avatar {
+  $size_img: 80%;
+  $border_intern: 88%;
+  $border_intermedie: 95%;
+  $border_external: 103%;
+  $pos_border_interne: 6%;
   @include Flex(row, center);
   position: relative;
   &__img {
-    width: 77.5%;
-    height: 77.5%;
+    width: $size_img;
+    height: $size_img;
     border-radius: 50%;
     object-fit: cover;
     animation: fadeIn 0.8s ease-in-out;
   }
   &__ico {
-    color: $color_font_dark;
+    color: var(--color-gray) _dark;
     position: relative;
-    top: -10px;
+    top: -4px;
   }
   &__borderExternal,
   &__borderIntermedie,
   &__borderIntern {
     position: absolute;
     border-radius: 100%;
-    border-width: 2.5px;
+    border-width: 2px;
     border-style: solid;
     z-index: 10;
   }
   &__borderExternal {
-    width: 100%;
-    height: 100%;
-    border-color: $color_gray_light;
+    width: $border_external;
+    height: $border_external;
+    border-color: var(--color-gray) _light;
     border-right-color: transparent;
     transform: rotate(-30deg);
   }
   &__borderIntermedie {
-    width: 92.5%;
-    height: 92.5%;
-    border-color: $color_third_color;
+    width: $border_intermedie;
+    height: $border_intermedie;
+    border-color: var(--color-second);
     border-right-color: transparent;
     transform: rotate(65deg);
   }
   &__borderIntern {
-    width: 85%;
-    height: 85%;
-    top: 8%;
-    left: 8%;
-    border-color: $color_sec_color;
+    width: $border_intern;
+    height: $border_intern;
+    top: $pos_border_interne;
+    left: $pos_border_interne;
+    border-color: var(--color-primary);
     border-left-color: transparent;
     transform: rotate(45deg);
   }

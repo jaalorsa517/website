@@ -35,14 +35,14 @@ import Avatar from "@/components/Global/JAvatar.vue";
     position: absolute;
     top: 0;
     left: 0;
-    background: linear-gradient(to top, #49983a, $color_primary_color);
+    background: linear-gradient(to top, #49983a, var(--color-primary) _color);
     z-index: -1;
   }
   &__txt {
     font-size: 1.8em;
     text-align: center;
     line-height: 1.3;
-    color: $color_white;
+    color: var(--color-white);
     white-space: nowrap;
     overflow: hidden;
   }
@@ -54,7 +54,7 @@ import Avatar from "@/components/Global/JAvatar.vue";
     position: relative;
     top: 25px;
     .avatar__ico {
-      color: $color_sec_color;
+      color: var(--color-primary);
     }
   }
   @include pocketWidth() {
@@ -72,7 +72,7 @@ import Avatar from "@/components/Global/JAvatar.vue";
     overflow: hidden;
     &__back {
       height: 100%;
-      background: linear-gradient(to top, #49983a, $color_primary_color);
+      background: linear-gradient(to top, #49983a, var(--color-primary) _color);
       transform: skewY(-15deg);
     }
     &__container {
@@ -83,21 +83,24 @@ import Avatar from "@/components/Global/JAvatar.vue";
       font-size: 2.5em;
       text-align: initial;
       line-height: initial;
-      color: $color_white;
+      color: var(--color-white);
       &--one {
         $one: 390px;
         @include widthPause($one);
-        animation: getNameWidthPause($one) 0s forwards, typing 2s steps(22), blink 0.6s step-end, blinkEnd 1s 2s forwards;
+        animation: getNameWidthPause($one) 0s forwards, typing 2s steps(22), blink 0.6s step-end,
+          blinkEnd 1s 2s forwards;
       }
       &--two {
         $two: 310px;
         @include widthPause($two);
-        animation: getNameWidthPause($two) 0.1s 2.2s forwards, typing 2s 2.2s steps(22), blink 0.6s step-end, blinkEnd 1s 4.2s forwards;
+        animation: getNameWidthPause($two) 0.1s 2.2s forwards, typing 2s 2.2s steps(22), blink 0.6s step-end,
+          blinkEnd 1s 4.2s forwards;
       }
       &--three {
         $three: 180px;
         @include widthPause($three);
-        animation: getNameWidthPause($three) 0.1s 4.4s forwards, typing 2s 4.4s steps(22), blink 0.6s step-end infinite;
+        animation: getNameWidthPause($three) 0.1s 4.4s forwards, typing 2s 4.4s steps(22),
+          blink 0.6s step-end infinite;
       }
     }
     &__img {
@@ -112,17 +115,20 @@ import Avatar from "@/components/Global/JAvatar.vue";
       &--one {
         $one: 460px;
         @include widthPause($one);
-        animation: getNameWidthPause($one) 0s forwards, typing 2s steps(22), blink 0.6s step-end, blinkEnd 1s 2s forwards;
+        animation: getNameWidthPause($one) 0s forwards, typing 2s steps(22), blink 0.6s step-end,
+          blinkEnd 1s 2s forwards;
       }
       &--two {
         $two: 360px;
         @include widthPause($two);
-        animation: getNameWidthPause($two) 0.1s 2.2s forwards, typing 2s 2.2s steps(22), blink 0.6s step-end, blinkEnd 1s 4.2s forwards;
+        animation: getNameWidthPause($two) 0.1s 2.2s forwards, typing 2s 2.2s steps(22), blink 0.6s step-end,
+          blinkEnd 1s 4.2s forwards;
       }
       &--three {
         $three: 220px;
         @include widthPause($three);
-        animation: getNameWidthPause($three) 0.1s 4.4s forwards, typing 2s 4.4s steps(22), blink 0.6s step-end infinite;
+        animation: getNameWidthPause($three) 0.1s 4.4s forwards, typing 2s 4.4s steps(22),
+          blink 0.6s step-end infinite;
       }
     }
   }

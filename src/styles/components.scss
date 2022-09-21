@@ -1,20 +1,20 @@
 .button {
   padding: $base;
   min-width: 100px;
-  background-color: $color_primary_color;
-  color: $color_white;
+  background-color: var(--color-primary);
+  color: var( --color-white);
   outline: none;
-  border: 1px solid $color_primary_color;
+  border: 1px solid var(--color-primary);
   border-radius: $radius_button;
   cursor: pointer;
   transition: all 0.3s ease;
   &:hover {
-    border-color: $color_sec_color;
-    background-color: $color_white;
-    color: $color_primary_color;
+    border-color: var(--color-primary);
+    background-color: var( --color-white);
+    color: var(--color-primary);
   }
   &:active {
-    border-color: $color_sec_color;
-    background-color: $color_sec_color;
+    border-color: var(--color-primary);
+    background-color: var(--color-primary);
   }
 }
