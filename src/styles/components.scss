@@ -1,20 +1,24 @@
 .button {
-  padding: $base;
+  padding: 0.1875em 0.3125em;
   min-width: 100px;
-  background-color: var(--color-primary);
+  font-size: 0.9375em;
   color: var( --color-white);
   outline: none;
-  border: 1px solid var(--color-primary);
+  background-color: var(--color-third);
+  border: 1px solid var(--color-third);
   border-radius: $radius_button;
   cursor: pointer;
   transition: all 0.3s ease;
   &:hover {
-    border-color: var(--color-primary);
+    border-color: var(--color-third);
     background-color: var( --color-white);
-    color: var(--color-primary);
+    color: var(--color-third);
   }
   &:active {
-    border-color: var(--color-primary);
-    background-color: var(--color-primary);
+    border-color: var(--color-third);
+    background-color: var(--color-third);
+  }
+  @include tabletWidth(){
+    padding: 0.6125em;
   }
 }

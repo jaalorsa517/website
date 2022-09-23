@@ -11,7 +11,7 @@ const icons = [
 </script>
 <template>
   <footer class="footer">
-    <a class="footer__link" :href="icon.link" v-for="(icon, key) in icons" :key="key">
+    <a class="footer__link" :href="icon.link" target="_blank" v-for="(icon, key) in icons" :key="key">
       <JIconic class="footer__icon" :name="icon.name"></JIconic>
     </a>
   </footer>

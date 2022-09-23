@@ -11,6 +11,7 @@ const { isNone } = defineProps({ isNone: { type: Boolean, default: false } });
 .separate {
   $major: 95%;
   $minor: 85%;
+  width: 100%;
   @include Flex(column, center, flex-start);
   &.none {
     @include Flex(column, center, flex-end);
@@ -18,6 +19,7 @@ const { isNone } = defineProps({ isNone: { type: Boolean, default: false } });
   &__line {
     height: 0.125em;
     margin: 0.25rem 0;
+    animation: grownWidth 1.5s ease-in-out;
     &--one {
       width: $major;
       background-color: var(--color-primary);

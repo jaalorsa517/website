@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,600;1,600&family=Aref+Ruqaa&family=Playfair+Display:ital@0;1&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&family=Aref+Ruqaa&family=Playfair+Display:ital@0;1&display=swap');
 @import "./normalize.css";
 @import "./vars.scss";
 @import "./components.scss";
@@ -12,6 +12,7 @@ body {
   --font-cursive: "Aref Ruqaa", serif;
   --color-primary: #008937;
   --color-second: #8dc124;
+  --color-third: #438C40;
   --color-white: #fff;
   --color-font-light: #f9f9f9;
   --color-gray: #bfbfbf;
@@ -38,7 +39,7 @@ body {
   background-color: var( --color-white);
   font-style: normal;
   font-weight: 400;
-  line-height: 20px;
+  line-height: 1.4;
   letter-spacing: 0.02em;
 }
 
@@ -59,7 +60,7 @@ h6 {
   font-style: normal;
   color: var(--color-font-dark);
   letter-spacing: 0.02em;
-  line-height: 22px;
+  line-height: 1.2;
   font-weight: 600;
 }
 h1 {

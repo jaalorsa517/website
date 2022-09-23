@@ -48,20 +48,21 @@ const isShow = computed(() => {
     border-width: 2px;
     border-style: solid;
     z-index: 10;
+    animation: 1.8s ease-in-out forwards;
   }
   &__borderExternal {
     width: $border_external;
     height: $border_external;
     border-color: var(--color-gray) _light;
     border-right-color: transparent;
-    transform: rotate(-30deg);
+    animation-name: turnsTo-30;
   }
   &__borderIntermedie {
     width: $border_intermedie;
     height: $border_intermedie;
     border-color: var(--color-second);
     border-right-color: transparent;
-    transform: rotate(65deg);
+    animation-name: turnsTo65;
   }
   &__borderIntern {
     width: $border_intern;
@@ -70,7 +71,7 @@ const isShow = computed(() => {
     left: $pos_border_interne;
     border-color: var(--color-primary);
     border-left-color: transparent;
-    transform: rotate(45deg);
+    animation-name: turnsTo45;
   }
 }
 </style>

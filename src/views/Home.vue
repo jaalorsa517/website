@@ -5,6 +5,7 @@ import Separate from "@/components/global/Separate.vue";
 
 <template>
   <div class="root">
+    <Separate :is-none="true"></Separate>
     <Intro></Intro>
     <Separate></Separate>
   </div>
@@ -14,5 +15,6 @@ import Separate from "@/components/global/Separate.vue";
 .root {
   max-width: 1024px;
   margin: 0 auto;
+  @include Flex(column, center, center);
 }
 </style>
