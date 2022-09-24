@@ -21,4 +21,9 @@ export default [
     name: "Blog",
     component: defineAsyncComponent(() => import("@/views/Blog.vue")),
   },
+  {
+    path: "/utils",
+    name: "Utilidades",
+    component: defineAsyncComponent(() => import("@/views/Utils.vue")),
+  },
 ];

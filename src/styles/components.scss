@@ -1,8 +1,9 @@
+button,
 .button {
   padding: 0.1875em 0.3125em;
   min-width: 100px;
   font-size: 0.9375em;
-  color: var( --color-white);
+  color: var(--color-white);
   outline: none;
   background-color: var(--color-third);
   border: 1px solid var(--color-third);
@@ -11,14 +12,14 @@
   transition: all 0.3s ease;
   &:hover {
     border-color: var(--color-third);
-    background-color: var( --color-white);
+    background-color: var(--color-white);
     color: var(--color-third);
   }
   &:active {
     border-color: var(--color-third);
     background-color: var(--color-third);
   }
-  @include tabletWidth(){
+  @include tabletWidth() {
     padding: 0.6125em;
   }
 }

@@ -1,6 +1,5 @@
 <script setup>
 import Intro from "@/components/home/Intro.vue";
-import Separate from "@/components/global/Separate.vue";
 </script>
 
 <template>
@@ -13,7 +12,7 @@ import Separate from "@/components/global/Separate.vue";
 
 <style lang="scss">
 .root {
-  max-width: 1024px;
+  max-width: $max-width;
   margin: 0 auto;
   @include Flex(column, center, center);
 }
