@@ -37,6 +37,11 @@ export default defineConfig(({ mode, command }) => {
           ],
         },
         registerType: "autoUpdate",
+        workbox: {
+          cleanupOutdatedCaches: true,
+          skipWaiting: true,
+          clientsClaim: true,
+        },
       })
     );
   }
