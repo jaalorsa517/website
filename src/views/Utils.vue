@@ -37,6 +37,9 @@ import Separate from "@/components/global/Separate.vue";
     --color_popup_font: var(--color-font-light);
     --font-size: var(--font-size);
     --font-family: var(--font-principal);
+    button {
+      @extend .button;
+    }
   }
   @include desktopWidth() {
     &__jsonTransform {

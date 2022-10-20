@@ -4,7 +4,9 @@ import { VitePWA } from "vite-plugin-pwa";
 import { resolve } from "path";
 
 export default defineConfig(({ mode, command }) => {
-  const plugins = [vue()];
+  const plugins = [
+    vue({ template: { compilerOptions: { isCustomElement: (tag) => tag.startsWith("j5-") } } }),
+  ];
 
   if (mode === "production") {
     plugins.push(
@@ -60,7 +62,8 @@ export default defineConfig(({ mode, command }) => {
         additionalData: `
               @import "@/styles/vars.scss";
               @import "@/styles/animations.scss"; 
-              @import "./src/styles/mixins.scss";
+              @import "@/styles/mixins.scss";
+              @import "@/styles/components.scss";
             `,
       },
     },
