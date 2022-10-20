@@ -5,6 +5,7 @@ export const useRoot = defineStore("root", {
     return {
       name: "root",
       isMobile: window.innerWidth < 768,
+      jsonTransform: null,
     };
   },
 });

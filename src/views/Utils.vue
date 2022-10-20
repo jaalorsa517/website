@@ -1,5 +1,25 @@
 <script setup>
 import Separate from "@/components/global/Separate.vue";
+import { useRoot } from "@/store";
+import { onBeforeUnmount, onMounted } from "vue";
+
+const store = useRoot();
+
+onMounted(() => {
+  const jsonTransform = document.querySelector(".utils__wcJsonTrasnform");
+  if (!jsonTransform && store.jsonTransform) {
+    const container = document.querySelector(".utils__jsonTransform");
+    container.appendChild(store.jsonTransform);
+    store.$patch({ jsonTransform: null });
+  }
+});
+onBeforeUnmount(() => {
+  const jsonTransform = document.querySelector(".utils__wcJsonTrasnform");
+  if (jsonTransform) {
+    store.$patch({ jsonTransform });
+    jsonTransform.remove();
+  }
+});
 </script>
 
 <template>
