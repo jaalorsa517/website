@@ -23,3 +23,19 @@ button,
     padding: 0.6125em;
   }
 }
+
+.skeleton {
+  animation: skeleton-animation 1.2s linear infinite alternate;
+}
+
+.spinner {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  border: 5px solid rgb(2, 139, 59);
+  border-top-color: #fff;
+  position: absolute;
+  bottom: 0;
+  left: calc(50% - 20px);
+  animation: spinner-animation 1.2s linear infinite;
+}

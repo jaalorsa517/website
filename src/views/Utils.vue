@@ -1,30 +1,10 @@
 <script setup>
 import Separate from "@/components/global/Separate.vue";
-import { useRoot } from "@/store";
-import { onBeforeUnmount, onMounted } from "vue";
-
-const store = useRoot();
-
-onMounted(() => {
-  const jsonTransform = document.querySelector(".utils__wcJsonTrasnform");
-  if (!jsonTransform && store.jsonTransform) {
-    const container = document.querySelector(".utils__jsonTransform");
-    container.appendChild(store.jsonTransform);
-    store.$patch({ jsonTransform: null });
-  }
-});
-onBeforeUnmount(() => {
-  const jsonTransform = document.querySelector(".utils__wcJsonTrasnform");
-  if (jsonTransform) {
-    store.$patch({ jsonTransform });
-    jsonTransform.remove();
-  }
-});
 </script>
 
 <template>
   <section class="utils">
-    <Separate></Separate>
+    <Separate :is-none="true"></Separate>
     <h1 class="utils__title">Utilidades</h1>
     <div class="utils__container">
       <h2 class="utils__subtitle">Formateador JSON</h2>
@@ -32,7 +12,7 @@ onBeforeUnmount(() => {
         <j5-json-transform class="utils__wcJsonTrasnform"></j5-json-transform>
       </div>
     </div>
-    <Separate :is-none="true"></Separate>
+    <Separate></Separate>
   </section>
 </template>
 <style lang="scss">
@@ -57,6 +37,7 @@ onBeforeUnmount(() => {
     --color_popup_font: var(--color-font-light);
     --font-size: var(--font-size);
     --font-family: var(--font-principal);
+    --color_error: var(--color-error);
     button {
       @extend .button;
     }

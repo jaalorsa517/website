@@ -5,6 +5,7 @@ import JAvatar from "@/components/global/JAvatar.vue";
 
 const title = computed(() => Intro.title);
 const description = computed(() => Intro.body);
+const txtBtn = computed(() => Intro.btnKwonMore);
 </script>
 <template>
   <section class="intro">
@@ -16,13 +17,13 @@ const description = computed(() => Intro.body);
       <p class="intro__description" v-html="description"></p>
     </div>
     <div class="intro__container">
-      <button class="intro__btn button">Saber más...</button>
+      <RouterLink class="intro__btn button" to="/about">{{ txtBtn }}</RouterLink>
     </div>
   </section>
 </template>
 <style lang="scss">
 .intro {
-  padding: 1.5em 0;
+  padding: $padding_sections;
   &__container {
     @include Flex(column, center, center);
     padding: 0.5em;

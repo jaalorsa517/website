@@ -21,21 +21,19 @@ const { isNone } = defineProps({ isNone: { type: Boolean, default: false } });
     margin: 0.25rem 0;
     animation: grownWidth 1.5s ease-in-out;
     &--one {
-      width: $major;
-      background-color: var(--color-primary);
-    }
-    &--dos {
       width: $minor;
       background-color: var(--color-second);
-    }
-    &.none {
-      &--one {
-        width: $minor;
-        background-color: var(--color-second);
-      }
-      &--dos {
+      &.none {
         width: $major;
         background-color: var(--color-primary);
+      }
+    }
+    &--dos {
+      width: $major;
+      background-color: var(--color-primary);
+      &.none {
+        width: $minor;
+        background-color: var(--color-second);
       }
     }
   }
