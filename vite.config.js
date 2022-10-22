@@ -19,6 +19,9 @@ export default defineConfig(({ mode, command }) => {
           description:
             "Desarrollador fullStack Jaime Ortiz, con experiencia en desarrollo web, usando NodeJs y VueJs.",
           theme_color: "#ffffff",
+          background_color: "#ffffff",
+          orientation: "portrait",
+          lang: "es",
           icons: [
             {
               src: "pwa-192x192.png",
@@ -38,11 +41,12 @@ export default defineConfig(({ mode, command }) => {
             },
           ],
         },
-        registerType: "autoUpdate",
+        registerType: "prompt",
         workbox: {
           cleanupOutdatedCaches: true,
           skipWaiting: true,
           clientsClaim: true,
+          sourcemap: true,
         },
       })
     );
@@ -60,10 +64,8 @@ export default defineConfig(({ mode, command }) => {
     preprocessorOptions: {
       scss: {
         additionalData: `
-              @import "@/styles/vars.scss";
-              @import "@/styles/animations.scss"; 
-              @import "@/styles/mixins.scss";
-              @import "@/styles/components.scss";
+          @import "@/styles/vars.scss";
+          @import "@/styles/mixins.scss";
             `,
       },
     },

@@ -13,5 +13,3 @@ app.component("Separate", Separate);
 app.mount("#app");
 
 init();
-
-
