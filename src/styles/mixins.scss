@@ -5,6 +5,12 @@
   align-items: $align;
 }
 
+@mixin mobileSmallWidth() {
+  @media screen and (min-width: 320px) {
+    @content;
+  }
+}
+
 @mixin pocketWidth() {
   @media screen and (min-width: 540px) {
     @content;

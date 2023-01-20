@@ -24,19 +24,17 @@ const close = async () => {
 
 <style lang="scss">
 .promptSW {
+  width: 250px;
   position: fixed;
-  right: 0;
   bottom: 0;
-  margin: 16px;
   padding: 12px;
   border: 1px solid #8885;
   border-radius: 4px;
-  z-index: 1;
+  z-index: 10000;
   text-align: left;
   box-shadow: 3px 4px 5px 0 #8885;
   background-color: var(--color-white);
   &__message {
-    max-width: 250px;
     margin-bottom: 8px;
     text-align: center;
   }
@@ -45,11 +43,22 @@ const close = async () => {
     justify-content: center;
   }
   &__button {
+    width: auto;
     border: 1px solid #8885;
     outline: none;
     margin-right: 5px;
     border-radius: 2px;
     padding: 3px 10px;
+  }
+  @include mobileSmallWidth() {
+    margin: auto;
+    right: 50%;
+    transform: translateX(50%);
+  }
+  @include pocketWidth() {
+    margin: 16px;
+    right: 0;
+    transform: unset;
   }
 }
 </style>
