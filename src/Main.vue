@@ -1,6 +1,7 @@
 <script setup>
 import JHeader from "@/components/global/JHeader.vue";
 import JFooter from "@/components/global/JFooter.vue";
+import PromptSW from "@/components/global/PromptSW.vue";
 </script>
 <template>
   <main class="main">
@@ -8,6 +9,7 @@ import JFooter from "@/components/global/JFooter.vue";
     <router-view class="contentBody"></router-view>
     <JFooter />
   </main>
+  <PromptSW />
 </template>
 <style lang="scss">
 .contentBody {

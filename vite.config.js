@@ -41,10 +41,8 @@ export default defineConfig(({ mode, command }) => {
             },
           ],
         },
-        registerType: "prompt",
         workbox: {
           cleanupOutdatedCaches: true,
-          skipWaiting: true,
           clientsClaim: true,
           sourcemap: true,
         },
