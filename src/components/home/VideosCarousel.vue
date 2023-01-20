@@ -72,8 +72,7 @@ onBeforeMount(() => {
     border-radius: 10px;
     &--moreVideo {
       @include Flex(row, center);
-      background: rgb(0, 137, 55);
-      background: linear-gradient(180deg, rgba(0, 137, 55, 1) 0%, rgba(67, 140, 64, 1) 100%);
+      background: var(--color-third);
     }
   }
   &__moreVideo {

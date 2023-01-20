@@ -47,7 +47,7 @@ const txtBtn = computed(() => Intro.btnKwonMore);
   &__description {
     animation-name: fadeInUp;
   }
-  &__btn {
+  & &__btn {
     color: var(--color-white);
   }
   &__avatar {
