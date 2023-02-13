@@ -8,7 +8,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@jaalorsa/j5-components": "^1.4.4",
+    "@jaalorsa/j5-components": "^1.5.0",
     "pinia": "^2.0.29",
     "vue": "^3.2.45",
     "vue-router": "^4.1.6"

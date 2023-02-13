@@ -5,9 +5,17 @@ import { useRoot } from "@/store";
 
 const store = useRoot();
 const isOpen = ref(false);
+const randomMinMax = (min = 0, max = 1) => Math.floor(Math.random() * (max - min + 1)) + min;
+const animations = ["fade_in_out", "slide_in_out_1", "slide_in_out_2", "slide_in_out_3", "slide_in_out_4"];
+const index = randomMinMax(0, animations.length - 1);
 
-function toggleMenu() {
-  isOpen.value = !isOpen.value;
+function onIsOpen(event) {
+  isOpen.value = event?.detail?.isOpen;
+  if (isOpen.value) {
+    document.body.style.overflow = "hidden";
+  } else {
+    document.body.style.overflow = "auto";
+  }
 }
 </script>
 <template>
@@ -22,15 +30,18 @@ function toggleMenu() {
         </Transition>
       </div>
       <div class="hamburguer__rigth">
-        <div class="hamburguer__menu" @click="toggleMenu" v-if="store.isMobile">
-          <div :class="['hamburguer__line', 'hamburguer__line--uno', isOpen ? 'active' : '']"></div>
-          <div :class="['hamburguer__line', 'hamburguer__line--dos', isOpen ? 'active' : '']"></div>
-          <div :class="['hamburguer__line', 'hamburguer__line--tres', isOpen ? 'active' : '']"></div>
-        </div>
+        <j5-menu-hamburguer
+          class="hamburguer__menuMobile"
+          :animation="animations[index]"
+          @isOpen="onIsOpen"
+          v-if="store.isMobile"
+        >
+          <slot></slot>
+        </j5-menu-hamburguer>
       </div>
     </div>
     <Transition>
-      <section class="hamburguer__content" v-if="isOpen || !store.isMobile" @click="isOpen = false">
+      <section class="hamburguer__content" v-if="!store.isMobile">
         <slot></slot>
       </section>
     </Transition>
@@ -38,6 +49,36 @@ function toggleMenu() {
 </template>
 <style lang="scss">
 .hamburguer {
+  &__menuMobile {
+    font-size: var(--font-size);
+    text-align: end;
+    --color: var(--color-font-dark);
+    --colorActive: var(--color-font-dark);
+    --menuPositionTop: 3.4375em;
+    --menuHeight: calc(100vh - 3.4375em);
+    --menuBackground: var(--color-white);
+    .j5-menu-hamburguer__menu .j5-menu-hamburguer__line {
+      height: 0.125em;
+      margin: 0.125em 0;
+      border-radius: 0.0625em;
+      &--uno {
+        width: 1.25em;
+        &.active {
+          transform: rotate(-45deg) translate(-25%, 50%);
+        }
+      }
+      &--dos {
+        width: 0.625em;
+      }
+      &--tres {
+        width: 0.9375em;
+        &.active {
+          width: 1.25em;
+          transform: rotate(45deg) translate(-20%, -40%);
+        }
+      }
+    }
+  }
   &__container {
     @include Flex(row, space-between);
     height: $height_fixed;
@@ -45,11 +86,6 @@ function toggleMenu() {
     border-bottom: 1px solid var(--color-gray);
     position: relative;
     z-index: 1001;
-  }
-  &__menu {
-    font-size: var(--font-size);
-    text-align: end;
-    cursor: pointer;
   }
   &__left {
     @include Flex(row, flex-start);
@@ -68,33 +104,6 @@ function toggleMenu() {
     font-size: var(--font-size);
     line-height: 25px;
     letter-spacing: 0.02em;
-  }
-
-  &__line {
-    height: 0.125em;
-    margin: 0.125em 0;
-    border-radius: 0.0625em;
-    background-color: var(--color-font-dark);
-    transition: transform 600ms ease-in-out, opacity 800ms ease-in-out;
-    &--uno {
-      width: 1.25em;
-      &.active {
-        transform: rotate(-45deg) translate(-25%, 50%);
-      }
-    }
-    &--dos {
-      width: 0.625em;
-      &.active {
-        opacity: 0;
-      }
-    }
-    &--tres {
-      width: 0.9375em;
-      &.active {
-        width: 1.25em;
-        transform: rotate(45deg) translate(-20%, -40%);
-      }
-    }
   }
 
   &__content {

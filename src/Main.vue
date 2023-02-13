@@ -1,7 +1,13 @@
 <script setup>
+import { defineAsyncComponent } from "vue";
+import { MODE_PROD } from "@/shared/const";
 import JHeader from "@/components/global/JHeader.vue";
 import JFooter from "@/components/global/JFooter.vue";
-import PromptSW from "@/components/global/PromptSW.vue";
+
+const PromptSW =
+  import.meta.env.VITE_MODE === MODE_PROD
+    ? defineAsyncComponent(() => "@/components/global/PromptSW.vue")
+    : null;
 </script>
 <template>
   <main class="main">
@@ -9,7 +15,7 @@ import PromptSW from "@/components/global/PromptSW.vue";
     <router-view class="contentBody"></router-view>
     <JFooter />
   </main>
-  <PromptSW />
+  <PromptSW v-if="PromptSW" />
 </template>
 <style lang="scss">
 .contentBody {

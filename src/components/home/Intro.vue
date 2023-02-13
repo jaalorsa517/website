@@ -49,6 +49,9 @@ const txtBtn = computed(() => Intro.btnKwonMore);
   }
   & &__btn {
     color: var(--color-white);
+    &:hover {
+      color: var(--color-third);
+    }
   }
   &__avatar {
     width: 8em;
