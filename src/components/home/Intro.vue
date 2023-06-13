@@ -5,7 +5,7 @@ import JAvatar from "@/components/global/JAvatar.vue";
 
 const title = computed(() => Intro.title);
 const description = computed(() => Intro.body);
-const txtBtn = computed(() => Intro.btnKwonMore);
+// const txtBtn = computed(() => Intro.btnKwonMore);
 </script>
 <template>
   <section class="intro">
@@ -16,9 +16,9 @@ const txtBtn = computed(() => Intro.btnKwonMore);
     <div class="intro__container">
       <p class="intro__description" v-html="description"></p>
     </div>
-    <div class="intro__container">
+    <!-- <div class="intro__container">
       <RouterLink class="intro__btn button" to="/about">{{ txtBtn }}</RouterLink>
-    </div>
+    </div> -->
   </section>
 </template>
 <style lang="scss">

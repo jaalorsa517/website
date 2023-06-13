@@ -72,10 +72,29 @@ h2 {
   font-size: var(--font-size-subtitle);
 }
 
+a {
+  text-decoration: underline;
+}
+a:visited,
+a:hover {
+  text-decoration: none;
+}
 a,
 a:visited {
   color: var(--color-font-dark);
-  text-decoration: none;
+}
+
+code{
+  display: block;
+  max-width: 95%;
+  margin: auto;
+  padding: 0.5em;
+  font-size: 0.85em;
+  text-overflow: initial;
+  overflow-x:scroll;
+  background-color: var(--color-gray-light);
+  white-space: pre;
+
 }
 
 .app {

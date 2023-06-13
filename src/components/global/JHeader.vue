@@ -14,7 +14,7 @@ const options = routes.map((route) => ({ name: route.name, link: route.path }));
         <nav class="header__nav">
           <ul class="header__options">
             <li class="header__option" v-for="(option, key) in options" :key="key">
-              <RouterLink :to="option.link">{{ option.name }}</RouterLink>
+              <RouterLink class="header__link" :to="option.link">{{ option.name }}</RouterLink>
             </li>
           </ul>
           <JFooter class="header__footer" v-if="store.isMobile"></JFooter>
@@ -43,6 +43,10 @@ const options = routes.map((route) => ({ name: route.name, link: route.path }));
     &:first-child {
       border-top: 1px solid var(--color-gray);
     }
+  }
+
+  &__link {
+    text-decoration: none;
   }
   &__footer {
     margin: 4em auto;
