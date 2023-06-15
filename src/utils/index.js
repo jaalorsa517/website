@@ -1,7 +1,8 @@
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 import { useRoot } from "@/store/index";
-import { j5JsonTransform, j5Carousel, j5MenuHamburguer } from "@jaalorsa/j5-components";
+import * as components from "@jaalorsa/j5-components";
+import { useFirebaseStore } from "@/store/firebaseStore";
 
 function initFirebase() {
   const firebaseConfig = {
@@ -14,14 +15,22 @@ function initFirebase() {
     measurementId: import.meta.env.VITE_FIREBASE_MEASUREMENT_ID,
   };
   const firebaseApp = initializeApp(firebaseConfig);
-  getAnalytics(firebaseApp);
+  const analytics = getAnalytics(firebaseApp);
+  useFirebaseStore().$patch({ analyticsInstance: analytics });
+}
+
+function initJ5Components() {
+  components.j5Carousel();
+  components.j5Collapse();
+  components.j5JsonTransform();
+  components.j5MenuHamburguer();
+  components.j5Toggle();
+  components.j5Tooltip();
 }
 
 export function init() {
   initFirebase();
-  j5JsonTransform();
-  j5Carousel();
-  j5MenuHamburguer();
+  initJ5Components();
   window.addEventListener("resize", () => {
     useRoot().$patch({ isMobile: window.innerWidth < 768 });
   });
