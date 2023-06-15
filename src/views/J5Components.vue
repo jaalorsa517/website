@@ -1,6 +1,6 @@
 <script setup>
 import { computed } from "vue";
-import { Components } from "@/assets/resources";
+import { Components } from "@/assets/resources/language/index.js";
 
 const title = computed(() => Components.title);
 const description = computed(() => Components.description);

@@ -45,6 +45,7 @@ export default defineConfig(({ mode, command }) => {
         workbox: {
           cleanupOutdatedCaches: true,
           clientsClaim: true,
+          skipWaiting: true,
           sourcemap: true,
         },
       })

@@ -1,5 +1,5 @@
 <script setup>
-import { Carousel } from "@/assets/resources/index";
+import { Carousel } from "@/assets/resources/language/index";
 import { computed } from "@vue/reactivity";
 import { useRoot } from "@/store";
 import { onBeforeMount, reactive, ref } from "vue";

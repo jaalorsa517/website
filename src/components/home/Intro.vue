@@ -1,5 +1,5 @@
 <script setup>
-import { Intro } from "@/assets/resources/index";
+import { Intro } from "@/assets/resources/language/index";
 import { computed } from "vue";
 import JAvatar from "@/components/global/JAvatar.vue";
 

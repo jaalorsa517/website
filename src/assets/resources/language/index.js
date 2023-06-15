@@ -1,6 +1,6 @@
-import * as intro from "@/assets/resources/Home/intro.language";
-import * as carousel from "@/assets/resources/Home/carousel.language";
-import * as components from "@/assets/resources/Components/intro.language";
+import * as intro from "@/assets/resources/language/Home/intro.language";
+import * as carousel from "@/assets/resources/language/Home/carousel.language";
+import * as components from "@/assets/resources/language/Components/intro.language";
 
 function getLanguage(language) {
   const languageNav = window.navigator.language.split("-")[0] || "es";
