@@ -35,3 +35,22 @@ export function init() {
     useRoot().$patch({ isMobile: window.innerWidth < 768 });
   });
 }
+
+export function serviceWorkerInit() {
+  if (import.meta.env.PROD) {
+    import("virtual:pwa-register/vue").then(({ useRegisterSW }) => {
+      useRegisterSW({
+        onNeedRefresh() {
+          console.log("onNeedRefresh");
+        },
+        onoffline() {
+          console.log("onoffline");
+        },
+
+        onRegisterError(error) {
+          console.log("onRegisterError", error);
+        },
+      });
+    });
+  }
+}

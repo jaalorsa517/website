@@ -10,7 +10,7 @@ const store = useRoot();
 const videos = reactive({ items: [] });
 
 const title = computed(() => Carousel.title);
-const moreVideos = computed(() => Carousel.moreVideos);
+// const moreVideos = computed(() => Carousel.moreVideos);
 const countSlides = computed(() => {
   if (store.isMobile) return 1;
   if (videos.items.length <= 3) return videos.items.length || 1;
@@ -18,7 +18,7 @@ const countSlides = computed(() => {
 });
 
 onBeforeMount(() => {
-  YoutubeService.getVideos()
+  YoutubeService.getVideos({ maxResults: 15 })
     .then((playlistItemsDto) => {
       videos.items = playlistItemsDto.items || [];
     })
@@ -28,17 +28,17 @@ onBeforeMount(() => {
 });
 </script>
 <template>
-  <div class="carousel">
+  <div class="carousel" v-if="videos.items.length">
     <h2 class="carousel__title">{{ title }}</h2>
     <j5-carousel class="carousel__slider" transition-auto="10000" :count-slides="countSlides">
       <div class="carousel__container" v-for="video in videos.items" :key="video.videoId">
         <SlideVideo :video="video"></SlideVideo>
       </div>
-      <div class="carousel__slide carousel__slide--moreVideo">
+      <!-- <div class="carousel__slide carousel__slide--moreVideo">
         <div class="carousel__imgContainer carousel__imgContainer--moreVideo">
           <RouterLink class="carousel__moreVideo" to="/videos">{{ moreVideos }}</RouterLink>
         </div>
-      </div>
+      </div> -->
     </j5-carousel>
   </div>
 </template>

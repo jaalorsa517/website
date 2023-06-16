@@ -13,7 +13,8 @@ export default defineConfig(({ mode, command }) => {
     plugins.push(
       VitePWA({
         base: "/",
-        includeAssets: ["favicon.svg", "favicon.ico", "robots.txt", "apple-touch-icon.png"],
+        includeAssets: ["favicon.svg", "favicon.ico", "robots.txt", "sitemap.xml", "apple-touch-icon.png"],
+        id: "com.jaalorsa",
         manifest: {
           name: "Desarrollador fullStack Jaime Ortiz",
           short_name: "jaalorsa",
@@ -46,15 +47,14 @@ export default defineConfig(({ mode, command }) => {
           cleanupOutdatedCaches: true,
           clientsClaim: true,
           skipWaiting: true,
-          sourcemap: true,
+          sourcemap: false,
+          globPatterns: ["**/*.{js,css,html,ico,png,svg,xml,txt}"],
+          offlineGoogleAnalytics: true,
         },
       })
     );
-  }
+  } else plugins.push(VitePWA())
   const server = {};
-  if (command === "serve") {
-    server.port = 8080;
-  }
   const _resolve = {
     alias: {
       "@": resolve(__dirname, "src"),

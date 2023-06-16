@@ -3,18 +3,10 @@ import { createApp } from "vue";
 import "@/styles/main.scss";
 import App from "./Main.vue";
 import Separate from "@/components/global/Separate.vue";
-import { init } from "@/utils/index";
+import { init, serviceWorkerInit } from "@/utils/index";
 import { router } from "./router/index";
-import { useRegisterSW } from "virtual:pwa-register/vue";
 
-useRegisterSW({
-  onNeedRefresh() {
-    console.log("onNeedRefresh");
-  },
-  onoffline() {
-    console.log("onoffline");
-  },
-});
+serviceWorkerInit()
 
 const app = createApp(App);
 app.use(createPinia());

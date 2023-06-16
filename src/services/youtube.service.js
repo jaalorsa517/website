@@ -13,14 +13,14 @@ const host = import.meta.env.VITE_YOUTUBE_API_HOST;
  * @param {Object} {maxResults, pageToken}}
  * @returns Promise<playlistItemsDto>
  */
-export function getVideos({ maxResults = 5, pageToken = "" } = {}) {
+export function getVideos({maxResults = 5, pageToken = ""} = {}) {
   const fields =
-    "items/snippet/title,items/snippet/description,items/contentDetails,items/snippet/thumbnails/medium/url,nextPageToken";
+  "items/snippet/title,items/snippet/description,items/contentDetails,items/snippet/thumbnails/medium/url,nextPageToken";
   const params = { ...Params, fields, maxResults, pageToken };
   const paramsInString = Object.keys(params)
-    .filter((param) => Boolean(Params[param]))
-    .map((param) => `${param}=${Params[param]}`)
-    .join("&");
+  .filter((param) => Boolean(params[param]))
+  .map((param) => `${param}=${params[param]}`)
+  .join("&");
   const url = `${host}/playlistItems?${paramsInString}`;
   return new Promise((resolve, reject) => {
     get(url)
