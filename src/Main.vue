@@ -1,13 +1,11 @@
 <script setup>
 import { defineAsyncComponent } from "vue";
-import { MODE_PROD } from "@/shared/const";
 import JHeader from "@/components/global/JHeader.vue";
 import JFooter from "@/components/global/JFooter.vue";
 
-const PromptSW =
-  import.meta.env.VITE_MODE === MODE_PROD
-    ? defineAsyncComponent(() => "@/components/global/PromptSW.vue")
-    : null;
+const PromptSW = import.meta.env.PROD
+  ? defineAsyncComponent(() => import("@/components/global/PromptSW.vue"))
+  : null;
 </script>
 <template>
   <main class="main">

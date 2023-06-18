@@ -3,8 +3,6 @@ import { getAnalytics } from "firebase/analytics";
 import { useRoot } from "@/store/index";
 import * as components from "@jaalorsa/j5-components";
 import { useFirebaseStore } from "@/store/firebaseStore";
-import routes from "@/router/routes";
-import { router } from "@/router";
 
 function initFirebase() {
   const firebaseConfig = {
