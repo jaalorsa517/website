@@ -13,7 +13,7 @@ export default [
     path: "/lib-components",
     name: "Librería de componentes",
     component: () => import("@/views/J5Components.vue"),
-  }
+  },
   // {
   //   path: "/about",
   //   name: "Acerca de mí",

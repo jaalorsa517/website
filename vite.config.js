@@ -1,8 +1,8 @@
 import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
 import { VitePWA } from "vite-plugin-pwa";
-import {resolve} from "path";
-import {MODE_PROD} from "./src/shared/const"
+import { resolve } from "path";
+import { MODE_PROD } from "./src/shared/const";
 
 export default defineConfig(({ mode, command }) => {
   const plugins = [
@@ -13,12 +13,13 @@ export default defineConfig(({ mode, command }) => {
     plugins.push(
       VitePWA({
         base: "/",
-        includeAssets: ["favicon.svg", "favicon.ico", "robots.txt", "apple-touch-icon.png"],
+        includeAssets: ["favicon.svg", "favicon.ico", "robots.txt", "sitemap.xml", "apple-touch-icon.png"],
         manifest: {
-          name: "Desarrollador fullStack Jaime Ortiz",
+          name: "jaalorsa",
           short_name: "jaalorsa",
+          id: "jaalorsa",
           description:
-            "Desarrollador fullStack Jaime Ortiz, con experiencia en desarrollo web, usando NodeJs y VueJs.",
+            "Contenido para crecer en conocimiento técnico en programación web con Javascript, Vue y más.",
           theme_color: "#ffffff",
           background_color: "#ffffff",
           orientation: "portrait",
@@ -34,27 +35,20 @@ export default defineConfig(({ mode, command }) => {
               sizes: "512x512",
               type: "image/png",
             },
-            {
-              src: "pwa-512x512.png",
-              sizes: "512x512",
-              type: "image/png",
-              purpose: "any maskable",
-            },
           ],
         },
         workbox: {
           cleanupOutdatedCaches: true,
           clientsClaim: true,
           skipWaiting: true,
-          sourcemap: true,
+          sourcemap: false,
+          globPatterns: ["**/*.{js,css,html,ico,png,svg,xml,txt}"],
+          offlineGoogleAnalytics: true,
         },
       })
     );
-  }
+  } else plugins.push(VitePWA());
   const server = {};
-  if (command === "serve") {
-    server.port = 8080;
-  }
   const _resolve = {
     alias: {
       "@": resolve(__dirname, "src"),

@@ -3,6 +3,8 @@ import { getAnalytics } from "firebase/analytics";
 import { useRoot } from "@/store/index";
 import * as components from "@jaalorsa/j5-components";
 import { useFirebaseStore } from "@/store/firebaseStore";
+import routes from "@/router/routes";
+import { router } from "@/router";
 
 function initFirebase() {
   const firebaseConfig = {
@@ -34,4 +36,23 @@ export function init() {
   window.addEventListener("resize", () => {
     useRoot().$patch({ isMobile: window.innerWidth < 768 });
   });
+}
+
+export function serviceWorkerInit() {
+  if (import.meta.env.PROD) {
+    import("virtual:pwa-register/vue").then(({ useRegisterSW }) => {
+      useRegisterSW({
+        onNeedRefresh() {
+          console.log("onNeedRefresh");
+        },
+        onoffline() {
+          console.log("onoffline");
+        },
+
+        onRegisterError(error) {
+          console.log("onRegisterError", error);
+        },
+      });
+    });
+  }
 }

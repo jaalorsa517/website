@@ -1,5 +1,8 @@
 <script setup>
 import JIconic from "@/components/global/JIconic/JIconic.vue";
+import { useFirebaseStore } from "@/store/firebaseStore";
+import { logEvent } from "firebase/analytics";
+
 const icons = [
   { name: "youtube", link: "https://www.youtube.com/channel/UC2629Jqdc0PQCYRxmF3fcZA" },
   { name: "github", link: "https://github.com/jaalorsa517" },
@@ -8,10 +11,21 @@ const icons = [
   { name: "linkedin", link: "https://www.linkedin.com/in/jaime-alberto-ortiz-saldarriaga-54a3409b" },
   { name: "gmail", link: "mailto:jaalorsa519@gmail.com" },
 ];
+function onClick(name) {
+  const firebaseStore = useFirebaseStore();
+  logEvent(firebaseStore.analyticsInstance, "click_contacts", { contact_name: name });
+}
 </script>
 <template>
   <footer class="footer">
-    <a class="footer__link" :href="icon.link" target="_blank" v-for="(icon, key) in icons" :key="key">
+    <a
+      class="footer__link"
+      :href="icon.link"
+      target="_blank"
+      v-for="(icon, key) in icons"
+      :key="key"
+      @click="onClick(icon.name)"
+    >
       <JIconic class="footer__icon" :name="icon.name"></JIconic>
     </a>
   </footer>
