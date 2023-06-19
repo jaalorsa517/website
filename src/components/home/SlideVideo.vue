@@ -1,20 +1,14 @@
 <script setup>
-import { useFirebaseStore } from "@/store/firebaseStore";
-import { logEvent } from "firebase/analytics";
 import { ref } from "vue";
+import { selectContent } from "@/services/ga.services";
+import { ANALYTICS } from "@/shared/const";
 
 const props = defineProps({ video: Object });
 
 const isLoadImg = ref(false);
 
 function onClick() {
-  const firebaseStore = useFirebaseStore();
-  const name = props.video.title;
-  const id = props.video.videoId;
-  logEvent(firebaseStore.analyticsInstance, "click_video_carousel_youtube", {
-    video_name: name,
-    video_id: id,
-  });
+  selectContent(ANALYTICS.ORIGIN_CAROUSEL_YOUTUBE, props.video?.title);
 }
 </script>
 <template>
