@@ -22,7 +22,6 @@ jobs:
           echo 'VITE_YOUTUBE_API_HOST=${{vars.VITE_YOUTUBE_API_HOST}}' >> $GITHUB_ENV
           echo 'VITE_YOUTUBE_APIKEY=${{secrets.VITE_YOUTUBE_APIKEY}}' >> $GITHUB_ENV
           echo 'VITE_YOUTUBE_LIST=${{vars.VITE_YOUTUBE_LIST}}' >> $GITHUB_ENV
-          echo 'VITE_MODE=${{vars.VITE_MODE}}' >> $GITHUB_ENV
           echo 'VITE_FIREBASE_APIKEY=${{secrets.VITE_FIREBASE_APIKEY}}' >> $GITHUB_ENV
           echo 'VITE_FIREBASE_AUTH_DOMAIN=${{vars.VITE_FIREBASE_AUTH_DOMAIN}}' >> $GITHUB_ENV
           echo 'VITE_FIREBASE_PROJECT_ID=${{vars.VITE_FIREBASE_PROJECT_ID}}' >> $GITHUB_ENV

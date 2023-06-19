@@ -1,7 +1,7 @@
 <script setup>
 import JIconic from "@/components/global/JIconic/JIconic.vue";
-import { useFirebaseStore } from "@/store/firebaseStore";
-import { logEvent } from "firebase/analytics";
+import { selectContent } from "@/services/ga.services";
+import { ANALYTICS } from "@/shared/const";
 
 const icons = [
   { name: "youtube", link: "https://www.youtube.com/channel/UC2629Jqdc0PQCYRxmF3fcZA" },
@@ -12,8 +12,7 @@ const icons = [
   { name: "gmail", link: "mailto:jaalorsa519@gmail.com" },
 ];
 function onClick(name) {
-  const firebaseStore = useFirebaseStore();
-  logEvent(firebaseStore.analyticsInstance, "click_contacts", { contact_name: name });
+  selectContent(ANALYTICS.ORIGIN_CONTACTS, name);
 }
 </script>
 <template>

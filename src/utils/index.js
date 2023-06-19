@@ -3,8 +3,6 @@ import { getAnalytics } from "firebase/analytics";
 import { useRoot } from "@/store/index";
 import * as components from "@jaalorsa/j5-components";
 import { useFirebaseStore } from "@/store/firebaseStore";
-import routes from "@/router/routes";
-import { router } from "@/router";
 
 function initFirebase() {
   const firebaseConfig = {
@@ -17,8 +15,10 @@ function initFirebase() {
     measurementId: import.meta.env.VITE_FIREBASE_MEASUREMENT_ID,
   };
   const firebaseApp = initializeApp(firebaseConfig);
-  const analytics = getAnalytics(firebaseApp);
-  useFirebaseStore().$patch({ analyticsInstance: analytics });
+  if(import.meta.env.PROD) {
+    const analytics = getAnalytics(firebaseApp);
+    useFirebaseStore().$patch({ analyticsInstance: analytics });
+  }
 }
 
 function initJ5Components() {
@@ -42,16 +42,9 @@ export function serviceWorkerInit() {
   if (import.meta.env.PROD) {
     import("virtual:pwa-register/vue").then(({ useRegisterSW }) => {
       useRegisterSW({
-        onNeedRefresh() {
-          console.log("onNeedRefresh");
-        },
-        onoffline() {
-          console.log("onoffline");
-        },
-
-        onRegisterError(error) {
-          console.log("onRegisterError", error);
-        },
+        onNeedRefresh() {},
+        onoffline() {},
+        onRegisterError(error) {},
       });
     });
   }
