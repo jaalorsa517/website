@@ -8,10 +8,9 @@ function getInstanceGA() {
 
 export function selectContent(origin, name) {
   const gaInstance = getInstanceGA();
-  if (gaInstance) {
-    logEvent(gaInstance, "select_content", {
-      content_type: origin,
-      content_id: name,
-    });
-  }
+  if (!gaInstance) return;
+  logEvent(gaInstance, "select_content", {
+    content_type: origin,
+    content_id: name,
+  });
 }

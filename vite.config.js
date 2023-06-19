@@ -40,7 +40,7 @@ export default defineConfig(({ mode, command }) => {
         workbox: {
           cleanupOutdatedCaches: true,
           clientsClaim: true,
-          skipWaiting: true,
+          skipWaiting: false,
           sourcemap: false,
           globPatterns: ["**/*.{js,css,html,ico,png,svg,xml,txt}"],
           offlineGoogleAnalytics: true,
