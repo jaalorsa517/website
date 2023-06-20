@@ -1,5 +1,5 @@
 <script setup>
-import Avatar from "@/components/Global/JAvatar.vue";
+import Avatar from "@/components/global/JAvatar.vue";
 </script>
 <template>
   <div class="banner">

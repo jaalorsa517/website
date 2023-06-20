@@ -1,5 +1,9 @@
 export const es = {
-  title: "J5-Components",
+  titles: {
+    title: "J5-Components",
+    components: "Componentes",
+    instructions: "Instrucciones",
+  },
   description: `
       <p>
         La librería de componentes web es una solución esencial para los desarrolladores de JavaScript en su
