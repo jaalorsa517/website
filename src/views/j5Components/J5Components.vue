@@ -24,7 +24,7 @@ import { RouterView } from "vue-router";
     text-align: center;
   }
 
-  .subtitle {
+  .subtitle, [subtitle] {
     margin: 0;
     text-align: center;
   }
@@ -32,7 +32,7 @@ import { RouterView } from "vue-router";
   .container {
     margin: 1.5em 0;
     & p {
-      margin: 0.3em 0;
+      margin: 0.5em 0;
       line-height: 1.5;
     }
     & ul {

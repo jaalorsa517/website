@@ -1,13 +1,13 @@
 <script setup>
 import { computed } from "vue";
-import { Components } from "@/assets/resources/language/index.js";
+import { ViewLibComponents } from "@/assets/resources/language/index.js";
 import { convertStringJ5 } from "@/services/converter";
 import routes from "@/router/routes";
 import { RoutesName } from "@/assets/resources/language";
 
-const titles = computed(() => Components.titles);
-const description = computed(() => Components.description);
-const features = computed(() => convertStringJ5(Components.features));
+const titles = computed(() => ViewLibComponents.intro.titles);
+const description = computed(() => ViewLibComponents.intro.description);
+const features = computed(() => convertStringJ5(ViewLibComponents.intro.features));
 const links = computed(() => {
   const routeTarget = routes.find((route) => route.name === RoutesName.components);
   if (!routeTarget) return [];
@@ -25,10 +25,8 @@ const links = computed(() => {
     <Separate :is-none="true"></Separate>
     <section class="j5-components-intro__section j5-components-intro__section--summary section">
       <h1 class="j5-components-intro__title title">{{ titles.title }}</h1>
-      <div
-        class="j5-components-intro__container j5-components-intro__container--description container"
-        v-html="description"
-      ></div>
+      <div class="j5-components-intro__container j5-components-intro__container--description container"
+        v-html="description"></div>
     </section>
     <Separate></Separate>
     <section class="j5-components-intro__section section">
@@ -43,11 +41,9 @@ const links = computed(() => {
     </section>
     <Separate :is-none="true"></Separate>
     <section class="j5-components-intro__section j5-components-intro__section--instruction section">
-      <h2 class="j5-components-intro__subtitle subtitle">{{ titles.instruction }}</h2>
-      <div
-        class="j5-components-intro__container j5-components-intro__container--features container"
-        v-html="features"
-      ></div>
+      <h2 class="j5-components-intro__subtitle subtitle">{{ titles.instructions }}</h2>
+      <div class="j5-components-intro__container j5-components-intro__container--features container" v-html="features">
+      </div>
     </section>
     <Separate></Separate>
   </section>
@@ -65,6 +61,14 @@ const links = computed(() => {
     margin: 0;
   }
 
+  &__container {
+    &--feaatures {
+      > p {
+        margin: 0.5em 0;
+      }
+    }
+  }
+
   &__componentsLink {
     @include Flex(column, center, center);
     flex-wrap: wrap;
@@ -80,12 +84,12 @@ const links = computed(() => {
     &__componentsLink {
       @include Flex(row, center, center);
     }
+
     &__section &__container &__componentLink {
       margin: 0 0.5em;
     }
   }
 
-  @include tabletWidth() {
-  }
+  @include tabletWidth() {}
 }
 </style>

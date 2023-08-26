@@ -19,6 +19,6 @@ export const seo = {
     description: "Librería j5-components hecha en JavaScript vanilla, para crear componentes comunes y útiles.",
     canonical: "https://jaalorsa.com/lib-components",
     keywords: ["javascript", "web components", "custom elements"],
-    robots:["index, nofollow"],
+    robots:["index, follow"],
   },
 };
