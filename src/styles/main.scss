@@ -128,6 +128,18 @@ code {
   display: inline-flex;
 }
 
+[mw-auto] {
+  margin: 0 auto;
+}
+
+[mh-auto]{
+  margin: auto 0;
+}
+
+[m-auto]{
+  margin: auto;
+}
+
 @include desktopWidth() {
   body {
     --font-size: 18px;
