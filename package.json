@@ -24,16 +24,16 @@
     "deploy": "npm run build && firebase deploy --only hosting:website"
   },
   "dependencies": {
-    "@jaalorsa/j5-components": "^1.5.0",
-    "firebase": "^9.22.2",
-    "pinia": "^2.1.4",
+    "@jaalorsa/j5-components": "^1.5.1",
+    "firebase": "^10.1.0",
+    "pinia": "^2.1.6",
     "vue": "^3.3.4",
     "vue-router": "^4.2.2"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.2.3",
-    "sass": "^1.63.4",
-    "vite": "^4.3.9",
+    "sass": "^1.64.2",
+    "vite": "^4.4.8",
     "vite-plugin-pwa": "^0.16.4"
   }
 }
