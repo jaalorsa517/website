@@ -8,6 +8,7 @@ import * as viewComponentsCollapse from "@/assets/resources/language/Components/
 import * as viewComponentsJson from "@/assets/resources/language/Components/jsontransformer.language"
 import * as viewComponentMenuHamburguer from "@/assets/resources/language/Components/menuHamburguer.language"
 import * as viewComponentToggle from "@/assets/resources/language/Components/toggle.language"
+import * as viewComponentTooltip from "@/assets/resources/language/Components/tooltip.language"
 
 import * as componentCarousel from "@/assets/resources/language/Home/carousel.language";
 
@@ -28,7 +29,8 @@ export const ViewLibComponents = {
   collapse: getLanguage(viewComponentsCollapse),
   jsonTransformer: getLanguage(viewComponentsJson),
   menuHamburguer: getLanguage(viewComponentMenuHamburguer),
-  toggle: getLanguage(viewComponentToggle)
+  toggle: getLanguage(viewComponentToggle),
+  tooltip: getLanguage(viewComponentTooltip),
 };
 
 export const Components = {
