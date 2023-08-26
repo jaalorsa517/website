@@ -34,6 +34,10 @@ body {
   box-sizing: border-box;
 }
 
+body[scroll="true"] {
+  overflow: hidden;
+}
+
 body {
   font-family: var(--font-principal);
   font-size: var(--font-size);
@@ -117,14 +121,16 @@ code {
   text-align: center;
 }
 
-.card, [card] {
+.card,
+[card] {
   background-color: var(--color-white, #fff);
   border-radius: var(--radius-button, 15px);
   box-shadow: var(--shadow);
   padding: 1.5em;
 }
 
-.inline, [inline] {
+.inline,
+[inline] {
   display: inline-flex;
 }
 
@@ -132,11 +138,11 @@ code {
   margin: 0 auto;
 }
 
-[mh-auto]{
+[mh-auto] {
   margin: auto 0;
 }
 
-[m-auto]{
+[m-auto] {
   margin: auto;
 }
 

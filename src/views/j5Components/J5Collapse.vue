@@ -19,7 +19,6 @@ const events = computed(() => ViewLibComponents.collapse.events);
     <section class="j5-components-collapse__section j5-components-collapse__section--summary section">
       <h1 class="j5-components-collapse__title title">{{ titles.title }}</h1>
       <div class="j5-components-collapse__container j5-components-collapse__container--description container">
-        <div>
           <j5-collapse class="j5-components-collapse__demo card">
             <section slot="summary">
               <div class="container">
@@ -39,7 +38,6 @@ const events = computed(() => ViewLibComponents.collapse.events);
               </p>
             </section>
           </j5-collapse>
-        </div>
       </div>
     </section>
     <Separate></Separate>
