@@ -1,7 +1,7 @@
 export const es = {
   titles: {
     title: "J5-Carousel",
-    description: "Características",
+    description: "Modo de uso",
     default: "Valores por defecto",
     attributes: "Atributos",
   },
