@@ -44,6 +44,34 @@ export default defineConfig(({ mode, command }) => {
           sourcemap: false,
           globPatterns: ["**/*.{js,css,html,ico,png,svg,xml,txt}"],
           offlineGoogleAnalytics: true,
+          runtimeCaching: [
+            {
+              urlPattern: /^https:\/\/i\.ytimg\.com\/.*/,
+              handler: "CacheFirst",
+              options: {
+                cacheName: "img-thumbnail",
+                expiration: {
+                  maxAgeSeconds: 60 * 60 * 24 * 7, // <== 7 days
+                },
+                cacheableResponse: {
+                  statuses: [0, 200],
+                },
+              },
+            },
+            {
+              urlPattern: /^https:\/\/www\.googleapis\.com\/.*/,
+              handler: "CacheFirst",
+              options: {
+                cacheName: "youtube",
+                expiration: {
+                  maxAgeSeconds: 60 * 60 * 24 * 7, // <== 7 days
+                },
+                cacheableResponse: {
+                  statuses: [0, 200],
+                },
+              },
+            },
+          ],
         },
       })
     );

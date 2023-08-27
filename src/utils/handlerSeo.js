@@ -1,4 +1,5 @@
 export function handlerSeo(seo) {
+  if (!seo) return;
   document.title = seo.title || "jaalorsa";
   tagMeta("title", seo.title || "jaalorsa");
   tagMeta("description", seo.description || "");

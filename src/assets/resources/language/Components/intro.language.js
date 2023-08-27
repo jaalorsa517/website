@@ -1,5 +1,9 @@
 export const es = {
-  title: "J5-Components",
+  titles: {
+    title: "J5-Components",
+    components: "Componentes",
+    instructions: "Instrucciones",
+  },
   description: `
       <p>
         La librería de componentes web es una solución esencial para los desarrolladores de JavaScript en su
@@ -29,7 +33,7 @@ npm install j5-components
           Para usar la librería, se declara en el html deseado, importar la función inicializadora del web
           component en el archivo javascript principal y ejecutarla. Por ejemplo:
         </p>
-        <code lang="html">
+        <code>
 // En el HTML
 <j5-toggle></j5-toggle>
 // En el JS

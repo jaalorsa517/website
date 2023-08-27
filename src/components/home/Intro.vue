@@ -1,16 +1,16 @@
 <script setup>
-import { Intro } from "@/assets/resources/language/index";
 import { computed } from "vue";
+import { ViewHome } from "@/assets/resources/language/index";
 import JAvatar from "@/components/global/JAvatar.vue";
 
-const title = computed(() => Intro.title);
-const description = computed(() => Intro.body);
-// const txtBtn = computed(() => Intro.btnKwonMore);
+const title = computed(() => ViewHome.intro.title);
+const description = computed(() => ViewHome.intro.body);
+// const txtBtn = computed(() => ViewHome.intro.btnKwonMore);
 </script>
 <template>
   <section class="intro">
     <div class="intro__container">
-      <JAvatar class="intro__avatar" :url="Intro.urlPerfil"></JAvatar>
+      <JAvatar class="intro__avatar" :url="ViewHome.intro.urlPerfil"></JAvatar>
       <h1 class="intro__title">{{ title }}</h1>
     </div>
     <div class="intro__container">

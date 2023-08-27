@@ -1,5 +1,5 @@
 <script setup>
-import { Carousel } from "@/assets/resources/language/index";
+import { Components } from "@/assets/resources/language/index";
 import { computed } from "@vue/reactivity";
 import { useRoot } from "@/store";
 import { onBeforeMount, reactive, ref } from "vue";
@@ -9,8 +9,8 @@ import SlideVideo from "@/components/home/SlideVideo.vue";
 const store = useRoot();
 const videos = reactive({ items: [] });
 
-const title = computed(() => Carousel.title);
-// const moreVideos = computed(() => Carousel.moreVideos);
+const title = computed(() => Components.carousel.title);
+// const moreVideos = computed(() => Components.carousel.moreVideos);
 const countSlides = computed(() => {
   if (store.isMobile) return 1;
   if (videos.items.length <= 3) return videos.items.length || 1;
