@@ -74,11 +74,13 @@ const events = computed(() => ViewLibComponents.collapse.events);
 
   &__demo {
     margin: auto;
+    width: 300px;
     padding-top: 0;
     padding-bottom: 0.5em;
     border-top: 8px solid var(--color-third);
     border-top-left-radius: 0.2em;
     border-top-right-radius: 0.2em;
   }
+
 }
 </style>

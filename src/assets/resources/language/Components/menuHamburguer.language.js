@@ -1,6 +1,6 @@
 export const es = {
   titles: {
-    title: "J5-Json-Transform",
+    title: "J5-menu-hamburguer",
     description: "Modo de uso",
     default: "Valores por defecto",
     attributes: "Atributos",
