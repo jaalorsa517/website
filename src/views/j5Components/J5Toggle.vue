@@ -1,5 +1,5 @@
 <script setup>
-import { ref, computed, onMounted } from "vue";
+import { computed } from "vue";
 import ArrowBack from "@/components/global/ArrowBack.vue";
 import { RoutesName } from "@/assets/resources/language";
 import { ViewLibComponents } from "@/assets/resources/language/index.js";
@@ -10,23 +10,16 @@ const description = computed(() => ViewLibComponents.toggle.description);
 const defaultValues = computed(() => ViewLibComponents.toggle.default);
 const attributes = computed(() => ViewLibComponents.toggle.attributes);
 const events = computed(() => ViewLibComponents.toggle.events);
-const element = ref(null)
 
-function onChange({detail}){
-  // console.log({detail})
-}
-
-onMounted(() => {
-  element.value.setAttribute("checked",true)
-})
 </script>
+
 <template>
   <section class="j5-components-toggle">
     <ArrowBack :route-name="ROUTE_INITIAL" />
     <section class="j5-components-toggle__section j5-components-toggle__section--summary section">
       <h1 class="j5-components-toggle__title title">{{ titles.title }}</h1>
       <div class="j5-components-toggle__container j5-components-toggle__container--description container">
-        <j5-toggle  @change="onChange" ref="element" label="Inactivo/Activo" m-auto></j5-toggle>
+        <j5-toggle checked="true" label="Inactivo/Activo" m-auto></j5-toggle>
         <j5-toggle label="Inactivo/Activo" m-auto></j5-toggle>
       </div>
     </section>
