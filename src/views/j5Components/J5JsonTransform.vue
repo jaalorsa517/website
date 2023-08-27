@@ -15,7 +15,7 @@ const defaultValues = computed(() => ViewLibComponents.jsonTransformer.default);
     <Separate :is-none="true"></Separate>
     <section class="j5-components-json__section j5-components-json__section--summary section">
       <h1 class="j5-components-json__title title">{{ titles.title }}</h1>
-      <j5-json-transform m-auto></j5-json-transform>
+      <j5-json-transform class="j5-components-json__demo" m-auto></j5-json-transform>
     </section>
     <Separate></Separate>
     <section class="j5-components-json__section j5-components-json__section--summary section">
@@ -36,5 +36,9 @@ const defaultValues = computed(() => ViewLibComponents.jsonTransformer.default);
 <style lang="scss">
 .j5-components-json {
   width: 100%;
+
+  &__demo {
+    width: 300px
+  }
 }
 </style>
