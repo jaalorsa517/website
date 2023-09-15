@@ -7,7 +7,7 @@ const icons = [
   { name: "youtube", link: "https://www.youtube.com/channel/UC2629Jqdc0PQCYRxmF3fcZA" },
   { name: "github", link: "https://github.com/jaalorsa517" },
   { name: "facebook", link: "https://www.facebook.com/jaime.ortizsaldarriaga/" },
-  { name: "twitter", link: "https://twitter.com/jaalorsa517" },
+  { name: "x", link: "https://twitter.com/jaalorsa517" },
   { name: "linkedin", link: "https://www.linkedin.com/in/jaime-alberto-ortiz-saldarriaga-54a3409b" },
   { name: "gmail", link: "mailto:jaalorsa519@gmail.com" },
 ];
