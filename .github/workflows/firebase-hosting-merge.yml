@@ -5,18 +5,13 @@ name: Deploy website
 "on":
   push:
     branches:
-      - master
+      - develop
 jobs:
-  build_and_deploy:
+  setup:
     runs-on: ubuntu-latest
     environment:
       name: website
     steps:
-      - uses: actions/checkout@v3
-      - name: Use Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: "16.x"
       - name: set enviroment
         run: |
           echo 'VITE_YOUTUBE_API_HOST=${{vars.VITE_YOUTUBE_API_HOST}}' >> $GITHUB_ENV
@@ -30,10 +25,50 @@ jobs:
           echo 'VITE_FIREBASE_APP_ID=${{vars.VITE_FIREBASE_APP_ID}}' >> $GITHUB_ENV
           echo 'VITE_FIREBASE_MEASUREMENT_ID=${{vars.VITE_FIREBASE_MEASUREMENT_ID}}' >> $GITHUB_ENV
       
+      - name: checkout
+        uses: actions/checkout@v3
+
+      - name: Use Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "18.x"
+  build:
+    runs-on: ubuntu-latest
+    environment:
+      name: website
+    needs: [setup]
+    steps:
       - name: install dependencies
         run: npm ci
+
       - name: build project
         run: npm run build
+
+  release:
+    runs-on: ubuntu-latest
+    environment:
+      name: website
+    needs: [setup, build]
+    steps:
+      - name: Get version from package.json
+        id: get_version
+        run: echo "::set-output name=version::$(node -p -e "require('./package.json').version")"
+  
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: v${{ steps.get_version.outputs.version }}
+          release_name: Release ${{ steps.get_version.outputs.version }}
+
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: website
+    needs: [setup, build, release]
+    steps:    
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
