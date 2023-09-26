@@ -25,9 +25,6 @@ jobs:
           echo 'VITE_FIREBASE_APP_ID=${{vars.VITE_FIREBASE_APP_ID}}' >> $GITHUB_ENV
           echo 'VITE_FIREBASE_MEASUREMENT_ID=${{vars.VITE_FIREBASE_MEASUREMENT_ID}}' >> $GITHUB_ENV
       
-      - name: checkout
-        uses: actions/checkout@v3
-
       - name: Use Node.js
         uses: actions/setup-node@v3
         with:
@@ -38,7 +35,7 @@ jobs:
       name: website
     needs: [setup]
     steps:
-      - name: checkout
+      - name: Checkout
         uses: actions/checkout@v3
 
       - name: install dependencies
@@ -53,6 +50,9 @@ jobs:
       name: website
     needs: [setup, build]
     steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        
       - name: Get version from package.json
         id: get_version
         run: echo "::set-output name=version::$(node -p -e "require('./package.json').version")"
@@ -72,7 +72,10 @@ jobs:
       name: website
     needs: [setup, build, release]
     steps:    
-      - uses: FirebaseExtended/action-hosting-deploy@v0
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Deploy to Firebase
+        uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_WEBPAGE_7E920 }}'
