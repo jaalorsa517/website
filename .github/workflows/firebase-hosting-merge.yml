@@ -7,12 +7,12 @@ name: Deploy website
     branches:
       - master
 jobs:
-  setup:
+  build:
     runs-on: ubuntu-latest
     environment:
       name: website
     steps:
-      - name: Set enviroment
+      - name: Set enviroments
         run: |
           echo 'VITE_YOUTUBE_API_HOST=${{vars.VITE_YOUTUBE_API_HOST}}' >> $GITHUB_ENV
           echo 'VITE_YOUTUBE_APIKEY=${{secrets.VITE_YOUTUBE_APIKEY}}' >> $GITHUB_ENV
@@ -24,17 +24,12 @@ jobs:
           echo 'VITE_FIREBASE_MESSAGING_SENDER_ID=${{vars.VITE_FIREBASE_MESSAGING_SENDER_ID}}' >> $GITHUB_ENV
           echo 'VITE_FIREBASE_APP_ID=${{vars.VITE_FIREBASE_APP_ID}}' >> $GITHUB_ENV
           echo 'VITE_FIREBASE_MEASUREMENT_ID=${{vars.VITE_FIREBASE_MEASUREMENT_ID}}' >> $GITHUB_ENV
-      
+
       - name: Use Node.js
         uses: actions/setup-node@v3
         with:
           node-version: "18.x"
-  build:
-    runs-on: ubuntu-latest
-    environment:
-      name: website
-    needs: [setup]
-    steps:
+
       - name: Checkout
         uses: actions/checkout@v4
 
@@ -43,7 +38,7 @@ jobs:
 
       - name: Build project
         run: npm run build
-      
+
       - name: Upload artifact
         uses: actions/upload-artifact@v3
         with:
@@ -55,7 +50,7 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: website
-    needs: [setup, build]
+    needs: [build]
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -63,12 +58,12 @@ jobs:
       - name: Get version from package.json
         id: get_version
         run: echo "version=$(node -p -e "require('./package.json').version")" >> $GITHUB_OUTPUT
-  
+
       - name: Create Release
         id: create_release
         uses: softprops/action-gh-release@v1
         env:
-           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           tag_name: v${{ steps.get_version.outputs.version }}
           name: Release ${{ steps.get_version.outputs.version }}
@@ -77,13 +72,12 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: website
-    needs: [setup, build, release]
-    steps:    
+    needs: [build, release]
+    steps:
       - name: Checkout
         uses: actions/checkout@v4
-      
 
-      - name : Download artifact
+      - name: Download artifact
         uses: actions/download-artifact@v3
         with:
           name: build-website
@@ -92,8 +86,8 @@ jobs:
       - name: Deploy to Firebase
         uses: FirebaseExtended/action-hosting-deploy@v0
         with:
-          repoToken: '${{ secrets.GITHUB_TOKEN }}'
-          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_WEBPAGE_7E920 }}'
+          repoToken: "${{ secrets.GITHUB_TOKEN }}"
+          firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT_WEBPAGE_7E920 }}"
           channelId: live
           projectId: webpage-7e920
           target: website
