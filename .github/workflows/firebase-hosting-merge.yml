@@ -49,6 +49,7 @@ jobs:
         with:
           name: build-website
           path: dist
+          retention-days: 1
 
   release:
     runs-on: ubuntu-latest
@@ -65,12 +66,12 @@ jobs:
   
       - name: Create Release
         id: create_release
-        uses: actions/create-release@v1
+        uses: softprops/action-gh-release@v1
         env:
            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           tag_name: v${{ steps.get_version.outputs.version }}
-          release_name: Release ${{ steps.get_version.outputs.version }}
+          name: Release ${{ steps.get_version.outputs.version }}
 
   deploy:
     runs-on: ubuntu-latest
@@ -86,6 +87,7 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: build-website
+          path: dist
 
       - name: Deploy to Firebase
         uses: FirebaseExtended/action-hosting-deploy@v0
