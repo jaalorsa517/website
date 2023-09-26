@@ -1,4 +1,4 @@
-[![Deploy website](https://github.com/jaalorsa517/website/actions/workflows/firebase-hosting-merge.yml/badge.svg?branch=master)](https://github.com/jaalorsa517/website/actions/workflows/firebase-hosting-merge.yml)
+![Static Badge](https://img.shields.io/badge/license-MIT-blue?style=plastic) [![Deploy website](https://github.com/jaalorsa517/website/actions/workflows/firebase-hosting-merge.yml/badge.svg?branch=master)](https://github.com/jaalorsa517/website/actions/workflows/firebase-hosting-merge.yml)
 # Web site jaalorsa
 
 ## Descripción
