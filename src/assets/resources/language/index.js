@@ -10,6 +10,8 @@ import * as viewComponentMenuHamburguer from "@/assets/resources/language/Compon
 import * as viewComponentToggle from "@/assets/resources/language/Components/toggle.language"
 import * as viewComponentTooltip from "@/assets/resources/language/Components/tooltip.language"
 
+import * as viewComponentsIntroVue from "@/assets/resources/language/ComponentsVue/intro.language";
+
 import * as componentCarousel from "@/assets/resources/language/Home/carousel.language";
 
 function getLanguage(language) {
@@ -32,6 +34,10 @@ export const ViewLibComponents = {
   toggle: getLanguage(viewComponentToggle),
   tooltip: getLanguage(viewComponentTooltip),
 };
+
+export const ViewLibComponentsVue = {
+  intro: getLanguage(viewComponentsIntroVue),
+}
 
 export const Components = {
   carousel: getLanguage(componentCarousel),

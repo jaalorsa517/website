@@ -19,7 +19,7 @@ export default [
       {
         path: "",
         name: RoutesName.componentsIntro,
-        component: () => import("@/views/j5Components/j5Intro.vue"),
+        component: () => import("@/views/j5Components/J5Intro.vue"),
       },
       {
         path: "/lib-components/j5-carousel",
@@ -50,6 +50,38 @@ export default [
         path: "lib-components/j5-tooltip",
         name: RoutesName.componentsTooltip,
         component: () => import("@/views/j5Components/J5Tooltip.vue"),
+      },
+    ],
+  },
+  {
+    path: "/lib-components-vue",
+    name: RoutesName.componentsVue,
+    component: () => import("@/views/j5ComponentsVue/J5ComponentsVue.vue"),
+    children: [
+      {
+        path: "",
+        name: RoutesName.componentsIntroVue,
+        component: () => import("@/views/j5ComponentsVue/J5VIntro.vue"),
+      },
+      {
+        path: "/lib-components/j5-carousel",
+        name: RoutesName.componentsAlertVue,
+        component: () => import("@/views/j5ComponentsVue/J5VAlert.vue"),
+      },
+      {
+        path: "/lib-components/j5-collapse",
+        name: RoutesName.componentsIconsVue,
+        component: () => import("@/views/j5ComponentsVue/J5VIcons.vue"),
+      },
+      {
+        path: "/lib-components/j5-json-transform",
+        name: RoutesName.componentsInputVue,
+        component: () => import("@/views/j5ComponentsVue/J5VInput.vue"),
+      },
+      {
+        path: "/lib-components/j5-json-transform",
+        name: RoutesName.componentsSelectVue,
+        component: () => import("@/views/j5ComponentsVue/J5VSelect.vue"),
       },
     ],
   },
