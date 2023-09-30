@@ -5,7 +5,7 @@ import App from "./Main.vue";
 import Separate from "@/components/global/Separate.vue";
 import { init, serviceWorkerInit } from "@/utils/index";
 import { router } from "./router/index";
-
+import "@jaalorsa/j5-components-vue/style.css";
 serviceWorkerInit()
 
 const app = createApp(App);

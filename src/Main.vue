@@ -16,7 +16,6 @@ const PromptSW = import.meta.env.PROD
   <PromptSW v-if="PromptSW" />
 </template>
 <style lang="scss">
-@import "@jaalorsa/j5-components-vue/style.css";
 
 .contentBody {
   min-height: calc(100vh - ($height_fixed * 2));
