@@ -47,37 +47,43 @@ export function convertStringJ5(str) {
       matchValue.replace(/<\/div/g, "&lt;/div")
     )
     .replace(/(<code>.*)<section(.*<\/code>)/gm, (matchValue) =>
-      matchValue.replace(/<section/g, "&lt;/div")
+      matchValue.replace(/<section/g, "&lt;/section")
     )
     .replace(/(<code>.*)<\/section(.*<\/code>)/gm, (matchValue) =>
-      matchValue.replace(/<\/section/g, "&lt;/div")
+      matchValue.replace(/<\/section/g, "&lt;/section")
     )
     .replace(/(<code>.*)<a(.*<\/code>)/gm, (matchValue) =>
-      matchValue.replace(/<a/g, "&lt;/div")
+      matchValue.replace(/<a/g, "&lt;/a")
     )
     .replace(/(<code>.*)<\/a(.*<\/code>)/gm, (matchValue) =>
-      matchValue.replace(/<\/a/g, "&lt;/div")
+      matchValue.replace(/<\/a/g, "&lt;/a")
     )
     .replace(/(<code>.*)<form(.*<\/code>)/gm, (matchValue) =>
-      matchValue.replace(/<form/g, "&lt;/div")
+      matchValue.replace(/<form/g, "&lt;/form")
     )
     .replace(/(<code>.*)<\/form(.*<\/code>)/gm, (matchValue) =>
-      matchValue.replace(/<\/form/g, "&lt;/div")
+      matchValue.replace(/<\/form/g, "&lt;/form")
     )
     .replace(/(<code>.*)<ul(.*<\/code>)/gm, (matchValue) =>
-      matchValue.replace(/<ul/g, "&lt;/div")
+      matchValue.replace(/<ul/g, "&lt;/ul")
     )
     .replace(/(<code>.*)<\/ul(.*<\/code>)/gm, (matchValue) =>
-      matchValue.replace(/<\/ul/g, "&lt;/div")
+      matchValue.replace(/<\/ul/g, "&lt;/ul")
     )
     .replace(/(<code>.*)<ul(.*<\/code>)/gm, (matchValue) =>
-      matchValue.replace(/<ul/g, "&lt;/div")
+      matchValue.replace(/<ul/g, "&lt;/ul")
     )
     .replace(/(<code>.*)<\/ul(.*<\/code>)/gm, (matchValue) =>
-      matchValue.replace(/<\/ul/g, "&lt;/div")
+      matchValue.replace(/<\/ul/g, "&lt;/ul")
+    )
+    .replace(/(<code>.*)<svg(.*<\/code>)/gm, (matchValue) =>
+      matchValue.replace(/<svg/g, "&lt;/svg")
+    )
+    .replace(/(<code>.*)<\/svg(.*<\/code>)/gm, (matchValue) =>
+      matchValue.replace(/<\/svg/g, "&lt;/svg")
     )
     .replace(/(<code>.*)<input(.*<\/code>)/gm, (matchValue) =>
-      matchValue.replace(/<input/g, "&lt;/div")
+      matchValue.replace(/<input/g, "&lt;/input")
     )
     .replace(/&=2ñ/g, "\n");
 }

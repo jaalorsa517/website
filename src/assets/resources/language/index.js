@@ -5,13 +5,14 @@ import * as viewHome from "@/assets/resources/language/Home/intro.language";
 import * as viewComponentsIntro from "@/assets/resources/language/Components/intro.language";
 import * as viewComponentsCarousel from "@/assets/resources/language/Components/carousel.language";
 import * as viewComponentsCollapse from "@/assets/resources/language/Components/collapse.language";
-import * as viewComponentsJson from "@/assets/resources/language/Components/jsontransformer.language"
-import * as viewComponentMenuHamburguer from "@/assets/resources/language/Components/menuHamburguer.language"
-import * as viewComponentToggle from "@/assets/resources/language/Components/toggle.language"
-import * as viewComponentTooltip from "@/assets/resources/language/Components/tooltip.language"
+import * as viewComponentsJson from "@/assets/resources/language/Components/jsontransformer.language";
+import * as viewComponentMenuHamburguer from "@/assets/resources/language/Components/menuHamburguer.language";
+import * as viewComponentToggle from "@/assets/resources/language/Components/toggle.language";
+import * as viewComponentTooltip from "@/assets/resources/language/Components/tooltip.language";
 
 import * as viewComponentsIntroVue from "@/assets/resources/language/ComponentsVue/intro.language";
 import * as viewComponentsAlertVue from "@/assets/resources/language/ComponentsVue/alert.language";
+import * as viewComponentsIconsVue from "@/assets/resources/language/ComponentsVue/icons.language";
 
 import * as componentCarousel from "@/assets/resources/language/Home/carousel.language";
 
@@ -38,8 +39,9 @@ export const ViewLibComponents = {
 
 export const ViewLibComponentsVue = {
   intro: getLanguage(viewComponentsIntroVue),
-  alert: getLanguage(viewComponentsAlertVue)
-}
+  alert: getLanguage(viewComponentsAlertVue),
+  icons: getLanguage(viewComponentsIconsVue),
+};
 
 export const Components = {
   carousel: getLanguage(componentCarousel),
