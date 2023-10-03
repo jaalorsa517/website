@@ -11,6 +11,7 @@ import * as viewComponentToggle from "@/assets/resources/language/Components/tog
 import * as viewComponentTooltip from "@/assets/resources/language/Components/tooltip.language"
 
 import * as viewComponentsIntroVue from "@/assets/resources/language/ComponentsVue/intro.language";
+import * as viewComponentsAlertVue from "@/assets/resources/language/ComponentsVue/alert.language";
 
 import * as componentCarousel from "@/assets/resources/language/Home/carousel.language";
 
@@ -37,6 +38,7 @@ export const ViewLibComponents = {
 
 export const ViewLibComponentsVue = {
   intro: getLanguage(viewComponentsIntroVue),
+  alert: getLanguage(viewComponentsAlertVue)
 }
 
 export const Components = {

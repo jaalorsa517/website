@@ -64,22 +64,22 @@ export default [
         component: () => import("@/views/j5ComponentsVue/J5VIntro.vue"),
       },
       {
-        path: "/lib-components/j5-carousel",
+        path: "/lib-components/j5v-alert",
         name: RoutesName.componentsAlertVue,
         component: () => import("@/views/j5ComponentsVue/J5VAlert.vue"),
       },
       {
-        path: "/lib-components/j5-collapse",
+        path: "/lib-components/j5v-icons",
         name: RoutesName.componentsIconsVue,
         component: () => import("@/views/j5ComponentsVue/J5VIcons.vue"),
       },
       {
-        path: "/lib-components/j5-json-transform",
+        path: "/lib-components/j5v-input",
         name: RoutesName.componentsInputVue,
         component: () => import("@/views/j5ComponentsVue/J5VInput.vue"),
       },
       {
-        path: "/lib-components/j5-json-transform",
+        path: "/lib-components/j5v-select",
         name: RoutesName.componentsSelectVue,
         component: () => import("@/views/j5ComponentsVue/J5VSelect.vue"),
       },
