@@ -19,22 +19,28 @@ export const es = {
   `,
   features: `
   <p>Para instalar la librería, ejecutar en la consola</p>
-        <code lang="bash"> npm install @jaalorsa/j5-components-vue </code>
+        <code lang="bash"> 
+npm install @jaalorsa/j5-components-vue 
+        </code>
         <p>
           Para usar la librería, es tan sencillo como importar el componente deseado desde la librería y usarlo 
           directamente en el HTML. Por ejemplo:
         </p>
-        <code>// En el Javascript
+        <code>
+// En el Javascript
 import { J5VAlert } from "@jaalorsa/j5-components-vue"
 // En el HTML
-<J5VAlert></J5VAlert></code>
+<J5VAlert></J5VAlert>
+        </code>
         <p>
           El componente tiene unos estilos predefinidos. Para activarlos se importan el archivo css para que se inyecte al DOM.
         </p>
-        <code>//En un archivo css
+        <code>
+//En un archivo css
 @import "@jaalorsa/j5-components-vue/style.css";
 // En un archivo Javascript
-import "@jaalorsa/j5-components-vue/style.css";</code>
+import "@jaalorsa/j5-components-vue/style.css";
+        </code>
         <p>
           <b>Nota: </b> Tener presente que la importación dependerá de la herramienta de empaquetado usado en el proyecto. 
           La herramienta recomendada es <a href="https://vitejs.dev/" target="_blank" rel="noreferrer">Vite</a>.

@@ -50,7 +50,7 @@ export const es= {
     Se puede personalizar en estructura HTML como en estilos o funcionalidades.
   </p>
   <p>
-    El componente tiene habilitado los siguientes slotos:
+    El componente tiene habilitado los siguientes slots:
   </p>
   <ul>
     <li>
