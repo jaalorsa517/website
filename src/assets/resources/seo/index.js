@@ -21,4 +21,11 @@ export const seo = {
     keywords: ["javascript", "web components", "custom elements"],
     robots:["index, follow"],
   },
+  "/lib-components-vue": {
+    title: "Components Vue | jaalorsa",
+    description: "Librería j5-components-vue está pensada para reutilizar componentes hecho en Vue y poder generar agiiidad en el desarrollo.",
+    canonical: "https://jaalorsa.com/lib-components-vue",
+    keywords: ["javascript", "vue", "component"],
+    robots:["index, follow"],
+  },
 };
