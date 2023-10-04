@@ -14,6 +14,7 @@ import * as viewComponentsIntroVue from "@/assets/resources/language/ComponentsV
 import * as viewComponentsAlertVue from "@/assets/resources/language/ComponentsVue/alert.language";
 import * as viewComponentsIconsVue from "@/assets/resources/language/ComponentsVue/icons.language";
 import * as viewComponentsInputVue from "@/assets/resources/language/ComponentsVue/input.language";
+import * as viewComponentsSelectVue from "@/assets/resources/language/ComponentsVue/select.language";
 
 import * as componentCarousel from "@/assets/resources/language/Home/carousel.language";
 
@@ -43,6 +44,7 @@ export const ViewLibComponentsVue = {
   alert: getLanguage(viewComponentsAlertVue),
   icons: getLanguage(viewComponentsIconsVue),
   input: getLanguage(viewComponentsInputVue),
+  select: getLanguage(viewComponentsSelectVue)
 };
 
 export const Components = {
