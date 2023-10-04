@@ -1,6 +1,6 @@
 <script setup>
 import { ref, computed } from "vue";
-import Iconic from "@/components/global/JIconic/JIconic.vue";
+import { J5VIcons } from "@jaalorsa/j5-components-vue"
 
 const { url } = defineProps({ url: String });
 const isLoaded = ref(false);
@@ -16,7 +16,7 @@ const isShow = computed(() => {
     <div class="avatar__borderIntermedie"></div>
     <div class="avatar__borderIntern"></div>
     <img class="avatar__img" :src="url" alt="user" v-if="url" v-show="isLoaded" @load="isLoaded = true" />
-    <Iconic class="avatar__ico" name="userSkeleton" v-if="isShow" />
+    <J5VIcons class="avatar__ico" name="userSkeleton" v-if="isShow" />
   </div>
 </template>
 <style lang="scss">
@@ -28,6 +28,7 @@ const isShow = computed(() => {
   $pos_border_interne: 6%;
   @include Flex(row, center);
   position: relative;
+
   &__img {
     width: $size_img;
     height: $size_img;
@@ -35,11 +36,13 @@ const isShow = computed(() => {
     object-fit: cover;
     animation: fadeIn 0.8s ease-in-out;
   }
+
   &__ico {
     color: var(--color-gray) _dark;
     position: relative;
     top: -4px;
   }
+
   &__borderExternal,
   &__borderIntermedie,
   &__borderIntern {
@@ -50,6 +53,7 @@ const isShow = computed(() => {
     z-index: 10;
     animation: 1.8s ease-in-out forwards;
   }
+
   &__borderExternal {
     width: $border_external;
     height: $border_external;
@@ -57,6 +61,7 @@ const isShow = computed(() => {
     border-right-color: transparent;
     animation-name: turnsTo-30;
   }
+
   &__borderIntermedie {
     width: $border_intermedie;
     height: $border_intermedie;
@@ -64,6 +69,7 @@ const isShow = computed(() => {
     border-right-color: transparent;
     animation-name: turnsTo65;
   }
+
   &__borderIntern {
     width: $border_intern;
     height: $border_intern;
@@ -73,5 +79,4 @@ const isShow = computed(() => {
     border-left-color: transparent;
     animation-name: turnsTo45;
   }
-}
-</style>
+}</style>

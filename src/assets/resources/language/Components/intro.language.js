@@ -27,7 +27,7 @@ export const es = {
   features: `
   <p>Para instalar la librería, ejecutar en la consola</p>
         <code lang="bash">
-npm install j5-components
+npm install @jaalorsa/j5-components
         </code>
         <p>
           Para usar la librería, se declara en el html deseado, importar la función inicializadora del web

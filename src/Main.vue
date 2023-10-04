@@ -16,6 +16,7 @@ const PromptSW = import.meta.env.PROD
   <PromptSW v-if="PromptSW" />
 </template>
 <style lang="scss">
+
 .contentBody {
   min-height: calc(100vh - ($height_fixed * 2));
 }

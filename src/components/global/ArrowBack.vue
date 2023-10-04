@@ -1,5 +1,5 @@
 <script setup>
-import JIconic from "@/components/global/JIconic/JIconic.vue";
+import { J5VIcons } from "@jaalorsa/j5-components-vue"
 import { router } from "@/router";
 import { RoutesName } from "@/assets/resources/language";
 
@@ -15,7 +15,7 @@ function onClick() {
 
 <template>
   <section class="arrowBack__goBack" @click="onClick">
-    <JIconic name="arrow_back" />
+    <J5VIcons name="arrow_back" />
     <span class="arrowBack__textBack">{{ props.text }}</span>
   </section>
 </template>
