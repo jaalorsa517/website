@@ -2,7 +2,7 @@
   "name": "@jaalorsa/website",
   "description": "Contenido para crecer en conocimiento técnico en programación web con Javascript, Vue y más.",
   "private": false,
-  "version": "3.3.0",
+  "version": "3.3.1",
   "author": "jaalorsa <jaalorsa517@hotmail.com>",
   "license": "MIT",
   "keywords": [
@@ -25,7 +25,7 @@
   },
   "dependencies": {
     "@jaalorsa/j5-components": "^1.5.3",
-    "@jaalorsa/j5-components-vue": "^2.0.0",
+    "@jaalorsa/j5-components-vue": "^2.0.1",
     "firebase": "^10.4.0",
     "pinia": "^2.1.6",
     "vue": "^3.3.4",

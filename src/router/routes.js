@@ -1,5 +1,8 @@
 import { RoutesName } from "@/assets/resources/language";
 
+const RoutesComponents = "/lib-components";
+const RoutesComponentsVue = "/lib-components-vue";
+
 export default [
   {
     path: "/",
@@ -12,7 +15,7 @@ export default [
     component: () => import("@/views/Utils.vue"),
   },
   {
-    path: "/lib-components",
+    path: RoutesComponents,
     name: RoutesName.components,
     component: () => import("@/views/j5Components/J5Components.vue"),
     children: [
@@ -22,39 +25,39 @@ export default [
         component: () => import("@/views/j5Components/J5Intro.vue"),
       },
       {
-        path: "/lib-components/j5-carousel",
+        path: RoutesComponents + "/j5-carousel",
         name: RoutesName.componentsCarousel,
         component: () => import("@/views/j5Components/J5Carousel.vue"),
       },
       {
-        path: "/lib-components/j5-collapse",
+        path: RoutesComponents + "/j5-collapse",
         name: RoutesName.componentsCollapse,
         component: () => import("@/views/j5Components/J5Collapse.vue"),
       },
       {
-        path: "/lib-components/j5-json-transform",
+        path: RoutesComponents + "/j5-json-transform",
         name: RoutesName.componentsJsonTransform,
         component: () => import("@/views/j5Components/J5JsonTransform.vue"),
       },
       {
-        path: "/lib-components/j5-menu-hamburguer",
+        path: RoutesComponents + "/j5-menu-hamburguer",
         name: RoutesName.componentsMenuHamburguer,
         component: () => import("@/views/j5Components/J5MenuHamburguer.vue"),
       },
       {
-        path: "/lib-components/j5-toggle",
+        path: RoutesComponents + "/j5-toggle",
         name: RoutesName.componentsToggle,
         component: () => import("@/views/j5Components/J5Toggle.vue"),
       },
       {
-        path: "lib-components/j5-tooltip",
+        path: RoutesComponents + "/j5-tooltip",
         name: RoutesName.componentsTooltip,
         component: () => import("@/views/j5Components/J5Tooltip.vue"),
       },
     ],
   },
   {
-    path: "/lib-components-vue",
+    path: RoutesComponentsVue,
     name: RoutesName.componentsVue,
     component: () => import("@/views/j5ComponentsVue/J5ComponentsVue.vue"),
     children: [
@@ -64,25 +67,26 @@ export default [
         component: () => import("@/views/j5ComponentsVue/J5VIntro.vue"),
       },
       {
-        path: "/lib-components/j5v-alert",
+        path: RoutesComponentsVue + "/j5v-alert",
         name: RoutesName.componentsAlertVue,
         component: () => import("@/views/j5ComponentsVue/J5VAlert.vue"),
       },
       {
-        path: "/lib-components/j5v-icons",
+        path: RoutesComponentsVue + "/j5v-icons",
         name: RoutesName.componentsIconsVue,
         component: () => import("@/views/j5ComponentsVue/J5VIcons.vue"),
       },
       {
-        path: "/lib-components/j5v-input",
+        path: RoutesComponentsVue + "/j5v-input",
         name: RoutesName.componentsInputVue,
         component: () => import("@/views/j5ComponentsVue/J5VInput.vue"),
       },
       {
-        path: "/lib-components/j5v-select",
+        path: RoutesComponentsVue + "/j5v-select",
         name: RoutesName.componentsSelectVue,
         component: () => import("@/views/j5ComponentsVue/J5VSelect.vue"),
       },
+      
     ],
   },
   // {
