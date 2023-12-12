@@ -86,7 +86,11 @@ export default [
         name: RoutesName.componentsSelectVue,
         component: () => import("@/views/j5ComponentsVue/J5VSelect.vue"),
       },
-      
+      {
+        path: RoutesComponentsVue + "/j5v-datalist",
+        name: RoutesName.componentsDatalistVue,
+        component: () => import("@/views/j5ComponentsVue/J5VDatalist.vue"),
+      },
     ],
   },
   // {

@@ -15,6 +15,7 @@ export const es = {
   componentsIconsVue:"J5V-Icons",
   componentsInputVue: "J5V-Input",
   componentsSelectVue: "J5V-Select",
+  componentsDatalistVue: "J5V-Datalist",
   about: "Acerca de mí",
   videos: "Videos",
   blog: "Blog",
