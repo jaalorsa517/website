@@ -2,7 +2,7 @@
   "name": "@jaalorsa/website",
   "description": "Contenido para crecer en conocimiento técnico en programación web con Javascript, Vue y más.",
   "private": false,
-  "version": "3.4.0",
+  "version": "3.4.1",
   "author": "jaalorsa <jaalorsa517@hotmail.com>",
   "license": "MIT",
   "type": "module",
@@ -26,14 +26,14 @@
   },
   "dependencies": {
     "@jaalorsa/j5-components": "^1.5.3",
-    "@jaalorsa/j5-components-vue": "^2.1.0",
+    "@jaalorsa/j5-components-vue": "^2.1.1",
     "firebase": "^10.7.1",
     "pinia": "^2.1.7",
-    "vue": "^3.4.0",
+    "vue": "^3.4.8",
     "vue-router": "^4.2.5"
   },
   "devDependencies": {
-    "@vitejs/plugin-vue": "^5.0.1",
+    "@vitejs/plugin-vue": "^5.0.3",
     "sass": "^1.69.6",
     "vite": "^5.0.10",
     "vite-plugin-pwa": "^0.17.4"
