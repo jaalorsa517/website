@@ -2,7 +2,7 @@
   "name": "@jaalorsa/website",
   "description": "Contenido para crecer en conocimiento técnico en programación web con Javascript, Vue y más.",
   "private": false,
-  "version": "3.4.0",
+  "version": "3.4.1",
   "author": "jaalorsa <jaalorsa517@hotmail.com>",
   "license": "MIT",
   "type": "module",
