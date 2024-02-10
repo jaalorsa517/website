@@ -1,6 +1,6 @@
 {
   "projects": {
-    "default": "webpage-7e920"
+    "production": "webpage-7e920"
   },
   "targets": {
     "webpage-7e920": {
