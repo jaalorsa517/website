@@ -3,7 +3,6 @@ import { playlistItemsDto } from "@/shared/youtube.dto";
 
 const Params = {
   part: "snippet,contentDetails",
-  key: import.meta.env.VITE_YOUTUBE_APIKEY,
   playlistId: import.meta.env.VITE_YOUTUBE_LIST,
 };
 const host = import.meta.env.VITE_YOUTUBE_API_HOST;
