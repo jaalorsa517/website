@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import { Components } from "@/assets/resources/language/index";
 import { computed } from "@vue/reactivity";
 import { useRoot } from "@/store";

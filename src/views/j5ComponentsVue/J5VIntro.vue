@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import { computed } from "vue";
 import { ViewLibComponentsVue } from "@/assets/resources/language/index.js";
 import { convertStringJ5 } from "@/services/converter";

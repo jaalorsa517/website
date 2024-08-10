@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import { computed, reactive, watch, ref } from "vue";
 import { J5VDatalist } from "@jaalorsa/j5-components-vue"
 import { convertStringJ5 } from "@/services/converter";

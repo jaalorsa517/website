@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import Avatar from "@/components/global/JAvatar.vue";
 </script>
 <template>

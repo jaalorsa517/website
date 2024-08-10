@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import { computed, provide } from "vue";
 import { ICONS_NAMES, J5VIcons } from "@jaalorsa/j5-components-vue"
 import ArrowBack from "@/components/global/ArrowBack.vue";

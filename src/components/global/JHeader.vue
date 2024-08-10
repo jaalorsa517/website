@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import { useRoot } from "@/store";
 import routes from "@/router/routes";
 import MenuHamburguer from "@/components/global/MenuHamburguer.vue";

@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 const { isNone } = defineProps({ isNone: { type: Boolean, default: false } });
 </script>
 <template>

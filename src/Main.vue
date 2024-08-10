@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import { defineAsyncComponent } from "vue";
 import JHeader from "@/components/global/JHeader.vue";
 import JFooter from "@/components/global/JFooter.vue";

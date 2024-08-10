@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import { J5VIcons } from "@jaalorsa/j5-components-vue"
 import { router } from "@/router";
 import { RoutesName } from "@/assets/resources/language";

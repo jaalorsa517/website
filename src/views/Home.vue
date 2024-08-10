@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import Intro from "@/components/home/Intro.vue";
 import JCarousel from "@/components/home/VideosCarousel.vue";
 </script>

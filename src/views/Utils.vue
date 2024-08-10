@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import Separate from "@/components/global/Separate.vue";
 </script>
 
