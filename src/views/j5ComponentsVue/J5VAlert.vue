@@ -91,12 +91,12 @@ const isShowSlots = ref(false)
 
     &__container {
       flex-direction: column;
+      gap: 1em;
 
       &--btn {
         flex-direction: row;
       }
 
-      gap: 1em;
     }
 
     @include tabletWidth() {
