@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed, reactive, watch, ref } from "vue";
 import { J5VDatalist } from "@jaalorsa/j5-components-vue"
-import { convertStringJ5 } from "@/services/converter";
+import { convertStringJ5 } from "@/shared/services/converter";
 import ArrowBack from "@/components/global/ArrowBack.vue";
 import { RoutesName } from "@/assets/resources/language";
 import { ViewLibComponentsVue } from "@/assets/resources/language/index.js";

@@ -1,4 +1,4 @@
-import { get } from "@/services/http.services";
+import { get } from "@/shared/services/http.services";
 import { playlistItemsDto } from "@/shared/youtube.dto";
 
 const Params = {

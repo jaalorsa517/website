@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import { Components } from "@/assets/resources/language/index";
 import { computed } from "@vue/reactivity";
-import { useRoot } from "@/store";
+import { useRoot } from "@/plugins/store";
 import { onBeforeMount, reactive, ref } from "vue";
-import * as YoutubeService from "@/services/youtube.service";
+import * as YoutubeService from "@/shared/services/youtube.service";
 import SlideVideo from "@/components/home/SlideVideo.vue";
 
 const store = useRoot();

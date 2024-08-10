@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref } from "vue";
 import logo from "@/assets/logo.png";
-import { useRoot } from "@/store";
+import { useRoot } from "@/plugins/store";
 
 const store = useRoot();
 const isOpen = ref(false);

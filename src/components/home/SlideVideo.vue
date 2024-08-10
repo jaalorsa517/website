@@ -1,6 +1,6 @@
 <script setup lang="ts"> 
 import { ref } from "vue";
-import { selectContent } from "@/services/ga.services";
+import { selectContent } from "@/shared/services/ga.services";
 import { ANALYTICS } from "@/shared/const";
 
 const props = defineProps({ video: Object });

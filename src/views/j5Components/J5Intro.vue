@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { computed } from "vue";
 import { ViewLibComponents } from "@/assets/resources/language/index.js";
-import { convertStringJ5 } from "@/services/converter";
-import routes from "@/router/routes";
+import { convertStringJ5 } from "@/shared/services/converter";
+import routes from "@/plugins/router/routes";
 import { RoutesName } from "@/assets/resources/language";
 
 const titles = computed(() => ViewLibComponents.intro.titles);

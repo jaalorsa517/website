@@ -4,7 +4,7 @@ import { J5VSelct } from "@jaalorsa/j5-components-vue";
 import ArrowBack from "@/components/global/ArrowBack.vue";
 import { RoutesName } from "@/assets/resources/language";
 import { ViewLibComponentsVue } from "@/assets/resources/language/index.js";
-import { convertStringJ5 } from "@/services/converter";
+import { convertStringJ5 } from "@/shared/services/converter";
 
 const ROUTE_INITIAL = RoutesName.componentsIntroVue;
 const titles = computed(() => ViewLibComponentsVue.select.titles);

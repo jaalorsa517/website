@@ -1,5 +1,5 @@
 import { logEvent } from "firebase/analytics";
-import { useFirebaseStore } from "@/store/firebaseStore";
+import { useFirebaseStore } from "@/plugins/store/firebaseStore";
 
 function getInstanceGA() {
   const firebaseStore = useFirebaseStore();

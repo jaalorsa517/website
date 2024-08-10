@@ -1,8 +1,8 @@
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
-import { useRoot } from "@/store/index";
+import { useRoot } from "@/plugins/store/index";
 import * as components from "@jaalorsa/j5-components";
-import { useFirebaseStore } from "@/store/firebaseStore";
+import { useFirebaseStore } from "@/plugins/store/firebaseStore";
 
 function initFirebase() {
   const firebaseConfig = {

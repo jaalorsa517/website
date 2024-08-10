@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router";
 import routes from "./routes";
 import { seo } from "@/assets/resources/seo";
-import { handlerSeo } from "@/utils/handlerSeo";
+import { handlerSeo } from "@/shared/utils/handlerSeo";
 
 export const router = createRouter({
   routes,
