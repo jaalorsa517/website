@@ -1,18 +1,21 @@
 <script setup lang="ts">
-import { computed } from "vue";
+import { computed, inject } from "vue";
 import { ViewLibComponentsVue } from "@/assets/resources/language/index.js";
-import { convertStringJ5 } from "@/services/converter";
-import routes from "@/router/routes";
+import routes from "@/plugins/router/routes";
 import { RoutesName } from "@/assets/resources/language";
+import { IConverter } from "@/shared/models/interfaces/IConverter";
+import { ConverterServiceInject } from "@/shared/constants/injectsKey";
+
+const convertService = inject<IConverter>(ConverterServiceInject) as IConverter
 
 const titles = computed(() => ViewLibComponentsVue.intro.titles);
 const description = computed(() => ViewLibComponentsVue.intro.description);
-const features = computed(() => convertStringJ5(ViewLibComponentsVue.intro.features));
+const features = computed(() => convertService.convertStringJ5(ViewLibComponentsVue.intro.features));
 const links = computed(() => {
   const routeTarget = routes.find((route) => route.name === RoutesName.componentsVue);
   if (!routeTarget) return [];
   return routeTarget.children
-    .filter((child) => child.name !== RoutesName.componentsIntroVue)
+    ?.filter((child) => child.name !== RoutesName.componentsIntroVue)
     .map((child) => ({
       routeName: child.name,
       path: child.path,

@@ -19,7 +19,7 @@ import * as viewComponentsDatalistVue from "@/assets/resources/language/Componen
 
 import * as componentCarousel from "@/assets/resources/language/Home/carousel.language";
 
-function getLanguage(language) {
+function getLanguage(language: any) {
   const languageNav = window.navigator.language.split("-")[0] || "es";
   return language[languageNav] || {};
 }

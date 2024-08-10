@@ -1,17 +1,11 @@
-import { createPinia } from "pinia";
-import { createApp } from "vue";
-import "@/styles/main.scss";
 import App from "./Main.vue";
-import Separate from "@/components/global/Separate.vue";
-import { init, serviceWorkerInit } from "@/utils/index";
-import { router } from "./router/index";
+import { createApp } from "vue";
+import { init } from "@/config/init";
+import { initConfigApp } from "@/config";
 import "@jaalorsa/j5-components-vue/style.css";
-serviceWorkerInit()
+import "@/styles/main.scss";
 
 const app = createApp(App);
-app.use(createPinia());
-app.use(router);
-app.component("Separate", Separate);
-app.mount("#app");
-
-init();
+initConfigApp(app).then(() => {
+  init();
+});

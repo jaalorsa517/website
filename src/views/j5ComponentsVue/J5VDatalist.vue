@@ -1,14 +1,17 @@
 <script setup lang="ts">
-import { computed, reactive, watch, ref } from "vue";
+import { computed, reactive, watch, ref, inject } from "vue";
 import { J5VDatalist } from "@jaalorsa/j5-components-vue"
-import { convertStringJ5 } from "@/services/converter";
 import ArrowBack from "@/components/global/ArrowBack.vue";
 import { RoutesName } from "@/assets/resources/language";
 import { ViewLibComponentsVue } from "@/assets/resources/language/index.js";
+import { IConverter } from "@/shared/models/interfaces/IConverter";
+import { ConverterServiceInject } from "@/shared/constants/injectsKey";
+
+const convertService = inject<IConverter>(ConverterServiceInject) as IConverter
 
 const ROUTE_INITIAL = RoutesName.componentsIntroVue;
 const titles = computed(() => ViewLibComponentsVue.datalist.titles);
-const description = computed(() => convertStringJ5(ViewLibComponentsVue.datalist.description));
+const description = computed(() => convertService.convertStringJ5(ViewLibComponentsVue.datalist.description));
 const props = computed(() => ViewLibComponentsVue.datalist.props);
 const events = computed(() => ViewLibComponentsVue.datalist.events);
 const styles = computed(() => ViewLibComponentsVue.datalist.styles);
@@ -16,16 +19,16 @@ const styles = computed(() => ViewLibComponentsVue.datalist.styles);
 const inputValue = ref("inicial")
 const inputValue3 = ref("")
 
-const options = reactive([])
-const selecteds = reactive([])
+const options = reactive<string[]>([])
+const selecteds = reactive<string[]>([])
 
-const options2 = reactive([])
-const selecteds2 = reactive([])
+const options2 = reactive<string[]>([])
+const selecteds2 = reactive<string[]>([])
 
-const options3 = reactive(["Option 1", "Option 2", "Option 3"])
-const selecteds3 = reactive([])
+const options3 = reactive<string[]>(["Option 1", "Option 2", "Option 3"])
+const selecteds3 = reactive<string[]>([])
 
-function setOption(value) {
+function setOption(value: string) {
   options.push(`Option ${value}`)
 }
 
@@ -43,7 +46,7 @@ watch(inputValue3, (value) => {
   options3.push(`Option ${value}`)
 })
 
-function onItemSelected(evt) {
+function onItemSelected(evt: any) {
   const value = evt.textContent
   selecteds2.push(value)
 }
@@ -126,9 +129,10 @@ function onItemSelected(evt) {
   }
 
   &__container {
-    & .j5v-datalist{
+    & .j5v-datalist {
       --width-input: 300px;
     }
+
     &--demo {
       @include Flex(column, center, center);
       gap: 1em;

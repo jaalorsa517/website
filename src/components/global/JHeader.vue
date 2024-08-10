@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { useRoot } from "@/store";
-import routes from "@/router/routes";
+import { useRoot } from "@/plugins/store";
+import routes from "@/plugins/router/routes";
 import MenuHamburguer from "@/components/global/MenuHamburguer.vue";
 import JFooter from "@/components/global/JFooter.vue";
 

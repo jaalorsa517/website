@@ -18,7 +18,7 @@ const menuOptions = [
   "Acerca de...",
 ]
 
-function isOpen({detail}){
+function isOpen({ detail }: CustomEvent) {
   const state = detail?.isOpen || false
   document.body.setAttribute("scroll", state)
 }
@@ -28,7 +28,8 @@ function isOpen({detail}){
     <ArrowBack :route-name="ROUTE_INITIAL" />
     <section class="j5-components-menuHamburguer__section j5-components-menuHamburguer__section--summary section">
       <h1 class="j5-components-menuHamburguer__title title">{{ titles.title }}</h1>
-      <div class="j5-components-menuHamburguer__container j5-components-menuHamburguer__container--description container">
+      <div
+        class="j5-components-menuHamburguer__container j5-components-menuHamburguer__container--description container">
         <div class="j5-components-menuHamburguer__menuContainer">
           <j5-menu-hamburguer @isOpen="isOpen">
             <ul class="j5-components-menuHamburguer__menu">
@@ -41,25 +42,29 @@ function isOpen({detail}){
     <Separate></Separate>
     <section class="j5-components-menuHamburguer__section j5-components-menuHamburguer__section--summary section">
       <h2 class="j5-components-menuHamburguer__title subtitle">{{ titles.description }}</h2>
-      <div class="j5-components-menuHamburguer__container j5-components-menuHamburguer__container--description container"
+      <div
+        class="j5-components-menuHamburguer__container j5-components-menuHamburguer__container--description container"
         v-html="description"></div>
     </section>
     <Separate :is-none="true"></Separate>
     <section class="j5-components-menuHamburguer__section j5-components-menuHamburguer__section--summary section">
       <h2 class="j5-components-menuHamburguer__title subtitle">{{ titles.default }}</h2>
-      <div class="j5-components-menuHamburguer__container j5-components-menuHamburguer__container--description container"
+      <div
+        class="j5-components-menuHamburguer__container j5-components-menuHamburguer__container--description container"
         v-html="defaultValues"></div>
     </section>
     <Separate></Separate>
     <section class="j5-components-menuHamburguer__section j5-components-menuHamburguer__section--summary section">
       <h2 class="j5-components-menuHamburguer__title subtitle">{{ titles.attributes }}</h2>
-      <div class="j5-components-menuHamburguer__container j5-components-menuHamburguer__container--description container"
+      <div
+        class="j5-components-menuHamburguer__container j5-components-menuHamburguer__container--description container"
         v-html="attributes"></div>
     </section>
     <Separate :is-none="true"></Separate>
     <section class="j5-components-menuHamburguer__section j5-components-menuHamburguer__section--summary section">
       <h2 class="j5-components-menuHamburguer__title subtitle">{{ titles.events }}</h2>
-      <div class="j5-components-menuHamburguer__container j5-components-menuHamburguer__container--description container"
+      <div
+        class="j5-components-menuHamburguer__container j5-components-menuHamburguer__container--description container"
         v-html="events"></div>
     </section>
     <Separate></Separate>
@@ -69,19 +74,22 @@ function isOpen({detail}){
 <style lang="scss">
 .j5-components-menuHamburguer {
   width: 100%;
+
   &__menuContainer {
     width: 300px;
     height: 420px;
     margin: auto;
     padding: 0.3em;
-    @include Flex(row, flex-end,flex-start);
+    @include Flex(row, flex-end, flex-start);
     position: relative;
     border: 1px solid var(--color-third);
   }
+
   &__menu {
     height: 100vh;
     @include Flex(column, center, center);
     margin: auto;
+
     & li {
       width: 80%;
       padding: 0.8em 0;

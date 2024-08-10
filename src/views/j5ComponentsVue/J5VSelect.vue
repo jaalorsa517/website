@@ -1,14 +1,17 @@
 <script setup lang="ts">
-import { computed, ref } from "vue";
+import { computed, inject, ref } from "vue";
 import { J5VSelct } from "@jaalorsa/j5-components-vue";
 import ArrowBack from "@/components/global/ArrowBack.vue";
 import { RoutesName } from "@/assets/resources/language";
 import { ViewLibComponentsVue } from "@/assets/resources/language/index.js";
-import { convertStringJ5 } from "@/services/converter";
+import { IConverter } from "@/shared/models/interfaces/IConverter";
+import { ConverterServiceInject } from "@/shared/constants/injectsKey";
+
+const convertService = inject<IConverter>(ConverterServiceInject) as IConverter
 
 const ROUTE_INITIAL = RoutesName.componentsIntroVue;
 const titles = computed(() => ViewLibComponentsVue.select.titles);
-const description = computed(() => convertStringJ5(ViewLibComponentsVue.select.description));
+const description = computed(() => convertService.convertStringJ5(ViewLibComponentsVue.select.description));
 const props = computed(() => ViewLibComponentsVue.select.props);
 const styles = computed(() => ViewLibComponentsVue.select.styles);
 

@@ -1,4 +1,4 @@
-export function handlerSeo(seo) {
+export function handlerSeo(seo: any) {
   if (!seo) return;
   document.title = seo.title || "jaalorsa";
   tagMeta("title", seo.title || "jaalorsa");
@@ -8,7 +8,7 @@ export function handlerSeo(seo) {
   tagLink("canonical", seo.canonical || "https://jaalorsa.com");
 }
 
-function tagMeta(type, content) {
+function tagMeta(type: string, content: string) {
   let meta = document.querySelector(`meta[name="${type}"]`);
   if (!meta) {
     meta = document.createElement("meta");
@@ -18,7 +18,7 @@ function tagMeta(type, content) {
   meta.setAttribute("content", content);
 }
 
-function tagLink(type, content) {
+function tagLink(type: string, content: string) {
   let link = document.querySelector(`link[rel="${type}"]`);
   if (!link) {
     link = document.createElement("link");
