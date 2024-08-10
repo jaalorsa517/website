@@ -1,9 +1,12 @@
 <script setup lang="ts">
-import { defineAsyncComponent } from "vue";
+import { defineAsyncComponent, inject } from "vue";
 import JHeader from "@/components/global/JHeader.vue";
 import JFooter from "@/components/global/JFooter.vue";
+import { IsProdInject } from "@/shared/constants/injectsKey";
 
-const PromptSW = import.meta.env.PROD
+const isProd = inject<boolean>(IsProdInject)
+
+const PromptSW = isProd
   ? defineAsyncComponent(() => import("@/components/global/PromptSW.vue"))
   : null;
 </script>
@@ -16,7 +19,6 @@ const PromptSW = import.meta.env.PROD
   <PromptSW v-if="PromptSW" />
 </template>
 <style lang="scss">
-
 .contentBody {
   min-height: calc(100vh - ($height_fixed * 2));
 }

@@ -9,7 +9,7 @@ const randomMinMax = (min = 0, max = 1) => Math.floor(Math.random() * (max - min
 const animations = ["fade_in_out", "slide_in_out_1", "slide_in_out_2", "slide_in_out_3", "slide_in_out_4"];
 const index = randomMinMax(0, animations.length - 1);
 
-function onIsOpen(event) {
+function onIsOpen(event: CustomEvent) {
   isOpen.value = event?.detail?.isOpen;
   if (isOpen.value) {
     document.body.style.overflow = "hidden";
@@ -30,12 +30,8 @@ function onIsOpen(event) {
         </Transition>
       </div>
       <div class="hamburguer__rigth">
-        <j5-menu-hamburguer
-          class="hamburguer__menuMobile"
-          :animation="animations[index]"
-          @isOpen="onIsOpen"
-          v-if="store.isMobile"
-        >
+        <j5-menu-hamburguer class="hamburguer__menuMobile" :animation="animations[index]" @isOpen="onIsOpen"
+          v-if="store.isMobile">
           <slot></slot>
         </j5-menu-hamburguer>
       </div>
@@ -57,21 +53,27 @@ function onIsOpen(event) {
     --menuPositionTop: 3.4375em;
     --menuHeight: calc(100vh - 3.4375em);
     --menuBackground: var(--color-white);
+
     .j5-menu-hamburguer__menu .j5-menu-hamburguer__line {
       height: 0.125em;
       margin: 0.125em 0;
       border-radius: 0.0625em;
+
       &--uno {
         width: 1.25em;
+
         &.active {
           transform: rotate(-45deg) translate(-25%, 50%);
         }
       }
+
       &--dos {
         width: 0.625em;
       }
+
       &--tres {
         width: 0.9375em;
+
         &.active {
           width: 1.25em;
           transform: rotate(45deg) translate(-20%, -40%);
@@ -79,6 +81,7 @@ function onIsOpen(event) {
       }
     }
   }
+
   &__container {
     @include Flex(row, space-between);
     height: $height_fixed;
@@ -87,17 +90,21 @@ function onIsOpen(event) {
     position: relative;
     z-index: 1001;
   }
+
   &__left {
     @include Flex(row, flex-start);
   }
+
   &__logo {
     width: 38px;
     height: 38px;
+
     & img {
       width: 100%;
       height: 100%;
     }
   }
+
   &__title {
     margin: 0 0.5em;
     font-family: var(--font-cursive);
@@ -123,6 +130,7 @@ function onIsOpen(event) {
     padding: 0.5em 0.8em;
     border-bottom: 1px solid var(--color-gray);
     position: relative;
+
     &__container {
       display: initial;
       height: auto;
@@ -131,6 +139,7 @@ function onIsOpen(event) {
       position: static;
       z-index: 1;
     }
+
     &__content {
       position: static;
       width: auto;

@@ -4,7 +4,7 @@ import { defineConfig, PluginOption } from "vite";
 import vue from "@vitejs/plugin-vue";
 import { VitePWA } from "vite-plugin-pwa";
 import { resolve } from "path";
-import { MODE_PROD } from "./src/shared/const";
+import { MODE_PROD } from "./src/shared/constants";
 
 export default defineConfig(({ mode }) => {
   const plugins: PluginOption = [

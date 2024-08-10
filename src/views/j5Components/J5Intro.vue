@@ -1,18 +1,21 @@
 <script setup lang="ts">
-import { computed } from "vue";
+import { computed, inject } from "vue";
 import { ViewLibComponents } from "@/assets/resources/language/index.js";
-import { convertStringJ5 } from "@/shared/services/converter";
 import routes from "@/plugins/router/routes";
 import { RoutesName } from "@/assets/resources/language";
+import { ConverterServiceInject } from "@/shared/constants/injectsKey";
+import { IConverter } from "@/shared/models/interfaces/IConverter";
+
+const convertService = inject<IConverter>(ConverterServiceInject) as IConverter
 
 const titles = computed(() => ViewLibComponents.intro.titles);
 const description = computed(() => ViewLibComponents.intro.description);
-const features = computed(() => convertStringJ5(ViewLibComponents.intro.features));
+const features = computed(() => convertService.convertStringJ5(ViewLibComponents.intro.features));
 const links = computed(() => {
   const routeTarget = routes.find((route) => route.name === RoutesName.components);
   if (!routeTarget) return [];
   return routeTarget.children
-    .filter((child) => child.name !== RoutesName.componentsIntro)
+    ?.filter((child) => child.name !== RoutesName.componentsIntro)
     .map((child) => ({
       routeName: child.name,
       path: child.path,
@@ -63,7 +66,7 @@ const links = computed(() => {
 
   &__container {
     &--feaatures {
-      > p {
+      >p {
         margin: 0.5em 0;
       }
     }

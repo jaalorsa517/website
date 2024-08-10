@@ -4,17 +4,32 @@
     "module": "ESNext",
     "useDefineForClassFields": true,
     "skipDefaultLibCheck": true,
-    "noEmit": true,
-    "moduleResolution": "bundler",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
+    "sourceMap": true,
+    "esModuleInterop": true,
+    "noImplicitReturns": true,
+    "declaration": true,
+    "lib": ["esnext", "dom", "dom.iterable", "scripthost", "WebWorker"],
+    "skipLibCheck": true,
     "types": ["vite/client", "vite-plugin-pwa/client"],
     "baseUrl": "./",
     "paths": {
       "@/*": ["src/*"]
     },
-    "lib": ["esnext", "dom", "dom.iterable", "scripthost"],
-    "jsx": "preserve"
+
+    /* Bundler mode */
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "preserve",
+
+    /* Linting */
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true
   },
-  "include": ["src/**/*.js", "src/**/*.vue", "src/main.ts", "src/plugins/router/index.ts", "src/plugins/router/routes.ts", "src/shared/services/converter.ts", "src/shared/services/ga.services.ts", "src/shared/services/http.services.ts", "src/shared/services/youtube.service.ts", "src/shared/const.ts", "src/shared/youtube.dto.ts", "src/plugins/store/firebaseStore.ts", "src/plugins/store/index.ts", "src/shared/utils/handlerSeo.ts", "src/shared/utils/index.ts", "src/assets/resources/language/Components/tooltip.language.ts", "src/assets/resources/language/ComponentsVue/alert.language.ts", "src/assets/resources/language/ComponentsVue/datalist.language.ts", "src/assets/resources/language/ComponentsVue/icons.language.ts", "src/assets/resources/language/ComponentsVue/input.language.ts", "src/assets/resources/language/ComponentsVue/intro.language.ts", "src/assets/resources/language/ComponentsVue/select.language.ts", "src/assets/resources/language/Home/carousel.language.ts", "src/assets/resources/language/Home/intro.language.ts", "src/assets/resources/language/Routes/index.ts", "src/assets/resources/language/index.ts", "src/assets/resources/seo/index.ts"]
+  "include": ["src/**/*.js", "src/**/*.vue", "src/**/*.ts", "src/**/*.d.ts"],
+  "references": [{ "path": "./tsconfig.node.json" }]
 }

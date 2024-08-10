@@ -1,7 +1,11 @@
 <script setup lang="ts">
+import { inject } from "vue";
 import { J5VIcons } from "@jaalorsa/j5-components-vue";
-import { selectContent } from "@/shared/services/ga.services";
-import { ANALYTICS } from "@/shared/const";
+import { ANALYTICS } from "@/shared/constants";
+import { GAnalyticsSelectContentInject } from "@/shared/constants/injectsKey";
+import { ISelectContentEvent } from "@/shared/models/interfaces/IAnalytics";
+
+const selectContentEvent = inject<ISelectContentEvent>(GAnalyticsSelectContentInject) as ISelectContentEvent
 
 const icons = [
   { name: "youtube", link: "https://www.youtube.com/@jaalorsa" },
@@ -11,8 +15,8 @@ const icons = [
   { name: "linkedin", link: "https://www.linkedin.com/in/jaalorsa" },
   { name: "gmail", link: "mailto:jaalorsa519@gmail.com" },
 ];
-function onClick(name) {
-  selectContent(ANALYTICS.ORIGIN_CONTACTS, name);
+function onClick(name: string) {
+  selectContentEvent.selectContent(ANALYTICS.ORIGIN_CONTACTS, name);
 }
 </script>
 <template>

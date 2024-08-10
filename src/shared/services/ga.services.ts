@@ -1,16 +1,16 @@
-import { logEvent } from "firebase/analytics";
-import { useFirebaseStore } from "@/plugins/store/firebaseStore";
+import { Analytics, logEvent } from "firebase/analytics";
+import { ISelectContentEvent } from "@/shared/models/interfaces/IAnalytics"
 
-function getInstanceGA() {
-  const firebaseStore = useFirebaseStore();
-  return firebaseStore.analyticsInstance;
-}
+export class GAnalyticsSelectContent implements ISelectContentEvent{
 
-export function selectContent(origin, name) {
-  const gaInstance = getInstanceGA();
-  if (!gaInstance) return;
-  logEvent(gaInstance, "select_content", {
-    content_type: origin,
-    content_id: name,
-  });
+  constructor(private analyticsInstance: Analytics){}
+
+  selectContent(contentType: string, contentId: string) {
+    if(!this.analyticsInstance) return;
+    logEvent(this.analyticsInstance, "select_content", {
+      content_type: contentType,
+      content_id: contentId,
+    });
+  }
+
 }

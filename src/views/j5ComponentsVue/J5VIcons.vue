@@ -1,16 +1,19 @@
 <script setup lang="ts">
-import { computed, provide } from "vue";
+import { computed, inject, provide } from "vue";
 import { ICONS_NAMES, J5VIcons } from "@jaalorsa/j5-components-vue"
 import ArrowBack from "@/components/global/ArrowBack.vue";
 import { RoutesName } from "@/assets/resources/language";
 import { ViewLibComponentsVue } from "@/assets/resources/language/index.js";
-import { convertStringJ5 } from "@/shared/services/converter";
+import { IConverter } from "@/shared/models/interfaces/IConverter";
+import { ConverterServiceInject } from "@/shared/constants/injectsKey";
+
+const convertService = inject<IConverter>(ConverterServiceInject) as IConverter
 
 const ROUTE_INITIAL = RoutesName.componentsIntroVue;
 const titles = computed(() => ViewLibComponentsVue.icons.titles);
 const description = computed(() => ViewLibComponentsVue.icons.description);
-const attributes = computed(() => convertStringJ5(ViewLibComponentsVue.icons.props));
-const providers = computed(() => convertStringJ5(ViewLibComponentsVue.icons.providers));
+const attributes = computed(() => convertService.convertStringJ5(ViewLibComponentsVue.icons.props));
+const providers = computed(() => convertService.convertStringJ5(ViewLibComponentsVue.icons.providers));
 const keys_icons = ICONS_NAMES
 const iconsInyected = { icon_inyected: `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path stroke="currentColor" fill="none" d="M10 12V17" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> <path stroke="currentColor" fill="none" d="M14 12V17" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> <path stroke="currentColor" fill="none" d="M4 7H20" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> <path stroke="currentColor" fill="none" d="M6 10V18C6 19.6569 7.34315 21 9 21H15C16.6569 21 18 19.6569 18 18V10" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> <path stroke="currentColor" fill="none" d="M9 5C9 3.89543 9.89543 3 11 3H13C14.1046 3 15 3.89543 15 5V7H9V5Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>` }
 provide("j5v-icons", iconsInyected);
