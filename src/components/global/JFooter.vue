@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import { J5VIcons } from "@jaalorsa/j5-components-vue";
 import { selectContent } from "@/services/ga.services";
 import { ANALYTICS } from "@/shared/const";
@@ -7,7 +7,7 @@ const icons = [
   { name: "youtube", link: "https://www.youtube.com/@jaalorsa" },
   { name: "github", link: "https://github.com/jaalorsa517" },
   { name: "facebook", link: "https://www.facebook.com/jaime.ortizsaldarriaga/" },
-  { name: "x", link: "https://twitter.com/jaalorsa517" },
+  { name: "x", link: "https://x.com/jaalorsa517" },
   { name: "linkedin", link: "https://www.linkedin.com/in/jaalorsa" },
   { name: "gmail", link: "mailto:jaalorsa519@gmail.com" },
 ];

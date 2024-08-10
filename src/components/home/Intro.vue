@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import { computed } from "vue";
 import { ViewHome } from "@/assets/resources/language/index";
 import JAvatar from "@/components/global/JAvatar.vue";

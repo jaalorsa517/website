@@ -43,7 +43,6 @@ export function serviceWorkerInit() {
     import("virtual:pwa-register/vue").then(({ useRegisterSW }) => {
       useRegisterSW({
         onNeedRefresh() {},
-        onoffline() {},
         onRegisterError(error) {},
       });
     });

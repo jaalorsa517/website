@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import { computed, ref } from "vue";
 import { J5VAlert } from "@jaalorsa/j5-components-vue"
 import ArrowBack from "@/components/global/ArrowBack.vue";
@@ -91,12 +91,12 @@ const isShowSlots = ref(false)
 
     &__container {
       flex-direction: column;
+      gap: 1em;
 
       &--btn {
         flex-direction: row;
       }
 
-      gap: 1em;
     }
 
     @include tabletWidth() {

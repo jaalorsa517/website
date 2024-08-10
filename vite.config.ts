@@ -1,19 +1,31 @@
-import { defineConfig } from "vite";
+/// <reference types="vitest" />
+
+import { defineConfig, PluginOption } from "vite";
 import vue from "@vitejs/plugin-vue";
 import { VitePWA } from "vite-plugin-pwa";
 import { resolve } from "path";
 import { MODE_PROD } from "./src/shared/const";
 
-export default defineConfig(({ mode, command }) => {
-  const plugins = [
-    vue({ template: { compilerOptions: { isCustomElement: (tag) => tag.startsWith("j5-") } } }),
+export default defineConfig(({ mode }) => {
+  const plugins: PluginOption = [
+    vue({
+      template: {
+        compilerOptions: { isCustomElement: (tag) => tag.startsWith("j5-") },
+      },
+    }),
   ];
 
   if (mode === MODE_PROD) {
     plugins.push(
       VitePWA({
         base: "/",
-        includeAssets: ["favicon.svg", "favicon.ico", "robots.txt", "sitemap.xml", "apple-touch-icon.png"],
+        includeAssets: [
+          "favicon.svg",
+          "favicon.ico",
+          "robots.txt",
+          "sitemap.xml",
+          "apple-touch-icon.png",
+        ],
         manifest: {
           name: "jaalorsa",
           short_name: "jaalorsa",

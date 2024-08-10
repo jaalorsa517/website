@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import { computed } from "vue";
 import ArrowBack from "@/components/global/ArrowBack.vue";
 import { RoutesName } from "@/assets/resources/language";

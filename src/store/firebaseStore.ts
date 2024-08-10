@@ -1,7 +1,8 @@
 import { defineStore } from "pinia";
+import { Analytics} from "firebase/analytics";
 
 export const useFirebaseStore = defineStore("firebase", {
   state: () => ({
-    analyticsInstance: null,
+    analyticsInstance: {} as Analytics,
   }),
 });
