@@ -116,7 +116,7 @@ export default defineConfig(({ mode }) => {
         provider: "v8",
         all: true,
         enabled: true,  
-        exclude: ["test/**", "src/shared/constants/**", "src/shared/models/**", "src/plugins"],
+        exclude: ["test/**", "src/shared/constants/**", "src/shared/models/**", "src/plugins", "dist", "src/config"],
         reporter: ["json-summary", "html"],
         "100": true
       },
