@@ -115,10 +115,22 @@ export default defineConfig(({ mode }) => {
       coverage: {
         provider: "v8",
         all: true,
-        enabled: true,  
-        exclude: ["test/**", "src/shared/constants/**", "src/shared/models/**", "src/plugins", "dist", "src/config"],
+        enabled: true,
+        exclude: [
+          "test/**",
+          "src/shared/constants/**",
+          "src/shared/models/**",
+          "src/plugins",
+          "dist",
+          "src/config",
+          "src/styles",
+          "src/main.ts",
+          "src/Main.vue",
+          "vite.config.ts",
+          "src/assets"
+        ],
         reporter: ["json-summary", "html"],
-        "100": true
+        "100": true,
       },
     },
   };
