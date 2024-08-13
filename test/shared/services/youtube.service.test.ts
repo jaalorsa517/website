@@ -1,7 +1,7 @@
+import { describe, it, expect, vi } from "vitest";
 import { IHttpGet } from "@/shared/models/interfaces/IHttpClient";
 import { YoutubeTypes } from "@/shared/models/types/youtube";
 import { YoutTubeService } from "@/shared/services/youtube.service";
-import { describe, it, expect, vi } from "vitest";
 
 describe("YoutTubeService", () => {
   const youtubeTypes: YoutubeTypes = {
