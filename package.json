@@ -22,7 +22,9 @@
     "dev": "vite --host",
     "build": "vite build --mode production",
     "preview": "vite preview",
-    "deploy": "npm run build && firebase use production && firebase deploy --only hosting:website"
+    "deploy": "npm run build && firebase use production && firebase deploy --only hosting:website",
+    "test": "vitest run --coverage",
+    "test:watch": "vitest watch"
   },
   "dependencies": {
     "@jaalorsa/j5-components": "^1.5.3",

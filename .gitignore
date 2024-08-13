@@ -24,3 +24,5 @@ CNAME
 
 .firebase
 firebase*.log
+
+coverage

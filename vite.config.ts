@@ -110,5 +110,16 @@ export default defineConfig(({ mode }) => {
     resolve: _resolve,
     css,
     server,
+    test: {
+      environment: "jsdom",
+      coverage: {
+        provider: "v8",
+        all: true,
+        enabled: true,  
+        exclude: ["test/**", "src/shared/constants/**", "src/shared/models/**", "src/plugins"],
+        reporter: ["json-summary", "html"],
+        "100": true
+      },
+    },
   };
 });
