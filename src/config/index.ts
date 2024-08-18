@@ -8,14 +8,19 @@ import {
   ConverterServiceInject,
   GAnalyticsSelectContentInject,
   IsProdInject,
+  SeoServiceInject,
   YoutubeServiceInject,
 } from "@/shared/constants/injectsKey";
 import { HttpGet } from "@/shared/services/http.services";
 import { YoutTubeService } from "@/shared/services/youtube.service";
 import { ConverterService } from "@/shared/services/converter";
+import { SeoService } from "@/shared/services/Seo.service";
 
 export async function initConfigApp(app: App) {
   return new Promise((resolve) => {
+    const seoService = new SeoService(window);
+    app.provide(SeoServiceInject, seoService);
+
     const piniaStore = createPinia();
     app.use(piniaStore);
     app.use(router);
@@ -46,7 +51,7 @@ function enviromentProduction(app: App, firebaseApp: FirebaseConfig) {
     const analyticsInstace = firebaseApp.getAnalytics();
     const analytics = new GAnalyticsSelectContent(analyticsInstace);
     app.provide(GAnalyticsSelectContentInject, analytics);
-    return 
+    return;
   }
   app.provide(GAnalyticsSelectContentInject, {} as GAnalyticsSelectContent);
 }

@@ -1,7 +1,9 @@
 import { createRouter, createWebHistory } from "vue-router";
 import routes from "./routes";
 import { seo } from "@/assets/resources/seo";
-import { handlerSeo } from "@/shared/utils/handlerSeo";
+import { inject } from "vue";
+import { SeoServiceInject } from "@/shared/constants/injectsKey";
+import { IHandlerSeo } from "@/shared/models/interfaces/IHandlerSeo";
 
 export const router = createRouter({
   routes,
@@ -9,7 +11,8 @@ export const router = createRouter({
 });
 
 router.beforeEach((to, _, next) => {
+  const seoService = inject(SeoServiceInject) as IHandlerSeo;
   const _seo = seo[to.path];
-  handlerSeo(_seo);
+  seoService.handlerSeo(_seo);
   next();
 });

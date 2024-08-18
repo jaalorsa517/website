@@ -1,4 +1,6 @@
-export const seo: Record<string, any> = {
+import { SeoType } from "@/shared/models/types/Seo";
+
+export const seo: Record<string, SeoType> = {
   "/": {
     title: "jaalorsa",
     description:
