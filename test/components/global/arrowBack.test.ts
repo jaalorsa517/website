@@ -1,10 +1,9 @@
+import { J5VIcons } from "@jaalorsa/j5-components-vue";
 import { mount } from "@vue/test-utils";
-import { describe, it, expect, vi } from "vitest";
+import { describe, it, expect, vi, afterEach } from "vitest";
 import { useRouter } from "vue-router";
 import ArrowBack from "@/components/global/ArrowBack.vue";
 import { RoutesName } from "@/assets/resources/language";
-import { afterEach } from "node:test";
-import { J5VIcons } from "@jaalorsa/j5-components-vue"
 
 describe("ArrowBack component", async () => {
   vi.mock("vue-router", () => ({
@@ -60,12 +59,12 @@ describe("ArrowBack component", async () => {
     wrapper.unmount();
   });
 
-  it("El componente J5VIcons renderiza correctamente",  () => {
+  it("El componente J5VIcons renderiza correctamente", () => {
     const wrapper = mount(ArrowBack);
     const j5Icons = wrapper.findComponent(J5VIcons);
 
     expect(j5Icons.html()).toBeTruthy();
-    expect(j5Icons.props()).toMatchObject({ name: "arrow_back" });
+    expect(j5Icons.props().name).toBe("arrow_back");
     wrapper.unmount();
   });
 });
