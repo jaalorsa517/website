@@ -1,12 +1,14 @@
 <script setup lang="ts">
 import { J5VIcons } from "@jaalorsa/j5-components-vue"
-import { router } from "@/plugins/router";
+import { useRouter } from "vue-router";
 import { RoutesName } from "@/assets/resources/language";
 
 const props = defineProps({
   text: { type: String, default: "Regresar" },
   routeName: { type: String, default: RoutesName.inicio },
 });
+
+const router = useRouter()
 
 function onClick() {
   router.push({ name: props.routeName });

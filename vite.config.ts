@@ -92,6 +92,7 @@ export default defineConfig(({ mode }) => {
   const _resolve = {
     alias: {
       "@": resolve(__dirname, "src"),
+      "test": resolve(__dirname, "test"),
     },
   };
   const css = {
