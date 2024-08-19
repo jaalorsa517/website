@@ -1,10 +1,10 @@
 <script setup lang="ts">
-const { isNone } = defineProps({ isNone: { type: Boolean, default: false } });
+const props = defineProps({ isNone: { type: Boolean, default: false } });
 </script>
 <template>
-  <div :class="['separate', isNone ? 'none' : '']">
-    <div :class="['separate__line', 'separate__line--one', isNone ? 'none' : '']"></div>
-    <div :class="['separate__line', 'separate__line--dos', isNone ? 'none' : '']"></div>
+  <div :class="['separate', props.isNone ? 'none' : '']">
+    <div :class="['separate__line', 'separate__line--one', props.isNone ? 'none' : '']"></div>
+    <div :class="['separate__line', 'separate__line--dos', props.isNone ? 'none' : '']"></div>
   </div>
 </template>
 <style lang="scss">
