@@ -17,7 +17,7 @@ const title = computed(() => Components.carousel.title);
 // const moreVideos = computed(() => Components.carousel.moreVideos);
 const countSlides = computed(() => {
   if (store.isMobile) return 1;
-  if (videos.length <= 3) return videos.length || 1;
+  if (videos.length <= 3) return videos.length;
   return 3;
 });
 
