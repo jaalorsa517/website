@@ -112,6 +112,7 @@ export default defineConfig(({ mode }) => {
     css,
     server,
     test: {
+      setupFiles: "./test/Setup.js",
       environment: "jsdom",
       coverage: {
         provider: "v8",
