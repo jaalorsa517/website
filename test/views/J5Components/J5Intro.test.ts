@@ -4,7 +4,7 @@ import { shallowMount } from "@vue/test-utils";
 import { ConverterServiceInject } from "@/shared/constants/injectsKey";
 import * as routes from "@/plugins/router/routes";
 
-describe("J5Carousel component", () => {
+describe("J5Intro component into J5Components", () => {
   const globals = {
     provide: {
       [ConverterServiceInject as symbol]: {
@@ -34,7 +34,7 @@ describe("J5Carousel component", () => {
     wrapper.unmount();
   });
 
-  it("El componente J5Carousel renderiza correctamente", () => {
+  it("El componente J5Intro renderiza correctamente", () => {
     const wrapper = shallowMount(J5IntroView, {
       global: {
         ...globals,

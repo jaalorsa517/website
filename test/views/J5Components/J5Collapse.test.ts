@@ -3,7 +3,7 @@ import { describe, it, expect, vi } from "vitest";
 import { shallowMount } from "@vue/test-utils";
 import { ConverterServiceInject } from "@/shared/constants/injectsKey";
 
-describe("J5Carousel component", () => {
+describe("J5Collapse component", () => {
   const globals = {
     provide: {
       [ConverterServiceInject as symbol]: {
@@ -13,7 +13,7 @@ describe("J5Carousel component", () => {
     stubs: ["Separate"],
   };
 
-  it("El componente J5Carousel renderiza correctamente", () => {
+  it("El componente J5Collapse renderiza correctamente", () => {
     const wrapper = shallowMount(J5CollapselView, {
       global: {
         ...globals,
