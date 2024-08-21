@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from "vue-router";
-import routes from "./routes";
+import { routes } from "./routes";
 import { seo } from "@/assets/resources/seo";
 import { inject } from "vue";
 import { SeoServiceInject } from "@/shared/constants/injectsKey";
