@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed, inject } from "vue";
 import { ViewLibComponentsVue } from "@/assets/resources/language/index.js";
-import routes from "@/plugins/router/routes";
+import { routes } from "@/plugins/router/routes";
 import { RoutesName } from "@/assets/resources/language";
 import { IConverter } from "@/shared/models/interfaces/IConverter";
 import { ConverterServiceInject } from "@/shared/constants/injectsKey";
@@ -66,7 +66,7 @@ const links = computed(() => {
 
   &__container {
     &--feaatures {
-      > p {
+      >p {
         margin: 0.5em 0;
       }
     }

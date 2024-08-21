@@ -3,7 +3,7 @@ import { RoutesName } from "@/assets/resources/language";
 const RoutesComponents = "/lib-components";
 const RoutesComponentsVue = "/lib-components-vue";
 
-export default [
+export const routes = [
   {
     path: "/",
     name: RoutesName.inicio,
