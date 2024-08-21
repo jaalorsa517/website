@@ -9,6 +9,7 @@ import {
   GAnalyticsSelectContentInject,
   IsProdInject,
   SeoServiceInject,
+  WindowInject,
   YoutubeServiceInject,
 } from "@/shared/constants/injectsKey";
 import { HttpGet } from "@/shared/services/http.services";
@@ -18,6 +19,7 @@ import { SeoService } from "@/shared/services/Seo.service";
 
 export async function initConfigApp(app: App) {
   return new Promise((resolve) => {
+    app.provide(WindowInject, window);
     const seoService = new SeoService(window);
     app.provide(SeoServiceInject, seoService);
 

@@ -14,3 +14,5 @@ export const YoutubeServiceInject = Symbol() as InjectionKey<IYoutubeService>;
 export const ConverterServiceInject = Symbol() as InjectionKey<IConverter>;
 
 export const SeoServiceInject = Symbol() as InjectionKey<IHandlerSeo>;
+
+export const WindowInject = Symbol() as InjectionKey<Window>;
