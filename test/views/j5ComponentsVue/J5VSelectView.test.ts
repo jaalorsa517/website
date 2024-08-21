@@ -11,7 +11,7 @@ describe("J5VSelectView component", () => {
         convertStringJ5: vi.fn(),
       },
     },
-    stubs: ["Separate", "RouterLink"],
+    stubs: ["Separate"],
   };
 
   it("El componente J5VSelectView renderiza correctamente", () => {
