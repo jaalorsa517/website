@@ -5,7 +5,9 @@ import { shallowMount } from "@vue/test-utils";
 describe("Home component", () => {
   it("El componente Home renderiza correctamente", () => {
     const wrapper = shallowMount(Home, {
-      stubs: ["Separate"],
+      global: {
+        stubs: ["Separate"],
+      },
     });
     expect(wrapper.html()).toBeTruthy();
     wrapper.unmount();
