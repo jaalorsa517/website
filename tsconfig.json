@@ -13,7 +13,8 @@
     "types": ["vite/client", "vite-plugin-pwa/client"],
     "baseUrl": "./",
     "paths": {
-      "@/*": ["src/*"]
+      "@/*": ["src/*"],
+      "test/*": ["test/*"]
     },
 
     /* Bundler mode */
@@ -30,6 +31,6 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src/**/*.js", "src/**/*.vue", "src/**/*.ts", "src/**/*.d.ts"],
+  "include": ["src/**/*.js", "src/**/*.vue", "src/**/*.ts", "src/**/*.d.ts", "test/**/*.ts", "test/Setup.js", "test/views/j5ComponentsVue."],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

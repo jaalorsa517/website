@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed, inject } from "vue";
 import { ViewLibComponents } from "@/assets/resources/language/index.js";
-import routes from "@/plugins/router/routes";
+import { routes } from "@/plugins/router/routes";
 import { RoutesName } from "@/assets/resources/language";
 import { ConverterServiceInject } from "@/shared/constants/injectsKey";
 import { IConverter } from "@/shared/models/interfaces/IConverter";

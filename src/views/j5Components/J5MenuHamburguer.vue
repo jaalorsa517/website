@@ -1,8 +1,11 @@
 <script setup lang="ts">
-import { computed } from "vue";
+import { computed, inject } from "vue";
 import ArrowBack from "@/components/global/ArrowBack.vue";
 import { RoutesName } from "@/assets/resources/language";
 import { ViewLibComponents } from "@/assets/resources/language/index.js";
+import { WindowInject } from "@/shared/constants/injectsKey";
+
+const window = inject(WindowInject) as Window
 
 const ROUTE_INITIAL = RoutesName.componentsIntro;
 const titles = computed(() => ViewLibComponents.menuHamburguer.titles);
@@ -20,7 +23,7 @@ const menuOptions = [
 
 function isOpen({ detail }: CustomEvent) {
   const state = detail?.isOpen || false
-  document.body.setAttribute("scroll", state)
+  window.document.body.setAttribute("scroll", state)
 }
 </script>
 <template>

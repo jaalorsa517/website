@@ -1,7 +1,7 @@
 import { IHttpGet } from "@/shared/models/interfaces/IHttpClient";
 import { IYoutubeService } from "@/shared/models/interfaces/IYoutubeService";
 import { PlaylistItemsType, YoutubeTypes } from "@/shared/models/types/youtube";
-import { playlistItemsDto } from "@/shared/youtube.dto";
+import { playlistItemsDto } from "@/shared/models/dto/youtube.dto";
 
 export class YoutTubeService implements IYoutubeService {
   private host = "";

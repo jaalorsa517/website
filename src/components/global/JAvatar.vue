@@ -2,10 +2,10 @@
 import { ref, computed } from "vue";
 import { J5VIcons } from "@jaalorsa/j5-components-vue"
 
-const { url } = defineProps({ url: String });
+const props = defineProps({ url: String });
 const isLoaded = ref(false);
 const isShow = computed(() => {
-  if (!url) return true;
+  if (!props.url) return true;
   if (!isLoaded.value) return true;
   return false;
 });
@@ -15,7 +15,7 @@ const isShow = computed(() => {
     <div class="avatar__borderExternal"></div>
     <div class="avatar__borderIntermedie"></div>
     <div class="avatar__borderIntern"></div>
-    <img class="avatar__img" :src="url" alt="user" v-if="url" v-show="isLoaded" @load="isLoaded = true" />
+    <img class="avatar__img" :src="props.url" alt="user" v-if="props.url" v-show="isLoaded" @load="isLoaded = true" />
     <J5VIcons class="avatar__ico" name="userSkeleton" v-if="isShow" />
   </div>
 </template>
@@ -79,4 +79,5 @@ const isShow = computed(() => {
     border-left-color: transparent;
     animation-name: turnsTo45;
   }
-}</style>
+}
+</style>

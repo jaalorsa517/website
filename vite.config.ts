@@ -92,6 +92,7 @@ export default defineConfig(({ mode }) => {
   const _resolve = {
     alias: {
       "@": resolve(__dirname, "src"),
+      "test": resolve(__dirname, "test"),
     },
   };
   const css = {
@@ -110,5 +111,29 @@ export default defineConfig(({ mode }) => {
     resolve: _resolve,
     css,
     server,
+    test: {
+      setupFiles: "./test/Setup.js",
+      environment: "jsdom",
+      coverage: {
+        provider: "v8",
+        all: true,
+        enabled: true,
+        exclude: [
+          "test/**",
+          "src/shared/constants/**",
+          "src/shared/models/**",
+          "src/plugins",
+          "dist",
+          "src/config",
+          "src/styles",
+          "src/main.ts",
+          "src/Main.vue",
+          "vite.config.ts",
+          "src/assets"
+        ],
+        reporter: ["json-summary", "html"],
+        "100": true,
+      },
+    },
   };
 });
