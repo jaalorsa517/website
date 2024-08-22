@@ -28,7 +28,7 @@
   },
   "dependencies": {
     "@jaalorsa/j5-components": "^1.5.3",
-    "@jaalorsa/j5-components-vue": "^2.1.1",
+    "@jaalorsa/j5-components-vue": "^2.1.2",
     "firebase": "^10.13.0",
     "pinia": "^2.2.2",
     "vue": "^3.4.38",

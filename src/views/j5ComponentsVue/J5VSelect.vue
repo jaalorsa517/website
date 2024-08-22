@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed, inject, ref } from "vue";
-import { J5VSelct } from "@jaalorsa/j5-components-vue";
+import { J5VSelect } from "@jaalorsa/j5-components-vue";
 import ArrowBack from "@/components/global/ArrowBack.vue";
 import { RoutesName } from "@/assets/resources/language";
 import { ViewLibComponentsVue } from "@/assets/resources/language/index.js";
@@ -33,7 +33,7 @@ const modelValue = ref("red")
       <div class="j5v-components-select__container j5v-components-select__container--description container">
         <div class="selects">
           <h3>Select option: <b>{{ modelValue }}</b></h3>
-          <J5VSelct :options="options" v-model="modelValue" />
+          <J5VSelect :options="options" v-model="modelValue" />
         </div>
       </div>
     </section>
