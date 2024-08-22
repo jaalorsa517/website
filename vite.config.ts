@@ -92,7 +92,7 @@ export default defineConfig(({ mode }) => {
   const _resolve = {
     alias: {
       "@": resolve(__dirname, "src"),
-      "test": resolve(__dirname, "test"),
+      test: resolve(__dirname, "test"),
     },
   };
   const css = {
@@ -129,10 +129,15 @@ export default defineConfig(({ mode }) => {
           "src/main.ts",
           "src/Main.vue",
           "vite.config.ts",
-          "src/assets"
+          "src/assets",
         ],
         reporter: ["json-summary", "html"],
-        "100": true,
+        thresholds: {
+          statements: 100,
+          branches: 100,
+          functions: 100,
+          lines: 100,
+        },
       },
     },
   };
