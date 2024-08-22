@@ -12,7 +12,7 @@ export const es = {
   </p>
   <code>
   //TS
-  import { J5VSelct, OptionType } from "../../lib/main"
+  import { J5VSelect, OptionType } from "../../lib/main"
 
   const options: Array<OptionType> = [
     { value: "red", text: "Red" },
@@ -25,7 +25,7 @@ export const es = {
   //HTML
 <div class="selects">
   <h3>Select <span>{{ modelValue }}</span></h3>
-  <J5VSelct :options="options" v-model="modelValue" />
+  <J5VSelect :options="options" v-model="modelValue" />
 </div>
   </code>
   

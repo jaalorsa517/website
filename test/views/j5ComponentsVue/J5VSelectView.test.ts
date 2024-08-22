@@ -1,5 +1,5 @@
 import J5VSelectView from "@/views/j5ComponentsVue/J5VSelect.vue";
-import { J5VSelct } from "@jaalorsa/j5-components-vue";
+import { J5VSelect } from "@jaalorsa/j5-components-vue";
 import { describe, it, expect, vi } from "vitest";
 import { shallowMount } from "@vue/test-utils";
 import { ConverterServiceInject } from "@/shared/constants/injectsKey";
@@ -31,7 +31,7 @@ describe("J5VSelectView component", () => {
       },
     });
     const wrapperInstance = wrapper.vm as any;
-    const selectComponent = wrapper.findComponent(J5VSelct);
+    const selectComponent = wrapper.findComponent(J5VSelect);
     selectComponent.vm.$emit("update:modelValue", "green");
     expect(wrapperInstance.modelValue).toBe("green");
     wrapper.unmount();
