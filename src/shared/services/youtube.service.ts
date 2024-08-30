@@ -1,4 +1,4 @@
-import { IHttpGet } from "@/shared/models/interfaces/IHttpClient";
+import { J5HttpGetI } from "@jaalorsa/j5-components";
 import { IYoutubeService } from "@/shared/models/interfaces/IYoutubeService";
 import { PlaylistItemsType, YoutubeTypes } from "@/shared/models/types/youtube";
 import { playlistItemsDto } from "@/shared/models/dto/youtube.dto";
@@ -7,7 +7,7 @@ export class YoutTubeService implements IYoutubeService {
   private host = "";
   private playlistId = "";
 
-  constructor(private httpGet: IHttpGet, youtubeTypes: YoutubeTypes) {
+  constructor(private httpGet: J5HttpGetI, youtubeTypes: YoutubeTypes) {
     this.host = youtubeTypes.host;
     this.playlistId = youtubeTypes.playlistId;
   }

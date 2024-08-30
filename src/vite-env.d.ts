@@ -17,12 +17,3 @@ interface ImportMetaEnv {
 interface ImportMeta {
   readonly env: ImportMetaEnv;
 }
-
-declare module "@jaalorsa/j5-components" {
-  export function j5MenuHamburguer(): void;
-  export function j5Carousel(): void;
-  export function j5Collapse(): void;
-  export function j5JsonTransform(): void;
-  export function j5Toggle(): void;
-  export function j5Tooltip(): void;
-}
