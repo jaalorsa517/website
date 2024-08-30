@@ -1,5 +1,6 @@
 import { createPinia } from "pinia";
 import { App } from "vue";
+import { J5HttpClient } from "@jaalorsa/j5-components";
 import { router } from "@/plugins/router";
 import Separate from "@/components/global/Separate.vue";
 import { FirebaseConfig } from "@/config/firebase.config";
@@ -12,7 +13,6 @@ import {
   WindowInject,
   YoutubeServiceInject,
 } from "@/shared/constants/injectsKey";
-import { HttpGet } from "@/shared/services/http.services";
 import { YoutTubeService } from "@/shared/services/youtube.service";
 import { ConverterService } from "@/shared/services/converter";
 import { SeoService } from "@/shared/services/Seo.service";
@@ -32,7 +32,7 @@ export async function initConfigApp(app: App) {
     const firebaseApp = new FirebaseConfig();
     enviromentProduction(app, firebaseApp);
 
-    const httpGet = new HttpGet();
+    const httpGet = new J5HttpClient(window);
     const youtTubeService = new YoutTubeService(httpGet, {
       host: import.meta.env.VITE_YOUTUBE_API_HOST,
       playlistId: import.meta.env.VITE_YOUTUBE_LIST,

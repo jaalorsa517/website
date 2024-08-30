@@ -1,5 +1,5 @@
+import { J5HttpGetI } from "@jaalorsa/j5-components";
 import { describe, it, expect, vi } from "vitest";
-import { IHttpGet } from "@/shared/models/interfaces/IHttpClient";
 import { YoutubeTypes } from "@/shared/models/types/youtube";
 import { YoutTubeService } from "@/shared/services/youtube.service";
 
@@ -26,7 +26,7 @@ describe("YoutTubeService", () => {
         },
       ],
     };
-    const httpMock: IHttpGet = {
+    const httpMock: J5HttpGetI = {
       get: vi.fn().mockResolvedValue(responseService),
     };
     const youtubeService = new YoutTubeService(httpMock, youtubeTypes);
@@ -51,7 +51,7 @@ describe("YoutTubeService", () => {
 
   it("Get videos error", async () => {
     const errorMsg = "error in http get request";
-    const httpMock: IHttpGet = {
+    const httpMock: J5HttpGetI = {
       get: vi.fn().mockRejectedValue(errorMsg),
     };
     const youtubeService = new YoutTubeService(httpMock, youtubeTypes);
