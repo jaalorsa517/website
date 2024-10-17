@@ -2,7 +2,7 @@
   "name": "@jaalorsa/website",
   "description": "Contenido para crecer en conocimiento técnico en programación web con Javascript, Vue y más.",
   "private": false,
-  "version": "4.1.9",
+  "version": "4.1.10",
   "author": "jaalorsa <jaalorsa517@hotmail.com>",
   "license": "MIT",
   "type": "module",
@@ -29,25 +29,28 @@
   "dependencies": {
     "@jaalorsa/j5-components": "^2.0.0",
     "@jaalorsa/j5-components-vue": "^2.1.3",
-    "firebase": "^10.13.1",
-    "pinia": "^2.2.2",
-    "vue": "^3.5.3",
-    "vue-router": "^4.4.3"
+    "firebase": "^10.14.1",
+    "pinia": "^2.2.4",
+    "vue": "^3.5.12",
+    "vue-router": "^4.4.5"
   },
   "devDependencies": {
-    "@types/node": "^22.5.4",
-    "@vitejs/plugin-vue": "^5.1.3",
-    "@vitest/coverage-v8": "^2.0.5",
+    "@types/node": "^22.7.6",
+    "@vitejs/plugin-vue": "^5.1.4",
+    "@vitest/coverage-v8": "^2.1.3",
     "@vue/test-utils": "^2.4.6",
-    "firebase-admin": "^12.4.0",
-    "firebase-tools": "^13.16.0",
-    "jsdom": "^25.0.0",
-    "sass": "^1.78.0",
-    "typescript": "^5.5.4",
-    "vite": "^5.4.3",
-    "vite-plugin-dts": "^4.1.0",
+    "firebase-admin": "^12.6.0",
+    "firebase-tools": "^13.22.1",
+    "jsdom": "^25.0.1",
+    "sass": "^1.80.0",
+    "typescript": "^5.6.3",
+    "vite": "^5.4.9",
+    "vite-plugin-dts": "^4.2.4",
     "vite-plugin-pwa": "^0.20.5",
-    "vitest": "^2.0.5",
+    "vitest": "^2.1.3",
     "vue-tsc": "^2.1.6"
+  },
+  "overrides": {
+    "path-to-regexp": "^8.1.0"
   }
 }
