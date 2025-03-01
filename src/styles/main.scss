@@ -1,7 +1,16 @@
+@forward "@/styles/vars.scss";
+@forward "@/styles/mixins.scss";
+@forward "@/styles/animations.scss";
+@forward "@/styles/components.scss";
 @import url("https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&family=Aref+Ruqaa&family=Playfair+Display:ital@0;1&display=swap");
 @import "./normalize.css";
-@import "@/styles/animations.scss";
-@import "@/styles/components.scss";
+
+html,
+body,
+main,
+.app {
+  scroll-behavior: smooth;
+}
 
 body {
   --font-size: 16px;
@@ -26,6 +35,14 @@ body {
   --shadow: 0 4px 4px #00000025;
   --radius-button: 15px;
   --height-fixed: 3.4375em;
+  font-family: var(--font-principal);
+  font-size: var(--font-size);
+  color: var(--color-font-dark);
+  background-color: var(--color-white);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.4;
+  letter-spacing: 0.02em;
 }
 
 * {
@@ -36,17 +53,6 @@ body {
 
 body[scroll="true"] {
   overflow: hidden;
-}
-
-body {
-  font-family: var(--font-principal);
-  font-size: var(--font-size);
-  color: var(--color-font-dark);
-  background-color: var(--color-white);
-  font-style: normal;
-  font-weight: 400;
-  line-height: 1.4;
-  letter-spacing: 0.02em;
 }
 
 small {
