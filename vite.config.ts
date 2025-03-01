@@ -1,5 +1,3 @@
-/// <reference types="vitest" />
-
 import { defineConfig, PluginOption } from "vite";
 import vue from "@vitejs/plugin-vue";
 import { VitePWA } from "vite-plugin-pwa";
@@ -31,7 +29,7 @@ export default defineConfig(({ mode }) => {
           short_name: "jaalorsa",
           id: "jaalorsa",
           description:
-            "Contenido para crecer en conocimiento técnico en programación web con Javascript, Vue y más.",
+            "Contenido para crecer en conocimiento técnico en programación web con Javascript, Vue y más.",
           theme_color: "#ffffff",
           background_color: "#ffffff",
           orientation: "portrait",
@@ -99,8 +97,8 @@ export default defineConfig(({ mode }) => {
     preprocessorOptions: {
       scss: {
         additionalData: `
-          @import "@/styles/vars.scss";
-          @import "@/styles/mixins.scss";
+          @use "@/styles/vars.scss" as *;
+          @use "@/styles/mixins.scss" as *;
             `,
       },
     },
@@ -111,34 +109,5 @@ export default defineConfig(({ mode }) => {
     resolve: _resolve,
     css,
     server,
-    test: {
-      setupFiles: "./test/Setup.js",
-      environment: "jsdom",
-      coverage: {
-        provider: "v8",
-        all: true,
-        enabled: true,
-        exclude: [
-          "test/**",
-          "src/shared/constants/**",
-          "src/shared/models/**",
-          "src/plugins",
-          "dist",
-          "src/config",
-          "src/styles",
-          "src/main.ts",
-          "src/Main.vue",
-          "vite.config.ts",
-          "src/assets",
-        ],
-        reporter: ["json-summary", "html"],
-        thresholds: {
-          statements: 100,
-          branches: 100,
-          functions: 100,
-          lines: 100,
-        },
-      },
-    },
   };
 });
