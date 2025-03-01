@@ -8,6 +8,9 @@ import { IHandlerSeo } from "@/shared/models/interfaces/IHandlerSeo";
 export const router = createRouter({
   routes,
   history: createWebHistory(),
+  scrollBehavior() {
+    return { top: 0, behavior: "smooth" };
+  },
 });
 
 router.beforeEach((to, _, next) => {

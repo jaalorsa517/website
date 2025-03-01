@@ -3,6 +3,13 @@
 @import "@/styles/animations.scss";
 @import "@/styles/components.scss";
 
+html,
+body,
+main,
+.app {
+  scroll-behavior: smooth;
+}
+
 body {
   --font-size: 16px;
   --font-size-title: calc(var(--font-size) * 1.5);
@@ -26,6 +33,14 @@ body {
   --shadow: 0 4px 4px #00000025;
   --radius-button: 15px;
   --height-fixed: 3.4375em;
+  font-family: var(--font-principal);
+  font-size: var(--font-size);
+  color: var(--color-font-dark);
+  background-color: var(--color-white);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.4;
+  letter-spacing: 0.02em;
 }
 
 * {
@@ -36,17 +51,6 @@ body {
 
 body[scroll="true"] {
   overflow: hidden;
-}
-
-body {
-  font-family: var(--font-principal);
-  font-size: var(--font-size);
-  color: var(--color-font-dark);
-  background-color: var(--color-white);
-  font-style: normal;
-  font-weight: 400;
-  line-height: 1.4;
-  letter-spacing: 0.02em;
 }
 
 small {

@@ -28,6 +28,10 @@ const options = routes.map((route) => ({ name: route.name, link: route.path }));
 <style lang="scss">
 .header {
   display: grid;
+  position: sticky;
+  top: 0;
+  background-color: var(--color-white);
+  z-index: 11;
   &__options {
     padding: 1.5em 2.5em;
     margin: auto;
